@@ -4,6 +4,12 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import roofDetail from '@assets/image_1788528449639.png';
+import roofCraft from '@assets/image_1788528508357.png';
+import roofInspection from '@assets/image_1788528536470.png';
+import roofInstall from '@assets/image_1788528549611.png';
+import roofRepair from '@assets/image_1788528562507.png';
+import roofCrew from '@assets/image_1788528584887.png';
 
 const queryClient = new QueryClient();
 
@@ -232,11 +238,18 @@ function Intro() {
   return (
     <section id="about" className="intro" aria-labelledby="about-title">
       <div className="container-shell intro-grid">
-        <div>
+        <div className="intro-heading">
           <div className="eyebrow">The partner behind the roof</div>
           <h2 id="about-title" className="serif" data-testid="text-about-headline">
             One Community Deserves One Connected Roofing Strategy
           </h2>
+          <figure className="section-photo intro-photo">
+            <img
+              src="/images/apartment-roofs-aerial.jpg"
+              alt="Aerial view of apartment buildings with connected pitched roof systems"
+            />
+            <figcaption>Multibuilding communities require one coordinated roof plan.</figcaption>
+          </figure>
         </div>
         <div className="intro-text">
           <p>
@@ -272,6 +285,13 @@ function Programs() {
             A roofing partner for every phase of the asset lifecycle, with the field discipline and documentation to keep the next phase moving.
           </p>
         </div>
+        <figure className="wide-photo programs-photo">
+          <img
+            src="/images/apartment-highrise.jpg"
+            alt="Modern multifamily apartment buildings with varied rooflines"
+          />
+          <figcaption>New construction, occupied assets, and portfolio-scale programs.</figcaption>
+        </figure>
         <div className="program-grid">
           {programs.map((program) => (
             <article className="program" key={program.number} data-testid={`program-${program.number}`}>
@@ -288,6 +308,43 @@ function Programs() {
   );
 }
 
+function RoofingInPractice() {
+  const workImages = [
+    { src: roofDetail, alt: 'Close-up of asphalt shingle roof system detail', label: 'Roof system detail' },
+    { src: roofCraft, alt: 'Roofer installing flashing along a shingle roof', label: 'Craft at the edge' },
+    { src: roofInspection, alt: 'Roofer inspecting a roof against a bright sky', label: 'Field inspection' },
+    { src: roofInstall, alt: 'Two roofers installing a new roof system', label: 'New construction crews' },
+    { src: roofRepair, alt: 'Roofer repairing an asphalt shingle roof', label: 'Reroofing in progress' },
+    { src: roofCrew, alt: 'Roofing crew member working on a roof edge', label: 'Closeout details' },
+  ];
+
+  return (
+    <section className="roofing-practice" aria-labelledby="roofing-practice-title">
+      <div className="container-shell">
+        <div className="section-lead">
+          <div>
+            <div className="eyebrow">The work in practice</div>
+            <h2 id="roofing-practice-title" className="serif">
+              Built Carefully. Documented Clearly.
+            </h2>
+          </div>
+          <p className="section-note">
+            From the first roof walk to final closeout, the quality is in the details our crews see, sequence, and leave behind.
+          </p>
+        </div>
+        <div className="roofing-gallery">
+          {workImages.map((image) => (
+            <figure className="roofing-gallery-item" key={image.label}>
+              <img src={image.src} alt={image.alt} />
+              <figcaption>{image.label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FieldIntelligence() {
   return (
     <section className="field" aria-labelledby="field-title">
@@ -297,6 +354,13 @@ function FieldIntelligence() {
           <h2 id="field-title" className="serif" data-testid="text-field-headline">
             Better Field Information. Cleaner Ownership Decisions.
           </h2>
+          <figure className="section-photo field-photo">
+            <img
+              src="/images/apartment-flat-roof.jpg"
+              alt="Large flat roof system on a multifamily building"
+            />
+            <figcaption>Field conditions documented at the roof-system level.</figcaption>
+          </figure>
         </div>
         <div className="field-copy">
           <p>
@@ -355,6 +419,13 @@ function ServiceArea() {
           <p>
             Multifamily Roofing Specialists is based in Charlotte, NC and serves institutional multifamily owners, developers, and general contractors across North Carolina, South Carolina, Tennessee, and Georgia.
           </p>
+          <figure className="area-photo">
+            <img
+              src="/images/apartment-exterior-hero.jpg"
+              alt="Contemporary apartment community exterior and roofline"
+            />
+            <figcaption>Charlotte-based coverage across the Southeast.</figcaption>
+          </figure>
           <div className="region-graphic" aria-label="Service region: North Carolina, South Carolina, Tennessee and Georgia" role="img">
             <div className="region-line" />
           </div>
@@ -527,6 +598,7 @@ function Home() {
         <Stats />
         <Intro />
         <Programs />
+        <RoofingInPractice />
         <FieldIntelligence />
         <WhyUs />
         <ServiceArea />

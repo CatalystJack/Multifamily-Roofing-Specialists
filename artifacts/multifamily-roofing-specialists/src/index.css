@@ -149,7 +149,7 @@
 .brand-mark::after { top: 5px; left: 7px; border-color: #edf0e8; }
 .brand-name {
   max-width: 205px;
-  font-size: .76rem;
+  font-size: .68rem;
   font-weight: 700;
   letter-spacing: .11em;
   line-height: 1.15;
@@ -165,7 +165,7 @@
 .nav-link {
   position: relative;
   color: #b7c3c5;
-  font-size: .68rem;
+  font-size: .61rem;
   text-decoration: none;
   letter-spacing: .11em;
   text-transform: uppercase;
@@ -183,6 +183,7 @@
 }
 .nav-link:hover { color: #edf0e8; }
 .nav-link:hover::after { width: 100%; }
+.header-cta { font-size: .61rem; }
 .menu-toggle {
   display: none;
   border: 1px solid rgba(237, 240, 232, .28);
@@ -244,8 +245,9 @@
   min-height: max(746px, min(100svh, 860px));
   overflow: hidden;
   background:
+    linear-gradient(90deg, rgba(31, 48, 58, .98) 0%, rgba(31, 48, 58, .9) 45%, rgba(31, 48, 58, .3) 100%),
     radial-gradient(circle at 82% 40%, rgba(158, 207, 228, .15), transparent 27%),
-    radial-gradient(circle at 68% 100%, rgba(187, 147, 100, .1), transparent 32%),
+    url('/images/apartment-exterior-hero.jpg') 78% 55% / cover no-repeat,
     #1f303a;
   isolation: isolate;
 }
@@ -394,6 +396,41 @@
 }
 .text-link span { color: #bb9364; transition: transform .25s ease; }
 .text-link:hover span { transform: translateX(5px); }
+.section-photo,
+.wide-photo,
+.area-photo {
+  position: relative;
+  margin-inline: 0;
+  overflow: hidden;
+  border-bottom: 4px solid #bb9364;
+}
+.section-photo img,
+.wide-photo img,
+.area-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.section-photo:hover img,
+.wide-photo:hover img,
+.area-photo:hover img { transform: scale(1.02); }
+.section-photo figcaption,
+.wide-photo figcaption,
+.area-photo figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 38px 20px 16px;
+  background: linear-gradient(transparent, rgba(31, 48, 58, .9));
+  color: #edf0e8;
+  font: 600 .61rem/1.5 var(--app-font-sans);
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.intro-photo { aspect-ratio: 4 / 3; margin-top: 42px; }
 
 .programs {
   padding: 128px 0 139px;
@@ -408,6 +445,8 @@
 }
 .section-lead h2 { max-width: 620px; margin-top: 18px; color: #edf0e8; }
 .section-note { max-width: 405px; color: #b7c3c5; font-size: .84rem; line-height: 1.75; }
+.programs-photo { aspect-ratio: 16 / 5; margin-bottom: 56px; }
+.programs-photo img { object-position: center 47%; filter: saturate(.74) contrast(1.05); }
 .program-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 10%; }
 .program {
   display: grid;
@@ -423,6 +462,61 @@
 .program-number { padding-top: 6px; color: #bb9364; font: .67rem var(--app-font-mono); }
 .program h3 { margin: 0; color: #edf0e8; font: 400 1.6rem/1.08 var(--app-font-serif); }
 .program p { max-width: 400px; margin: 14px 0 0; color: #b7c3c5; font-size: .81rem; line-height: 1.7; }
+
+.roofing-practice {
+  padding: 128px 0 139px;
+  background: #f4f0e7;
+  color: #1f303a;
+}
+.roofing-practice .section-lead { margin-bottom: 52px; }
+.roofing-practice .section-lead h2 { color: #1f303a; }
+.roofing-practice .section-note { color: #5b6b70; }
+.roofing-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+.roofing-gallery-item {
+  position: relative;
+  grid-column: span 4;
+  min-height: 230px;
+  margin: 0;
+  overflow: hidden;
+  border-bottom: 4px solid #bb9364;
+  background: #d9d4c9;
+}
+.roofing-gallery-item:nth-child(1),
+.roofing-gallery-item:nth-child(4) { grid-column: span 6; }
+.roofing-gallery-item:nth-child(1),
+.roofing-gallery-item:nth-child(4) { aspect-ratio: 16 / 8; }
+.roofing-gallery-item:nth-child(2),
+.roofing-gallery-item:nth-child(3),
+.roofing-gallery-item:nth-child(5),
+.roofing-gallery-item:nth-child(6) { aspect-ratio: 4 / 3; }
+.roofing-gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.82) contrast(1.04);
+  transition: transform .5s ease, filter .5s ease;
+}
+.roofing-gallery-item:hover img {
+  transform: scale(1.035);
+  filter: saturate(1) contrast(1.04);
+}
+.roofing-gallery-item figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 34px 16px 14px;
+  background: linear-gradient(transparent, rgba(31, 48, 58, .88));
+  color: #edf0e8;
+  font: 600 .61rem/1.4 var(--app-font-sans);
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
 
 .field {
   position: relative;
@@ -449,6 +543,8 @@
   border-color: rgba(187, 147, 100, .55);
 }
 .field h2 { max-width: 600px; margin-top: 18px; color: #edf0e8; }
+.field-photo { aspect-ratio: 4 / 3; margin-top: 42px; }
+.field-photo img { filter: saturate(.76) contrast(1.04); }
 .field-copy { position: relative; z-index: 1; max-width: 535px; padding-top: 9px; }
 .field-copy > p { color: #b7c3c5; font-size: .9rem; line-height: 1.85; }
 .field-list {
@@ -494,6 +590,8 @@
 .area h2 { max-width: 520px; margin-top: 18px; }
 .area-copy { max-width: 530px; padding-top: 9px; }
 .area-copy p { margin: 0; }
+.area-photo { aspect-ratio: 16 / 9; margin-top: 34px; }
+.area-photo img { object-position: center 44%; }
 .region-graphic {
   position: relative;
   height: 185px;
@@ -667,6 +765,7 @@
   }
   .mobile-menu .btn-primary { margin-top: 16px; color: #1f303a; text-align: center; }
   .hero { min-height: 835px; align-items: flex-start; }
+  .hero { background-position: center, center, 63% 55%, center; }
   .hero::before { top: 410px; right: -45vw; width: 130vw; height: 330px; }
   .hero::after { top: 470px; right: 16%; height: 265px; }
   .hero-content { padding-top: 168px; }
@@ -678,15 +777,24 @@
   .stat + .stat { padding-left: 0; border-top: 1px solid rgba(237, 240, 232, .13); border-left: 0; }
   .stat-number { font-size: 3.65rem; }
   .intro, .programs, .field, .why, .area, .contact { padding: 94px 0 101px; }
+  .roofing-practice { padding: 94px 0 101px; }
   .intro-grid, .section-lead, .field-grid, .area-grid, .contact-grid { grid-template-columns: 1fr; gap: 35px; }
   .intro-text, .field-copy, .area-copy { padding-top: 0; }
+  .intro-photo, .field-photo { max-height: 330px; margin-top: 30px; }
+  .programs-photo { aspect-ratio: 5 / 3; margin-bottom: 34px; }
+  .area-photo { margin-top: 28px; }
   .intro h2, .programs h2, .field h2, .why h2, .area h2, .contact h2 { font-size: clamp(2.5rem, 11vw, 3.65rem); }
   .section-lead { margin-bottom: 38px; }
+  .roofing-practice .section-lead { margin-bottom: 38px; }
   .section-note { font-size: .81rem; }
   .program-grid { grid-template-columns: 1fr; }
   .program { min-height: 0; padding: 23px 0 25px; }
   .program:nth-child(2) { border-top-color: rgba(237, 240, 232, .14); }
   .program h3 { font-size: 1.48rem; }
+  .roofing-gallery { grid-template-columns: 1fr; }
+  .roofing-gallery-item,
+  .roofing-gallery-item:nth-child(1),
+  .roofing-gallery-item:nth-child(4) { grid-column: span 1; aspect-ratio: 4 / 3; min-height: 0; }
   .field::before { top: 63%; right: -130px; width: 280px; height: 280px; }
   .field::after { top: 68%; right: -73px; width: 205px; height: 205px; }
   .why-head { margin-bottom: 37px; }
@@ -706,7 +814,7 @@
 }
 @media (max-width: 390px) {
   .container-shell { width: min(100% - 2rem, 1240px); }
-  .brand-name { max-width: 155px; font-size: .67rem; }
+  .brand-name { max-width: 155px; font-size: .62rem; }
   .hero h1 { font-size: 3.2rem; }
   .hero-actions { flex-direction: column; align-items: stretch; max-width: 235px; }
   .btn-primary, .btn-secondary { width: 100%; }
