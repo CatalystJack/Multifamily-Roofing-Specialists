@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from 'react';
+import { useEffect, useState, type CSSProperties, type FormEvent } from 'react';
 import { ArrowRight, Check, Menu, X } from 'lucide-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
@@ -148,7 +148,12 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="home" className="hero" aria-labelledby="hero-title">
+    <section
+      id="home"
+      className="hero"
+      aria-labelledby="hero-title"
+      style={{ '--hero-image': `url(${roofInstall})` } as CSSProperties}
+    >
       <div className="container-shell hero-content">
         <h1 id="hero-title" className="serif" data-testid="text-hero-headline">
           Multifamily
@@ -163,9 +168,6 @@ function Hero() {
         <div className="hero-copy">
           <p>
             We don&apos;t split our attention across residential, commercial, and industrial work. That focus means crews who&apos;ve seen the same building types over and over, and pricing built on real production data instead of a generalist&apos;s guess.
-          </p>
-          <p>
-            We deliver roofing for apartment communities, from ground-up new construction to portfolio-wide capital projects. One point of contact, licensed crews, and a process built around GC schedules and institutional reporting standards, not one-off residential jobs.
           </p>
         </div>
         <div className="hero-actions">
@@ -245,8 +247,8 @@ function Intro() {
           </h2>
           <figure className="section-photo intro-photo">
             <img
-              src="/images/apartment-roofs-aerial.jpg"
-              alt="Aerial view of apartment buildings with connected pitched roof systems"
+              src={roofDetail}
+              alt="Close-up of a connected asphalt shingle roof system"
             />
             <figcaption>Multibuilding communities require one coordinated roof plan.</figcaption>
           </figure>
@@ -287,8 +289,8 @@ function Programs() {
         </div>
         <figure className="wide-photo programs-photo">
           <img
-            src="/images/apartment-highrise.jpg"
-            alt="Modern multifamily apartment buildings with varied rooflines"
+            src={roofCraft}
+            alt="Roofer installing flashing and finishing a shingle roof"
           />
           <figcaption>New construction, occupied assets, and portfolio-scale programs.</figcaption>
         </figure>
@@ -356,8 +358,8 @@ function FieldIntelligence() {
           </h2>
           <figure className="section-photo field-photo">
             <img
-              src="/images/apartment-flat-roof.jpg"
-              alt="Large flat roof system on a multifamily building"
+              src={roofRepair}
+              alt="Roofer repairing an asphalt shingle roof"
             />
             <figcaption>Field conditions documented at the roof-system level.</figcaption>
           </figure>
@@ -421,8 +423,8 @@ function ServiceArea() {
           </p>
           <figure className="area-photo">
             <img
-              src="/images/apartment-exterior-hero.jpg"
-              alt="Contemporary apartment community exterior and roofline"
+              src={roofInspection}
+              alt="Roofer inspecting a roof during field work"
             />
             <figcaption>Charlotte-based coverage across the Southeast.</figcaption>
           </figure>
