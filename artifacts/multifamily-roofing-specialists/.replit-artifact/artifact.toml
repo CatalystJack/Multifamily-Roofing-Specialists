@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Multifamily Roofing Specialists"
+description = "A professional marketing website for a B2B roofing company serving multifamily owners, developers, and general contractors across the Southeast."
+version = "1.0.0"
+id = "artifacts/multifamily-roofing-specialists"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20847
+
+[services.development]
+run = "pnpm --filter @workspace/multifamily-roofing-specialists run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/multifamily-roofing-specialists", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/multifamily-roofing-specialists/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20847"
+BASE_PATH = "/"

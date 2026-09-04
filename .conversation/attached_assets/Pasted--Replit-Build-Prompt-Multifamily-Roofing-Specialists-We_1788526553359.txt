@@ -1,0 +1,172 @@
+# Replit Build Prompt — Multifamily Roofing Specialists Website
+
+*Copy everything below the line into Replit's Agent chat to build the site. It includes the full design system, page structure, and final copy so the agent doesn't have to invent content.*
+
+---
+
+Build a professional, institutional-feeling marketing website for a B2B roofing company. This is not a residential home-services site, it's a vendor site aimed at apartment developers, owners, and general contractors deciding who to award roofing work to. It should feel closer to a commercial real estate or construction-tech company than a typical local roofer's site: confident, understated, credible. No stock-photo-contractor clichés, no bright orange/red "call now" urgency styling, no cluttered trust-badge walls.
+
+## Tech stack
+
+- React (functional components, hooks) with Tailwind CSS
+- Single-page site with anchor-linked sections plus a simple multi-page structure if it's easy to set up (Home, About, Services, Service Area, Contact) — a well-built single page with clear sections is fine if multi-page adds complexity
+- Fully responsive down to mobile (375px width), with a collapsible mobile nav
+- Working contact form (can post to a placeholder endpoint or just show a success state, no backend required)
+- Deploy-ready on Replit
+
+## Design system
+
+**Color palette**
+- Base background: deep navy `#0B1929`
+- Secondary panel background: slightly lighter navy `#101F33` (for alternating section bands)
+- Primary text: warm off-white `#F2EFE9`
+- Secondary/body text: muted blue-grey `#A9B4C2`
+- Accent (numbering, eyebrows, dividers, small highlights): warm amber/gold `#C9973E`
+- Hairline borders/dividers: low-opacity white `rgba(242,239,233,0.12)`
+
+Use the accent color sparingly — small numerals, thin rules, section labels, and icon strokes, not large blocks or buttons. Primary CTA buttons should be a solid off-white fill with navy text (inverted from the background), not amber, so the amber stays a quiet signature rather than a loud action color.
+
+**Typography**
+- Display/headline typeface: an elegant serif with real editorial weight, something like Freight Display, Canela, or if using Google Fonts, **"Fraunces"** or **"Playfair Display"** at a light-to-regular weight. Headlines should feel restrained and confident, not decorative.
+- Body/UI typeface: a clean, neutral sans-serif such as **"Inter"** or **"Neue Montreal"** (Google Fonts substitute: Inter). Use it for nav, body copy, buttons, and labels.
+- Keep body text line length under ~75 characters per line.
+- Section eyebrow labels (e.g. "SIX CORE PROGRAMS") are small, letter-spaced, uppercase, amber-colored, and sit above the serif headline they introduce, matching the reference screenshot described below.
+
+**Layout concept**
+- Generous vertical whitespace between sections, alternating background bands (`#0B1929` / `#101F33`) to separate sections without hard borders everywhere
+- Left-aligned text blocks, not centered — this should read like a considered editorial layout, not a centered SaaS landing page
+- The "Six Core Programs" section is a 2-column x 3-row grid on desktop, single column on mobile, each item introduced with a small amber numeral (01–06), a serif sub-headline, and a short sans-serif description, separated by thin horizontal hairlines — matching the visual pattern of a reference screenshot the client provided: dark navy background, small amber "SIX CORE PROGRAMS" eyebrow, large serif hero headline top-left, and a two-column numbered grid on the right with amber numerals, serif item titles, and muted blue-grey body copy under each, separated by thin hairline rules.
+- Stats bar is a simple two-up (or three-up if a third stat is added later) row with a large serif number and a small sans-serif label underneath, no icons or card backgrounds needed
+
+## Design principles to follow
+
+- Spend visual boldness in exactly one place: the hero serif headline. Everything else stays quiet and disciplined.
+- Do not use rounded "SaaS card" treatments with soft drop shadows on every content block. Use hairline dividers and whitespace instead of boxes/cards to separate content.
+- Do not default to a warm cream background or a terracotta accent color. Stick to the navy/amber palette specified above.
+- Only use numbered markers (01–06) where content is genuinely a sequence, which the Six Core Programs section is.
+- Motion: keep it minimal. A single subtle fade/slide on initial hero load is fine. Avoid scroll-triggered fade-ins on every section and hover-lift effects on every card, that reads as generic AI-generated motion.
+- Make sure focus states are visible for keyboard navigation and color contrast is accessible (the off-white text on navy background should easily pass contrast checks).
+
+## Page structure and copy
+
+Use this content exactly as written unless something doesn't fit technically. Replace bracketed placeholders with the noted defaults if no real value is available yet.
+
+### Nav
+Home · About · Services · Service Area · Contact
+Header CTA button: **Request a Bid**
+
+### Hero
+Eyebrow (optional, small, amber): none needed here, this section leads with the name
+
+**Headline (serif, large):** Multifamily Roofing Specialists
+
+**Tagline (serif or sans, medium, sits right under headline):** Not Generalists. Multifamily Specialists.
+
+**Supporting paragraph:** We don't split our attention across residential, commercial, and industrial work. That focus means crews who've seen the same building types over and over, and pricing built on real production data instead of a generalist's guess.
+
+We deliver roofing for apartment communities, from ground-up new construction to portfolio-wide capital projects. One point of contact, licensed crews, and a process built around GC schedules and institutional reporting standards, not one-off residential jobs.
+
+Buttons: **Request a Bid** (primary, filled) and **See Our Work** (secondary, outline or text link)
+
+### Stats bar
+Two large stats side by side:
+- **50+** — Years of Combined Roofing Experience
+- **$5.5B+** — In Multifamily Transaction Experience
+
+### Intro / positioning section
+**Headline:** One Community Deserves One Connected Roofing Strategy
+
+Most roofing companies are built for homeowners. We're built for the people who build and own apartment communities.
+
+We work exclusively on multifamily properties, which means we understand what a general contractor's schedule actually requires, what a REIT's capital planning process looks like, and why a property manager can't afford a crew that shows up unannounced. Every job runs on clear specs, real documentation, and a single point of accountability from bid to closeout.
+
+Whether you're breaking ground on a new development or managing roof replacement across a growing portfolio, we scope it, price it, and deliver it the way an institutional partner expects.
+
+Link: **See Our Services**
+
+### Six Core Programs (numbered 2x3 grid section, matches the reference screenshot layout)
+
+Eyebrow: SIX CORE PROGRAMS
+Section headline: From Groundbreaking to Long-Term Reserve
+
+**01 — New Construction**
+Production roofing for apartment developments, with coordinated material loading, repeatable install details, and disciplined closeout across every building on the job.
+
+**02 — Occupied Rehabs & Portfolio Reroofing**
+Multi-building replacements sequenced around residents: access, parking, landscaping, daily cleanup, and clear communication with property staff throughout.
+
+**03 — Storm & Damage Inspections**
+Prompt, photo-documented field assessments organized by building, so ownership and management teams know exactly what needs action and what doesn't.
+
+**04 — Capital Planning Support**
+Roof condition data translated into real priorities: replacement windows, phasing options, and budget numbers your capital plan can actually use.
+
+**05 — Warranty & Closeout Documentation**
+Manufacturer and workmanship warranties, inspection records, and closeout packages delivered in a format that holds up for lenders, insurers, and future ownership transitions.
+
+**06 — Maintenance Programs**
+Recurring inspection and maintenance built around defined checkpoints (year 3, year 5, year 10), with documentation that carries forward as the roof ages.
+
+### AI-Assisted / Experience-Led section
+Eyebrow or small label: AI-ASSISTED. EXPERIENCE-LED.
+
+**Headline:** Better Field Information. Cleaner Ownership Decisions.
+
+Our inspection workflows use AI-assisted organization and automation to help structure imagery, observations, building-level conditions, and follow-up. That means less friction between the field, the report, and the capital plan, while experienced people remain responsible for every conclusion.
+
+Bulleted list:
+- Building-by-building condition organization
+- Photo-supported documentation
+- Repeatable inspection checkpoints
+- Clearer priorities and next actions
+
+### Why Work With Us
+**Headline:** Built for Institutional Multifamily, Not Retail Roofing
+
+Five items, laid out as a clean list or light grid (no heavy cards):
+
+**GC-Ready Process** — We work inside your construction schedule, not around it. Clear specs, submittals, and communication your project team can rely on.
+
+**Licensed, Vetted Crews** — Every crew on site carries its own general liability and workers' comp coverage, with certificates provided before work begins.
+
+**Supplier Relationships That Protect Your Timeline** — Established accounts with major manufacturers and distributors mean material availability and pricing you can plan around.
+
+**One Point of Contact** — No chasing subcontractors or translating between trades. One team owns the job from bid to warranty.
+
+**Manufacturer-Backed Warranties** — Material and workmanship warranties documented and delivered at closeout, not promised and forgotten.
+
+### Service Area
+**Headline:** Serving the Southeast, Based in Charlotte
+
+Multifamily Roofing Specialists is based in Charlotte, NC and serves institutional multifamily owners, developers, and general contractors across North Carolina, South Carolina, Tennessee, and Georgia.
+
+Optional: a simple, understated map graphic or state outline highlighting NC/SC/TN/GA, styled in the navy/amber palette, not a generic embedded Google Map.
+
+Button: **Contact Us About Your Project**
+
+### Bottom CTA band
+**Headline:** Have a Multifamily Roofing Project on the Schedule?
+
+Whether it's one building or a full portfolio, let's talk about scope, timeline, and budget before you finalize your bid list.
+
+Button: **Request a Bid** (links to contact form/section)
+
+### Contact section/page
+Simple form: Name, Company, Email, Phone, Project Type (dropdown: New Construction / Reroofing / Storm Damage / Capital Planning / Maintenance / Other), Message. Submit button: **Send Message**.
+Include placeholder phone and email fields near the form: `[Phone]`, `[Email]`.
+
+### Footer
+**Multifamily Roofing Specialists** — Not Generalists. Multifamily Specialists.
+Roofing for apartment communities. New construction, capital projects, and portfolio roofing across the Southeast.
+
+Services column: New Construction Roofing · Portfolio Reroofing & Capital Projects · Roof Inspections & Condition Reports · Repairs & Maintenance
+
+Quick Links column: Home · About · Services · Service Area · Contact
+
+Get in Touch column: `[Phone]` · `[Email]` · Serving Charlotte, NC and the greater NC, SC, TN, GA region
+
+Copyright line: © [current year] Multifamily Roofing Specialists. All Rights Reserved.
+
+## What "professional" means here
+
+Before finishing, check the build against this: would a REIT asset manager or a GC's project executive take this site seriously as a vendor, or does it read like a small local contractor's template site? If anything feels like a generic home-services template (bright CTA buttons, stock photos of a roofer giving a thumbs-up, testimonial carousels with 5-star icons, countdown-style urgency banners), remove or replace it. The credibility should come from restraint, real specificity in the copy, and the editorial-serif/navy-amber visual system, not from decoration.
