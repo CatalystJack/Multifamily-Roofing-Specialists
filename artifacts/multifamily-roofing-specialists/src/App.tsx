@@ -9,6 +9,7 @@ import roofCraft from '@assets/image_1788528508357.png';
 import roofInspection from '@assets/image_1788528536470.png';
 import roofInstall from '@assets/image_1788528549611.png';
 import roofRepair from '@assets/image_1788528562507.png';
+import brandLogo from '@assets/1_1788537653026.png';
 
 const queryClient = new QueryClient();
 
@@ -90,8 +91,7 @@ const reasons = [
 function Brand() {
   return (
     <a href="#home" className="brand" data-testid="link-brand">
-      <span className="brand-mark" aria-hidden="true" />
-      <span className="brand-name">Multifamily Roofing Specialists</span>
+      <img className="brand-logo" src={brandLogo} alt="Multifamily Roofing Specialists" />
     </a>
   );
 }

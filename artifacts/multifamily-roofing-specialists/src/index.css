@@ -123,37 +123,17 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
   min-width: 0;
   color: #edf0e8;
   text-decoration: none;
 }
-.brand-mark {
-  position: relative;
-  width: 26px;
-  height: 24px;
-  display: inline-block;
-  flex: 0 0 auto;
-}
-.brand-mark::before,
-.brand-mark::after {
-  content: '';
-  position: absolute;
+.brand-logo {
   display: block;
-  width: 19px;
-  height: 19px;
-  border: 1px solid #bb9364;
-  transform: rotate(45deg);
-}
-.brand-mark::before { top: 1px; left: 0; }
-.brand-mark::after { top: 5px; left: 6px; border-color: #edf0e8; }
-.brand-name {
-  max-width: 205px;
-  font-size: .65rem;
-  font-weight: 700;
-  letter-spacing: .11em;
-  line-height: 1.15;
-  text-transform: uppercase;
+  width: 184px;
+  height: 49px;
+  object-fit: cover;
+  object-position: center;
+  mix-blend-mode: screen;
 }
 .desktop-nav {
   display: flex;
@@ -701,7 +681,7 @@
 }
 @media (max-width: 390px) {
   .container-shell { width: min(100% - 2rem, 1240px); }
-  .brand-name { max-width: 155px; font-size: .59rem; }
+  .brand-logo { width: 157px; height: 42px; }
   .hero h1 { font-size: 2.8rem; }
   .hero-actions { flex-direction: column; align-items: stretch; max-width: 235px; }
   .btn-primary, .btn-secondary { width: 100%; }
