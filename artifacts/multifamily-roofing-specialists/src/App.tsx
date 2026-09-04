@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { ArrowRight, Check, Menu, X } from 'lucide-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
@@ -180,15 +180,47 @@ function Hero() {
 }
 
 function Stats() {
+  const [experience, setExperience] = useState(0);
+  const [transactions, setTransactions] = useState(0);
+
+  useEffect(() => {
+    const finalValues = { experience: 50, transactions: 5.5 };
+    const duration = 1800;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      setExperience(finalValues.experience);
+      setTransactions(finalValues.transactions);
+      return;
+    }
+
+    let frameId = 0;
+    const startTime = performance.now();
+    const animate = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+      setExperience(finalValues.experience * easedProgress);
+      setTransactions(finalValues.transactions * easedProgress);
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(animate);
+      }
+    };
+
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, []);
+
   return (
     <section className="stats" aria-label="Company experience">
       <div className="container-shell stats-inner">
         <div className="stat" data-testid="stat-experience">
-          <div className="stat-number serif">50+</div>
+          <div className="stat-number serif">{`${Math.round(experience)}+`}</div>
           <div className="stat-label">Years of Combined Roofing Experience</div>
         </div>
         <div className="stat" data-testid="stat-transactions">
-          <div className="stat-number serif">$5.5B+</div>
+          <div className="stat-number serif">{`$${transactions.toFixed(1)}B+`}</div>
           <div className="stat-label">In Multifamily Transaction Experience</div>
         </div>
       </div>
