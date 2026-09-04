@@ -9,7 +9,6 @@ import roofCraft from '@assets/image_1788528508357.png';
 import roofInspection from '@assets/image_1788528536470.png';
 import roofInstall from '@assets/image_1788528549611.png';
 import roofRepair from '@assets/image_1788528562507.png';
-import roofCrew from '@assets/image_1788528584887.png';
 
 const queryClient = new QueryClient();
 
@@ -155,33 +154,33 @@ function Hero() {
       style={{ '--hero-image': `url(${roofInstall})` } as CSSProperties}
     >
       <div className="container-shell hero-content">
-        <h1 id="hero-title" className="serif" data-testid="text-hero-headline">
-          Multifamily
-          <br />
-          Roofing
-          <br />
-          Specialists
-        </h1>
-        <p className="hero-tagline serif" data-testid="text-hero-tagline">
-          Not Generalists. Multifamily Specialists.
-        </p>
-        <div className="hero-copy">
-          <p>
-            We don&apos;t split our attention across residential, commercial, and industrial work. That focus means crews who&apos;ve seen the same building types over and over, and pricing built on real production data instead of a generalist&apos;s guess.
+        <div className="hero-heading">
+          <h1 id="hero-title" className="serif" data-testid="text-hero-headline">
+            Multifamily
+            <br />
+            Roofing
+            <br />
+            Specialists
+          </h1>
+        </div>
+        <div className="hero-support">
+          <p className="hero-tagline serif" data-testid="text-hero-tagline">
+            Not Generalists. Multifamily Specialists.
           </p>
+          <div className="hero-copy">
+            <p>
+              We don&apos;t split our attention across residential, commercial, and industrial work. That focus means crews who&apos;ve seen the same building types over and over, and pricing built on real production data instead of a generalist&apos;s guess.
+            </p>
+          </div>
+          <div className="hero-actions">
+            <a href="#contact" className="btn-primary" data-testid="button-hero-request-bid">
+              Request a Bid <ArrowRight size={15} aria-hidden="true" />
+            </a>
+            <a href="#services" className="btn-secondary" data-testid="button-hero-see-work">
+              See Our Work <ArrowRight size={15} aria-hidden="true" />
+            </a>
+          </div>
         </div>
-        <div className="hero-actions">
-          <a href="#contact" className="btn-primary" data-testid="button-hero-request-bid">
-            Request a Bid <ArrowRight size={15} aria-hidden="true" />
-          </a>
-          <a href="#services" className="btn-secondary" data-testid="button-hero-see-work">
-            See Our Work <ArrowRight size={15} aria-hidden="true" />
-          </a>
-        </div>
-      </div>
-      <div className="hero-index" aria-hidden="true">
-        <i />
-        <span>Charlotte / Southeast</span>
       </div>
     </section>
   );
@@ -310,43 +309,6 @@ function Programs() {
   );
 }
 
-function RoofingInPractice() {
-  const workImages = [
-    { src: roofDetail, alt: 'Close-up of asphalt shingle roof system detail', label: 'Roof system detail' },
-    { src: roofCraft, alt: 'Roofer installing flashing along a shingle roof', label: 'Craft at the edge' },
-    { src: roofInspection, alt: 'Roofer inspecting a roof against a bright sky', label: 'Field inspection' },
-    { src: roofInstall, alt: 'Two roofers installing a new roof system', label: 'New construction crews' },
-    { src: roofRepair, alt: 'Roofer repairing an asphalt shingle roof', label: 'Reroofing in progress' },
-    { src: roofCrew, alt: 'Roofing crew member working on a roof edge', label: 'Closeout details' },
-  ];
-
-  return (
-    <section className="roofing-practice" aria-labelledby="roofing-practice-title">
-      <div className="container-shell">
-        <div className="section-lead">
-          <div>
-            <div className="eyebrow">The work in practice</div>
-            <h2 id="roofing-practice-title" className="serif">
-              Built Carefully. Documented Clearly.
-            </h2>
-          </div>
-          <p className="section-note">
-            From the first roof walk to final closeout, the quality is in the details our crews see, sequence, and leave behind.
-          </p>
-        </div>
-        <div className="roofing-gallery">
-          {workImages.map((image) => (
-            <figure className="roofing-gallery-item" key={image.label}>
-              <img src={image.src} alt={image.alt} />
-              <figcaption>{image.label}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function FieldIntelligence() {
   return (
     <section className="field" aria-labelledby="field-title">
@@ -428,8 +390,11 @@ function ServiceArea() {
             />
             <figcaption>Charlotte-based coverage across the Southeast.</figcaption>
           </figure>
-          <div className="region-graphic" aria-label="Service region: North Carolina, South Carolina, Tennessee and Georgia" role="img">
-            <div className="region-line" />
+            <div className="region-states" aria-label="Service region: North Carolina, South Carolina, Tennessee and Georgia" role="img">
+              <span>North Carolina</span>
+              <span>South Carolina</span>
+              <span>Tennessee</span>
+              <span>Georgia</span>
           </div>
           <a href="#contact" className="btn-secondary area-button" data-testid="button-area-contact">
             Contact Us About Your Project <ArrowRight size={15} aria-hidden="true" />
@@ -600,7 +565,6 @@ function Home() {
         <Stats />
         <Intro />
         <Programs />
-        <RoofingInPractice />
         <FieldIntelligence />
         <WhyUs />
         <ServiceArea />
