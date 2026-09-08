@@ -5,11 +5,11 @@ import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import roofDetail from '@assets/image_1788528449639.png';
-import roofCraft from '@assets/image_1788528508357.png';
 import roofInspection from '@assets/image_1788528536470.png';
 import roofRepair from '@assets/image_1788528562507.png';
 import brandLogo from '@assets/3_1788871577496.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
+import programsImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_59_06_AM_1788872386373.png';
 
 const queryClient = new QueryClient();
 
@@ -288,8 +288,8 @@ function Programs() {
         </div>
         <figure className="wide-photo programs-photo">
           <img
-            src={roofCraft}
-            alt="Roofer installing flashing and finishing a shingle roof"
+            src={programsImage}
+            alt="Roofing crews working above a multifamily apartment community"
           />
           <figcaption>New construction, occupied assets, and portfolio-scale programs.</figcaption>
         </figure>
