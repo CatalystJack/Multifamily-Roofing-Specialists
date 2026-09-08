@@ -9,7 +9,7 @@ import roofCraft from '@assets/image_1788528508357.png';
 import roofInspection from '@assets/image_1788528536470.png';
 import roofInstall from '@assets/image_1788528549611.png';
 import roofRepair from '@assets/image_1788528562507.png';
-import brandLogo from '@assets/1_1788537653026.png';
+import brandLogo from '@assets/3_1788871577496.png';
 
 const queryClient = new QueryClient();
 
