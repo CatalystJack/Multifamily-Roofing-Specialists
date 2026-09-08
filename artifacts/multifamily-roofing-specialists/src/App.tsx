@@ -558,7 +558,7 @@ function Footer() {
 
 function Home() {
   return (
-    <div className="noise">
+    <div>
       <Header />
       <main>
         <Hero />
