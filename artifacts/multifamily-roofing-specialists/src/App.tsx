@@ -7,9 +7,9 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import roofDetail from '@assets/image_1788528449639.png';
 import roofCraft from '@assets/image_1788528508357.png';
 import roofInspection from '@assets/image_1788528536470.png';
-import roofInstall from '@assets/image_1788528549611.png';
 import roofRepair from '@assets/image_1788528562507.png';
 import brandLogo from '@assets/3_1788871577496.png';
+import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
 
 const queryClient = new QueryClient();
 
@@ -151,7 +151,7 @@ function Hero() {
       id="home"
       className="hero"
       aria-labelledby="hero-title"
-      style={{ '--hero-image': `url(${roofInstall})` } as CSSProperties}
+      style={{ '--hero-image': `url(${heroImage})` } as CSSProperties}
     >
       <div className="container-shell hero-content">
         <div className="hero-heading">
