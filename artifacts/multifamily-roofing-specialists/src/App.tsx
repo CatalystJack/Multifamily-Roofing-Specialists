@@ -5,11 +5,11 @@ import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import roofDetail from '@assets/image_1788528449639.png';
-import roofInspection from '@assets/image_1788528536470.png';
 import roofRepair from '@assets/image_1788528562507.png';
 import brandLogo from '@assets/3_1788871577496.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
 import programsImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_59_06_AM_1788872386373.png';
+import areaImage from '@assets/ChatGPT_Image_Sep_8,_2026,_09_00_43_AM_1788872448627.png';
 
 const queryClient = new QueryClient();
 
@@ -385,8 +385,8 @@ function ServiceArea() {
           </p>
           <figure className="area-photo">
             <img
-              src={roofInspection}
-              alt="Roofer inspecting a roof during field work"
+              src={areaImage}
+              alt="Sunset view across a multifamily apartment community and connected rooflines"
             />
             <figcaption>Charlotte-based coverage across the Southeast.</figcaption>
           </figure>
