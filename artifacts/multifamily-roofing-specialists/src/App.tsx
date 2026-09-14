@@ -1,4 +1,4 @@
-import { useEffect, useState, type CSSProperties, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from 'react';
 import { ArrowRight, Check, Menu, X } from 'lucide-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
@@ -88,6 +88,45 @@ const reasons = [
   },
 ];
 
+const proofPoints = [
+  'Manufacturer-backed warranties',
+  'Licensed, vetted crews',
+  'Supplier relationships',
+  'Photo-documented field work',
+  'Portfolio-scale programs',
+  'Southeast coverage',
+];
+
+function useInView() {
+  const ref = useRef<HTMLElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.14, rootMargin: '0px 0px -8% 0px' },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isVisible };
+}
+
 function Brand() {
   return (
     <a href="#home" className="brand" data-testid="link-brand">
@@ -98,11 +137,19 @@ function Brand() {
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
 
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 80);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container-shell header-inner">
         <Brand />
         <nav className="desktop-nav" aria-label="Primary navigation">
@@ -142,6 +189,25 @@ function Header() {
         </a>
       </nav>
     </header>
+  );
+}
+
+function ProofStrip() {
+  const marqueeItems = [...proofPoints, ...proofPoints];
+
+  return (
+    <section className="proof-strip" aria-label="Capabilities and proof points">
+      <div className="proof-viewport">
+        <div className="proof-track">
+          {marqueeItems.map((point, index) => (
+            <span className="proof-item" key={`${point}-${index}`}>
+              <span className="proof-mark" aria-hidden="true">+</span>
+              {point}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -236,8 +302,10 @@ function Stats() {
 }
 
 function Intro() {
+  const { ref, isVisible } = useInView();
+
   return (
-    <section id="about" className="intro" aria-labelledby="about-title">
+    <section ref={ref} id="about" className={`intro reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="about-title">
       <div className="container-shell intro-grid">
         <div className="intro-heading">
           <div className="eyebrow">The partner behind the roof</div>
@@ -272,8 +340,10 @@ function Intro() {
 }
 
 function Programs() {
+  const { ref, isVisible } = useInView();
+
   return (
-    <section id="services" className="programs" aria-labelledby="programs-title">
+    <section ref={ref} id="services" className={`programs reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="programs-title">
       <div className="container-shell">
         <div className="section-lead">
           <div>
@@ -295,12 +365,18 @@ function Programs() {
         </figure>
         <div className="program-grid">
           {programs.map((program) => (
-            <article className="program" key={program.number} data-testid={`program-${program.number}`}>
+            <article
+              className="program reveal-item"
+              key={program.number}
+              style={{ '--reveal-delay': `${Number(program.number) * 70}ms` } as CSSProperties}
+              data-testid={`program-${program.number}`}
+            >
               <div className="program-number">{program.number}</div>
               <div>
                 <h3>{program.title}</h3>
                 <p>{program.description}</p>
               </div>
+              <ArrowRight className="item-arrow" size={17} aria-hidden="true" />
             </article>
           ))}
         </div>
@@ -310,8 +386,10 @@ function Programs() {
 }
 
 function FieldIntelligence() {
+  const { ref, isVisible } = useInView();
+
   return (
-    <section className="field" aria-labelledby="field-title">
+    <section ref={ref} className={`field reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="field-title">
       <div className="container-shell field-grid">
         <div>
           <div className="eyebrow">AI-Assisted. Experience-Led.</div>
@@ -347,8 +425,10 @@ function FieldIntelligence() {
 }
 
 function WhyUs() {
+  const { ref, isVisible } = useInView();
+
   return (
-    <section className="why" aria-labelledby="why-title">
+    <section ref={ref} className={`why reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="why-title">
       <div className="container-shell">
         <div className="why-head">
           <div className="eyebrow">The standard we work to</div>
@@ -358,9 +438,15 @@ function WhyUs() {
         </div>
         <div className="why-list">
           {reasons.map((reason, index) => (
-            <article className="why-item" key={reason.title} data-testid={`reason-${index + 1}`}>
+            <article
+              className="why-item reveal-item"
+              key={reason.title}
+              style={{ '--reveal-delay': `${index * 70}ms` } as CSSProperties}
+              data-testid={`reason-${index + 1}`}
+            >
               <h3 className="serif">{reason.title}</h3>
               <p>{reason.description}</p>
+              <ArrowRight className="item-arrow" size={17} aria-hidden="true" />
             </article>
           ))}
         </div>
@@ -370,8 +456,10 @@ function WhyUs() {
 }
 
 function ServiceArea() {
+  const { ref, isVisible } = useInView();
+
   return (
-    <section id="service-area" className="area" aria-labelledby="area-title">
+    <section ref={ref} id="service-area" className={`area reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="area-title">
       <div className="container-shell area-grid">
         <div>
           <div className="eyebrow">Where we work</div>
@@ -406,8 +494,10 @@ function ServiceArea() {
 }
 
 function BottomCta() {
+  const { ref, isVisible } = useInView();
+
   return (
-    <section className="cta" aria-labelledby="cta-title">
+    <section ref={ref} className={`cta reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="cta-title">
       <div className="container-shell cta-grid">
         <div>
           <h2 id="cta-title" className="serif" data-testid="text-cta-headline">
@@ -427,6 +517,7 @@ function BottomCta() {
 
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const { ref, isVisible } = useInView();
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -434,7 +525,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="contact" aria-labelledby="contact-title">
+    <section ref={ref} id="contact" className={`contact reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="contact-title">
       <div className="container-shell contact-grid">
         <div>
           <div className="eyebrow">Start a conversation</div>
@@ -562,6 +653,7 @@ function Home() {
       <Header />
       <main>
         <Hero />
+        <ProofStrip />
         <Stats />
         <Intro />
         <Programs />

@@ -1,0 +1,1 @@
+- [Proof-point marquee](proof-point-marquee.md) — Keep credibility messaging text-based until licensed partner marks are available.
