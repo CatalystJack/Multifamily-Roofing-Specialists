@@ -5,11 +5,11 @@ import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import roofDetail from '@assets/image_1788528449639.png';
-import roofRepair from '@assets/image_1788528562507.png';
 import brandLogo from '@assets/3_1788871577496.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
 import programsImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_59_06_AM_1788872386373.png';
 import areaImage from '@assets/ChatGPT_Image_Sep_8,_2026,_09_00_43_AM_1788872448627.png';
+import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
 
 const queryClient = new QueryClient();
 
@@ -320,8 +320,8 @@ function FieldIntelligence() {
           </h2>
           <figure className="section-photo field-photo">
             <img
-              src={roofRepair}
-              alt="Roofer repairing an asphalt shingle roof"
+              src={fieldImage}
+              alt="Roofing crews working across a multifamily community at sunset"
             />
             <figcaption>Field conditions documented at the roof-system level.</figcaption>
           </figure>
