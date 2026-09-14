@@ -1,0 +1,21 @@
+# Replit Agent Follow-up — Undo the dark theme, keep the motion/interaction upgrades
+
+Paste this into the same Replit Agent chat as a follow-up.
+
+---
+
+**Prompt:**
+
+The dark theme isn't working for us — revert the base color palette to a light background. Keep everything else from the last pass (hero motion, logo/certification marquee, hover micro-interactions, scroll reveals, sticky nav behavior). Specifically:
+
+1. **Background**: Make the dominant background light again — off-white/light neutral (e.g. `#f7f6f2` or similar, or go brighter/whiter than our old cream `#f1eee7` if you want it to feel more modern) — not the near-black charcoal from the last change. Body text should be dark navy/charcoal on that light background, not light text on dark.
+
+2. **Keep dark only where it earns its keep**: it's fine for the hero section specifically to stay dark (photo/video with a dark scrim so the headline is legible — that's normal for a hero), but every section below the hero should be light. Don't bring back the alternating light/dark banding we had before either — pick one light base and use spacing/typography to separate sections, not background color swaps.
+
+3. **Accent color**: keep our tan/gold accent (`#c7a77f` or whatever it's currently set to) — it should read clearly against the light background, not against dark.
+
+4. **Nav**: the nav should still start transparent/blurred over the dark hero and solidify on scroll — but once it solidifies, it should go to a light/white bar with dark text, not a dark bar.
+
+5. **Contrast check**: after this change, verify text contrast in every section — anything that was styled assuming a dark background (light gray body copy, light borders, etc.) needs to flip to dark-on-light equivalents. Go through `src/index.css` section by section (`.intro`, `.programs`, `.field`, `.why`, `.area`, `.cta`, `.contact`, `.footer`) and fix any color that's still tuned for a dark background.
+
+Keep the marquee, hover-arrow interactions, scroll-triggered reveals, and sticky nav behavior from the previous change — this is only about fixing the background color direction, not undoing the motion/interaction work.
