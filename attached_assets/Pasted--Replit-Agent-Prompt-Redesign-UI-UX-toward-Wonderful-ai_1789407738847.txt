@@ -1,0 +1,46 @@
+# Replit Agent Prompt — Redesign UI/UX toward Wonderful.ai
+
+Paste everything below into the Replit Agent chat for this project (`artifacts/multifamily-roofing-specialists`). It's written to reference the actual files/classes already in the repo so the agent can execute directly instead of guessing.
+
+---
+
+**Prompt:**
+
+I want to restyle our marketing site (`artifacts/multifamily-roofing-specialists`) so it *feels* like wonderful.ai — a confident, moody, enterprise-SaaS aesthetic — while keeping our actual copy, services, and roofing-industry content. Don't copy their words or logo, just the visual/interaction language. Work in `src/App.tsx` and `src/index.css`.
+
+**1. Darken and simplify the color system**
+Right now `src/index.css` defines a cream/navy/tan palette (`--background: 42 24% 93%`, alternating `#f1eee7` cream sections with `#1c2e38`/`#304a54` navy sections, `#c7a77f` tan accent). Replace this with a single dominant near-black/charcoal base used almost everywhere (e.g. `#0b0e11`–`#14171b` range), off-white text (`#f5f5f2`), and cut the palette down to essentially two tones + one sharp accent used sparingly (keep our tan/gold as the *only* accent color, drop the mid-navy `#304a54` band as a separate "section color" — sections should differentiate mainly through spacing/typography, not alternating background blocks). Update the `:root` custom properties accordingly and remove the cream `.intro/.area/.contact` light sections in favor of staying dark, or if you keep a light section, make it true white/near-white, not cream.
+
+**2. Typography: bigger, tighter, more geometric**
+We currently load only Montserrat and alias it to both `--app-font-sans` and `--app-font-serif`. Wonderful.ai uses a bold geometric sans for huge, tight-tracking headlines with a lot of confidence — no serif softness. Drop the "serif" treatment on headlines (`.serif` class, `hero h1`, section `h2`s): keep Montserrat (or swap for something like Inter/General Sans if you want it even more geometric) but push headline weight to 600–700, tighten `letter-spacing` further (currently `-.065em` to `-.055em` — that direction is right, keep or increase slightly), and increase the size gap between headline and body copy so hierarchy reads instantly.
+
+**3. Hero section — motion instead of a static photo**
+`Hero()` in `App.tsx` currently renders a single static image (`heroImage`) with a heavy gradient overlay. Change this to a full-bleed looping background video (muted, autoplay, playsinline) of roofing/field footage if we have or can source any, with a dark gradient scrim so text stays legible — same idea as wonderful.ai's hero video. If no video asset is available yet, at minimum add a slow Ken-Burns style scale/pan animation to the still image (CSS `@keyframes` scaling `1 → 1.06` over ~20s, `animation-iteration-count: infinite`) so the hero never feels static. Keep the two-CTA layout (`Request a Bid` / `See Our Work`) but consider making the secondary action a plain text link with an arrow that slides on hover (see point 5) rather than an outlined button, to match wonderful.ai's lighter-weight secondary CTA pattern.
+
+**4. Add a logo/certification marquee**
+Wonderful.ai runs a continuous horizontal marquee of client logos right under the hero. We have real equivalent content: manufacturer certifications (e.g. GAF Master Elite), supplier accounts (ABC Supply, SRS, Beacon), and licensing bodies. Add a new section directly after `<Hero />` in `Home()`: a full-width strip with a slow, infinite CSS-scrolling row of these certification/partner marks (grayscale/monochrome logos, full opacity on hover). This reinforces credibility the same way their client-logo wall does, using our own real proof points instead of fabricated ones — pull actual mark usage guidelines before using any manufacturer logo.
+
+**5. Hover micro-interactions everywhere, not just a few spots**
+We already have arrow-slide hovers on `.text-link` and underline hovers on `.nav-link` — extend that same "arrow nudges right on hover" treatment consistently to: the `Programs` grid items, the `WhyUs` list items, and the footer service links. On cards/list rows, replace the current `border-top` color-change-on-hover with a subtle lift (`transform: translateY(-2px)` + soft shadow, e.g. `box-shadow: 0 12px 24px rgba(0,0,0,.25)`) so hovering reads as "this is interactive," matching wonderful.ai's card-lift feel.
+
+**6. Scroll-triggered reveals**
+Right now only the hero has an entrance animation (`rise-in`, applied once on load). Add an `IntersectionObserver`-based reveal (a small hook, e.g. `useInView`, or a lightweight library) so each section (`Intro`, `Programs`, `FieldIntelligence`, `WhyUs`, `ServiceArea`, `BottomCta`, `Contact`) fades/slides up into place the first time it scrolls into view, staggered slightly for grid items (Programs cards, WhyUs items) so they cascade in one after another rather than all appearing at once. Respect `prefers-reduced-motion` (the codebase already checks this in `Stats()` — follow that same pattern).
+
+**7. Sticky, consistent nav (not just a fading gradient)**
+`.site-header` is currently `position: absolute` with a gradient that fades to transparent — it only really reads as a "bar" near the very top. Make it `position: fixed`, and give it a state change on scroll: transparent/blurred over the hero for the first ~80px of scroll, then transitioning to a solid dark background with a bottom border once the user scrolls past the hero (a simple `scroll` listener toggling a class, or `IntersectionObserver` on the hero, is enough — no extra library required).
+
+**8. Replace the "Six Core Programs" grid with a feature-carousel feel**
+Wonderful.ai rotates through platform components (Data, Alerts, Permissions, Skills, Orchestrator) as an animated, almost tab-like sequence rather than a static grid. We don't need to fully rebuild `Programs()` as a carousel, but consider: numbering the six programs more prominently (already have `program-number`), and adding a thin animated progress indicator or auto-advancing highlight state across the six items on desktop, so the section feels alive rather than a static two-column list. This is optional/stretch — do it only if the rest of the list ships cleanly first.
+
+**9. Buttons**
+Keep our pill buttons (`.btn-primary`/`.btn-secondary`, `border-radius: 999px`) — that's fine and doesn't need to match wonderful.ai's more rectangular buttons. Focus effort on points 1–7 first; button shape is not the thing that will move the needle on this brief.
+
+**10. Mobile**
+Confirm the sticky-nav behavior (point 7) and scroll reveals (point 6) still perform well on mobile — disable/simplify heavy scroll listeners below ~700px if there's any jank, and make sure the marquee (point 4) doesn't cause horizontal overflow on small screens (`overflow-x: hidden` on the section wrapper).
+
+**When you're done, give me:**
+- A short summary of what changed, file by file
+- Any manufacturer/supplier logos you used in the marquee and where you sourced them (so I can confirm we're licensed to display them)
+- Flag anything you skipped (e.g. no video asset available) so I know what's still open
+
+Do not change the actual services, copy, pricing, or contact information — this is a visual/interaction pass only.
