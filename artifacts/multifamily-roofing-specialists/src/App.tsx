@@ -32,35 +32,30 @@ const programs = [
   {
     number: '02',
     title: 'Occupied Rehabs & Portfolio Reroofing',
-    image: areaImage,
     description:
       'Reroofing sequenced around residents, access, parking, cleanup, and property teams.',
   },
   {
     number: '03',
     title: 'Storm & Damage Inspections',
-    image: fieldImage,
     description:
       'Photo-documented inspections organized by building, with clear next actions.',
   },
   {
     number: '04',
     title: 'Capital Planning Support',
-    image: roofDetail,
     description:
       'Roof condition data turned into replacement windows, phasing, and usable budgets.',
   },
   {
     number: '05',
     title: 'Warranty & Closeout Documentation',
-    image: programsImage,
     description:
       'Warranty, inspection, and closeout records ready for lenders, insurers, and ownership.',
   },
   {
     number: '06',
     title: 'Maintenance Programs',
-    image: areaImage,
     description:
       'Scheduled inspections and maintenance that keep roof conditions visible over time.',
   },
@@ -92,15 +87,6 @@ const reasons = [
     description:
       'Documented material and workmanship warranties at closeout.',
   },
-];
-
-const proofPoints = [
-  'Manufacturer-backed warranties',
-  'Licensed, vetted crews',
-  'Supplier relationships',
-  'Photo-documented field work',
-  'Portfolio-scale programs',
-  'Southeast coverage',
 ];
 
 function useInView() {
@@ -195,25 +181,6 @@ function Header() {
         </a>
       </nav>
     </header>
-  );
-}
-
-function ProofStrip() {
-  const marqueeItems = [...proofPoints, ...proofPoints];
-
-  return (
-    <section className="proof-strip" aria-label="Capabilities and proof points">
-      <div className="proof-viewport">
-        <div className="proof-track">
-          {marqueeItems.map((point, index) => (
-            <span className="proof-item" key={`${point}-${index}`}>
-              <span className="proof-mark" aria-hidden="true">+</span>
-              {point}
-            </span>
-          ))}
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -371,11 +338,11 @@ function Programs() {
         <div className="program-grid">
           {programs.map((program) => (
             <article
-              className="program program-card reveal-item"
+              className={`program program-card ${program.image ? '' : 'program-card--plain'} reveal-item`}
               key={program.number}
               style={{
                 '--reveal-delay': `${Number(program.number) * 70}ms`,
-                '--program-image': `url(${program.image})`,
+                ...(program.image ? { '--program-image': `url(${program.image})` } : {}),
               } as CSSProperties}
               data-testid={`program-${program.number}`}
             >
@@ -663,7 +630,6 @@ function Home() {
       <Header />
       <main>
         <Hero />
-        <ProofStrip />
         <Stats />
         <Intro />
         <Programs />

@@ -223,36 +223,6 @@
   filter: none;
 }
 
-.proof-strip {
-  overflow: hidden;
-  border-bottom: 1px solid rgba(27, 43, 52, .12);
-  background: #fff;
-}
-.proof-viewport { overflow: hidden; }
-.proof-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 34s linear infinite;
-}
-.proof-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  min-height: 72px;
-  padding: 0 32px;
-  color: #53616a;
-  font-size: .59rem;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.proof-mark {
-  color: #c7a77f;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
 .hero {
   position: relative;
   display: flex;
@@ -449,6 +419,31 @@
   z-index: -1;
   background: linear-gradient(0deg, rgba(11, 14, 17, .96) 0%, rgba(11, 14, 17, .64) 42%, rgba(11, 14, 17, .04) 100%);
 }
+.program-card--plain {
+  background: linear-gradient(145deg, #3f6474 0%, #1b2b34 78%);
+}
+.program-card--plain:nth-child(2) {
+  background: linear-gradient(145deg, #6f6254 0%, #302c2a 78%);
+}
+.program-card--plain:nth-child(3) {
+  background: linear-gradient(145deg, #496a62 0%, #1b3435 78%);
+}
+.program-card--plain:nth-child(4) {
+  background: linear-gradient(145deg, #5e617e 0%, #282d49 78%);
+}
+.program-card--plain:nth-child(5) {
+  background: linear-gradient(145deg, #3f6474 0%, #1b2b34 78%);
+}
+.program-card--plain:nth-child(6) {
+  background: linear-gradient(145deg, #7a6a52 0%, #31291e 78%);
+}
+.program-card--plain::before {
+  background:
+    linear-gradient(135deg, rgba(240, 214, 173, .12) 0 1px, transparent 1px 100%),
+    linear-gradient(145deg, transparent 0 48%, rgba(245, 245, 242, .08) 48% 49%, transparent 49% 100%);
+  background-size: 28px 28px, 100% 100%;
+  filter: none;
+}
 .program:hover {
   transform: translateY(-5px);
   box-shadow: 0 18px 34px rgba(27, 43, 52, .2);
@@ -639,10 +634,6 @@
   from { transform: scale(1); }
   to { transform: scale(1.06) translate3d(-1%, -1%, 0); }
 }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -667,8 +658,7 @@
     animation-duration: .001ms !important;
     transition-duration: .001ms !important;
   }
-  .hero::before,
-  .proof-track { animation: none !important; }
+  .hero::before { animation: none !important; }
   .reveal,
   .reveal-item,
   .reveal.is-visible .reveal-item {
