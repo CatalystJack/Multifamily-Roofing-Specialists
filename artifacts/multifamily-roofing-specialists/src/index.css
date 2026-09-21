@@ -395,8 +395,6 @@
 }
 .section-lead h2 { max-width: 620px; margin-top: 18px; color: #1b2b34; }
 .section-note { max-width: 405px; color: #53616a; font-size: .75rem; line-height: 1.8; }
-.programs-photo { aspect-ratio: 16 / 5; margin-bottom: 78px; }
-.programs-photo img { object-position: center 47%; filter: saturate(.74) contrast(1.05); }
 .program-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -10,6 +10,7 @@ import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235
 import programsImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_59_06_AM_1788872386373.png';
 import areaImage from '@assets/ChatGPT_Image_Sep_8,_2026,_09_00_43_AM_1788872448627.png';
 import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
+import constructionImage from '@assets/Gemini_Generated_Image_xkwxflxkwxflxkwx_1790002833976.jpg';
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const programs = [
   {
     number: '04',
     title: 'Capital Planning Support',
+    image: constructionImage,
     description:
       'Roof condition data turned into replacement windows, phasing, and usable budgets.',
   },
