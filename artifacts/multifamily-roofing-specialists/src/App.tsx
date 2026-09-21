@@ -5,14 +5,69 @@ import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import brandLogo from '@assets/3_1788871577496.png';
+import roofDetail from '@assets/image_1788528449639.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
+import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
+import constructionImage from '@assets/Gemini_Generated_Image_xkwxflxkwxflxkwx_1790002833976.jpg';
+import newConstructionImage from '@assets/image_1790003076677.png';
+import occupiedRehabsImage from '@assets/image_1790013020294.png';
+import stormInspectionImage from '@assets/image_1790003116172.png';
+import maintenanceImage from '@assets/image_1790003123704.png';
+import warrantyImage from '@assets/image_1790003170403.png';
 
 const queryClient = new QueryClient();
 
 const navItems = [
   { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
   { label: 'Service Area', href: '#service-area' },
   { label: 'Contact', href: '#contact' },
+];
+
+const programs = [
+  {
+    number: '01',
+    title: 'New Construction',
+    image: newConstructionImage,
+    description:
+      'Production roofing coordinated to your schedule, materials, and closeout requirements.',
+  },
+  {
+    number: '02',
+    title: 'Occupied Rehabs & Portfolio Reroofing',
+    image: occupiedRehabsImage,
+    description:
+      'Reroofing sequenced around residents, access, parking, cleanup, and property teams.',
+  },
+  {
+    number: '03',
+    title: 'Storm & Damage Inspections',
+    image: stormInspectionImage,
+    description:
+      'Photo-documented inspections organized by building, with clear next actions.',
+  },
+  {
+    number: '04',
+    title: 'Capital Planning Support',
+    image: constructionImage,
+    description:
+      'Roof condition data turned into replacement windows, phasing, and usable budgets.',
+  },
+  {
+    number: '05',
+    title: 'Warranty & Closeout Documentation',
+    image: warrantyImage,
+    description:
+      'Warranty, inspection, and closeout records ready for lenders, insurers, and ownership.',
+  },
+  {
+    number: '06',
+    title: 'Maintenance Programs',
+    image: maintenanceImage,
+    description:
+      'Scheduled inspections and maintenance that keep roof conditions visible over time.',
+  },
 ];
 
 const reasons = [
@@ -229,6 +284,135 @@ function Stats() {
         <div className="stat" data-testid="stat-focus">
           <div className="stat-number serif">{`${Math.round(100 * progress)}%`}</div>
           <div className="stat-label">Multifamily Focus</div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AboutUs() {
+  const { ref, isVisible } = useInView();
+
+  return (
+    <section ref={ref} id="about" className={`about-us reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="about-title">
+      <div className="about-us-split">
+        <figure className="about-us-photo">
+          <img src={roofDetail} alt="Close-up of a connected asphalt shingle roof system" />
+          <figcaption>Every building has a different roof story.</figcaption>
+        </figure>
+        <div className="about-us-panel">
+          <div className="about-us-panel-inner">
+            <div className="about-us-kicker" aria-hidden="true">
+              <span>01 / About us</span>
+            </div>
+            <h2 id="about-title" className="serif" data-testid="text-about-headline">
+              People, process, and multifamily expertise.
+            </h2>
+            <div className="about-us-panel-label">Built exclusively for multifamily</div>
+            <p>
+              Most roofing companies serve homeowners. We work with the people who build, own, and manage apartment communities.
+            </p>
+            <p>
+              That focus shapes how we plan, communicate, document, and deliver—from the first scope through the final warranty.
+            </p>
+            <div className="about-us-panel-footer">
+              <span>One accountable team</span>
+              <span>Charlotte / Southeast</span>
+            </div>
+            <a href="#services" className="text-link about-us-link" data-testid="link-about-services">
+              Who we are
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Programs() {
+  const { ref, isVisible } = useInView();
+
+  return (
+    <section ref={ref} id="services" className={`programs reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="programs-title">
+      <div className="programs-header">
+        <div className="container-shell section-lead">
+          <div className="programs-title-block">
+            <span className="eyebrow">Our Markets</span>
+            <h2 id="programs-title" className="serif" data-testid="text-programs-headline">
+              From Groundbreaking to Long-Term Reserve
+            </h2>
+            <div className="programs-heading-rule" aria-hidden="true" />
+          </div>
+          <div className="programs-note">
+            <span className="programs-note-index">02 / 06</span>
+            <p>Roofing support across the full asset lifecycle.</p>
+            <span className="programs-note-label">Multifamily markets</span>
+          </div>
+        </div>
+      </div>
+      <div className="programs-body">
+        <div className="container-shell">
+          <div className="programs-body-head">
+            <span>Scope of work</span>
+            <span>Six ways we keep the roofline moving</span>
+          </div>
+          <div className="program-grid">
+            {programs.map((program) => (
+              <article
+                className={`program program-card ${program.image ? '' : 'program-card--plain'} reveal-item`}
+                key={program.number}
+                style={{
+                  '--reveal-delay': `${Number(program.number) * 70}ms`,
+                  ...(program.image ? { '--program-image': `url(${program.image})` } : {}),
+                } as CSSProperties}
+                data-testid={`program-${program.number}`}
+              >
+                <div className="program-card-content">
+                  <div className="program-number">{program.number}</div>
+                  <h3>{program.title}</h3>
+                  <p>{program.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FieldIntelligence() {
+  const { ref, isVisible } = useInView();
+
+  return (
+    <section ref={ref} className={`field reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="field-title">
+      <div className="container-shell field-grid">
+        <figure className="section-photo field-photo">
+          <img
+            src={fieldImage}
+            alt="Roofing crews working across a multifamily community at sunset"
+          />
+        </figure>
+        <div className="field-heading">
+          <span className="eyebrow">Field Intelligence</span>
+          <h2 id="field-title" className="serif" data-testid="text-field-headline">
+            Better Field Information. Cleaner Decisions.
+          </h2>
+        </div>
+        <div className="field-copy">
+          <p>
+            AI-assisted organization structures photos, observations, and building conditions. Experienced people remain responsible for every conclusion.
+          </p>
+          <ul className="field-list">
+            {[
+              'Building-level condition organization',
+              'Photo-supported reports',
+              'Repeatable checkpoints',
+              'Clear next actions',
+            ].map((item, index) => (
+              <li key={item} data-testid={`field-capability-${index + 1}`}>{item}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
@@ -470,6 +654,15 @@ function Footer() {
             </p>
           </div>
           <div>
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#services" data-testid="link-footer-new-construction">New Construction</a></li>
+              <li><a href="#services" data-testid="link-footer-portfolio">Portfolio Reroofing</a></li>
+              <li><a href="#services" data-testid="link-footer-inspections">Roof Inspections</a></li>
+              <li><a href="#services" data-testid="link-footer-maintenance">Repairs &amp; Maintenance</a></li>
+            </ul>
+          </div>
+          <div>
             <h3>Quick Links</h3>
             <ul>
               {navItems.map((item) => (
@@ -499,6 +692,9 @@ function Home() {
       <main>
         <Hero />
         <Stats />
+        <AboutUs />
+        <Programs />
+        <FieldIntelligence />
         <WhyUs />
         <ServiceArea />
         <BottomCta />
