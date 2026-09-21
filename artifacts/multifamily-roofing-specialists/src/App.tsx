@@ -483,25 +483,21 @@ function ServiceArea() {
             <div className="area-map-stage">
               <svg className="area-map" viewBox="0 0 520 350" role="img" aria-labelledby="area-map-title area-map-description">
                 <title id="area-map-title">Southeast project coverage map</title>
-                <desc id="area-map-description">Animated coverage routes from Charlotte through North Carolina, South Carolina, Tennessee, and Georgia.</desc>
-                <path className="area-route area-route--main" d="M285 151 C250 123 211 126 173 143 C144 156 119 178 103 204" />
-                <path className="area-route area-route--branch" d="M285 151 C310 158 337 178 351 208 C363 235 365 260 355 292" />
-                <path className="area-route area-route--branch" d="M285 151 C324 131 364 121 408 127 C438 131 457 144 470 163" />
-                <path className="area-route area-route--branch" d="M285 151 C263 183 247 218 231 254 C222 274 206 286 183 293" />
+                <desc id="area-map-description">Animated coverage map highlighting North Carolina, South Carolina, Tennessee, and Georgia from Charlotte.</desc>
                 <g className="area-state area-state--tn">
-                  <path d="M94 108 L239 108 L274 127 L258 151 L213 159 L155 154 L112 143 L87 126 Z" />
+                  <path d="M96 116 L250 116 L278 135 L260 157 L209 165 L154 158 L112 146 L86 130 Z" />
                   <text x="177" y="137">TN</text>
                 </g>
                 <g className="area-state area-state--nc">
-                  <path d="M286 119 L365 108 L430 122 L450 145 L421 162 L382 158 L352 177 L311 167 L279 148 Z" />
+                  <path d="M279 129 L353 115 L424 125 L458 153 L438 169 L393 167 L366 184 L321 170 L281 153 Z" />
                   <text x="370" y="143">NC</text>
                 </g>
                 <g className="area-state area-state--sc">
-                  <path d="M311 171 L352 178 L382 164 L407 181 L390 218 L347 239 L316 220 L294 194 Z" />
+                  <path d="M321 172 L366 185 L393 171 L415 188 L399 225 L360 243 L326 222 L302 194 Z" />
                   <text x="352" y="205">SC</text>
                 </g>
                 <g className="area-state area-state--ga">
-                  <path d="M218 174 L294 174 L316 220 L294 288 L247 306 L213 274 L199 224 Z" />
+                  <path d="M218 168 L302 174 L326 222 L310 291 L261 310 L221 278 L203 225 Z" />
                   <text x="260" y="246">GA</text>
                 </g>
                 <g className="area-origin">
@@ -513,7 +509,7 @@ function ServiceArea() {
             </div>
             <div className="area-map-key">
               <span><i className="area-key-dot area-key-dot--hq" />Charlotte HQ</span>
-              <span><i className="area-key-dot area-key-dot--route" />Active project region</span>
+              <span><i className="area-key-dot area-key-dot--route" />Active project states</span>
             </div>
           </div>
           <div className="region-states" aria-label="Service region: North Carolina, South Carolina, Tennessee and Georgia" role="list">

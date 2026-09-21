@@ -867,8 +867,9 @@
   margin: 8px 0 5px;
   overflow: hidden;
   background:
-    linear-gradient(rgba(245, 245, 242, .06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 245, 242, .06) 1px, transparent 1px);
+    linear-gradient(rgba(122, 200, 109, .08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122, 200, 109, .08) 1px, transparent 1px),
+    #18384b;
   background-size: 32px 32px;
 }
 .area-map-stage::before,
@@ -879,7 +880,7 @@
 }
 .area-map-stage::before {
   inset: 0;
-  background: radial-gradient(circle at 55% 40%, rgba(199, 167, 127, .16), transparent 43%);
+  background: radial-gradient(circle at 55% 43%, rgba(122, 200, 109, .18), transparent 46%);
 }
 .area-map-stage::after {
   top: 14px;
@@ -905,28 +906,34 @@
   stroke-dashoffset: 100;
   opacity: .48;
 }
-.area.is-visible .area-route {
-  animation: map-route 2.4s ease-out forwards, map-route-pulse 3.4s 2.4s ease-in-out infinite;
-}
 .area-state {
-  fill: rgba(83, 127, 150, .25);
-  stroke: rgba(245, 245, 242, .5);
-  stroke-width: 1;
-  transition: fill .25s ease, stroke .25s ease;
+  fill: #79c86d;
+  stroke: #173448;
+  stroke-width: 2.2;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: filter .25s ease, opacity .25s ease;
 }
-.area-state--nc { fill: rgba(199, 167, 127, .3); stroke: #c7a77f; }
-.area-state:hover { fill: rgba(199, 167, 127, .42); stroke: #f0d6ad; }
+.area.is-visible .area-state {
+  animation: map-state-in .7s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+.area-state--tn { animation-delay: .08s; }
+.area-state--ga { animation-delay: .22s; }
+.area-state--sc { animation-delay: .36s; }
+.area-state--nc { animation-delay: .5s; }
+.area-state:hover { filter: brightness(1.1) saturate(1.08); }
 .area-state text {
-  fill: #f5f5f2;
-  font: 600 11px var(--app-font-mono);
+  fill: #173448;
+  font: 700 11px var(--app-font-mono);
   letter-spacing: .12em;
   text-anchor: middle;
 }
-.area-origin circle:first-child { fill: #f0d6ad; stroke: #0b0e11; stroke-width: 3; }
+.area-origin circle:first-child { fill: #f0d6ad; stroke: #173448; stroke-width: 3; }
 .area-origin-pulse {
   fill: none;
-  stroke: #f0d6ad;
-  stroke-width: 1;
+  stroke: #79c86d;
+  stroke-width: 1.5;
   opacity: .7;
   transform-box: fill-box;
   transform-origin: center;
@@ -946,7 +953,7 @@
 .area-map-key span { display: inline-flex; align-items: center; gap: 7px; }
 .area-key-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; }
 .area-key-dot--hq { background: #f0d6ad; }
-.area-key-dot--route { border: 1px solid #c7a77f; }
+.area-key-dot--route { background: #79c86d; }
 .area-photo { aspect-ratio: 16 / 9; margin-top: 32px; }
 .area-photo img { object-position: center 44%; }
 .region-states {
