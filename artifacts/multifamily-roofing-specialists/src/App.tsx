@@ -61,12 +61,32 @@ const programs = [
   },
 ];
 
-const coreValues = [
-  'Check your ego at the door',
-  'Relentless pursuit of excellence',
-  'Partner first, always',
-  'Do what you say you’ll do',
-  'Take care of the crew, take care of the partner',
+const reasons = [
+  {
+    title: 'GC-Ready Process',
+    description:
+      'Specs, submittals, and communication that fit your schedule.',
+  },
+  {
+    title: 'Licensed, Vetted Crews',
+    description:
+      'Vetted crews with required liability and workers’ comp coverage.',
+  },
+  {
+    title: 'Supplier Relationships That Protect Your Timeline',
+    description:
+      'Established relationships that protect material availability and pricing.',
+  },
+  {
+    title: 'One Point of Contact',
+    description:
+      'One team owns the job from bid to warranty.',
+  },
+  {
+    title: 'Manufacturer-Backed Warranties',
+    description:
+      'Documented material and workmanship warranties at closeout.',
+  },
 ];
 
 function useInView() {
@@ -381,38 +401,29 @@ function WhyUs() {
     <section ref={ref} className={`why reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="why-title">
       <div className="container-shell">
         <div className="why-head">
-          <span className="eyebrow">Core Values</span>
+          <span className="eyebrow">Our Approach</span>
           <h2 id="why-title" className="serif" data-testid="text-why-headline">
-            How We Show Up
+            Built for Institutional Multifamily
           </h2>
         </div>
-        <div className="core-values-list">
-          {coreValues.map((value, index) => (
+        <div className="why-list">
+          {reasons.map((reason, index) => (
             <article
-              className="core-value-row reveal-item"
-              key={value}
+              className="why-item reveal-item"
+              key={reason.title}
               style={{ '--reveal-delay': `${index * 70}ms` } as CSSProperties}
               data-testid={`reason-${index + 1}`}
             >
-              <div className="core-value-number">{index + 1}.</div>
-              <h3 className="serif">{value}</h3>
+              <div className="why-value">
+                <span className="eyebrow">Value</span>
+                <h3 className="serif">{reason.title}</h3>
+              </div>
+              <div className="why-commitment">
+                <span className="eyebrow">Commitment</span>
+                <p>{reason.description}</p>
+              </div>
             </article>
           ))}
-        </div>
-        <div className="core-focus">
-          <div className="core-focus-label">
-            <span className="eyebrow">Core Focus</span>
-          </div>
-          <div className="core-focus-content">
-            <div className="core-focus-row">
-              <h3>Purpose / Cause / Passion:</h3>
-              <p>To bring honest, dependable roofing to the multifamily industry — done right the first time.</p>
-            </div>
-            <div className="core-focus-row">
-              <h3>Our Niche:</h3>
-              <p>Not Generalists. Multifamily Specialists. We don&apos;t split our attention across residential — multifamily and commercial roofing only.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
