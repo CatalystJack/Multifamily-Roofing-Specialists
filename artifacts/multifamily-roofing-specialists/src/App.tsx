@@ -19,6 +19,9 @@ const queryClient = new QueryClient();
 
 const navItems = [
   { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Service Area', href: '#service-area' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -221,8 +224,8 @@ function Hero() {
             <a href="#contact" className="btn-primary" data-testid="button-hero-request-bid">
               Request a Bid
             </a>
-            <a href="#contact" className="btn-secondary" data-testid="button-hero-see-work">
-              Talk to Our Team
+            <a href="#services" className="btn-secondary" data-testid="button-hero-see-work">
+              See Our Work
             </a>
           </div>
         </div>
@@ -429,32 +432,6 @@ function WhyUs() {
           <h2 id="why-title" className="serif" data-testid="text-why-headline">
             Built for Institutional Multifamily
           </h2>
-        </div>
-        <div className="intelligence-callout">
-          <div className="intelligence-callout-head">
-            <div>
-              <span className="eyebrow">Field Intelligence</span>
-              <h3 className="serif">AI-ASSISTED.<br />EXPERIENCE-LED.</h3>
-            </div>
-            <p className="intelligence-callout-lead">
-              Better field information. Cleaner ownership decisions.
-            </p>
-          </div>
-          <div className="intelligence-callout-body">
-            <p>
-              Our inspection workflows use AI-assisted organization and automation to help structure imagery, observations, building-level conditions, and follow-up. That means less friction between the field, the report, and the capital plan—while experienced people remain responsible for the conclusions.
-            </p>
-            <ul aria-label="Inspection workflow capabilities">
-              {[
-                'Building-by-building condition organization',
-                'Photo-supported documentation',
-                'Repeatable inspection checkpoints',
-                'Clearer priorities and next actions',
-              ].map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
         </div>
         <div className="why-list">
           {reasons.map((reason, index) => (
@@ -679,6 +656,15 @@ function Footer() {
             </p>
           </div>
           <div>
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#services" data-testid="link-footer-new-construction">New Construction</a></li>
+              <li><a href="#services" data-testid="link-footer-portfolio">Portfolio Reroofing</a></li>
+              <li><a href="#services" data-testid="link-footer-inspections">Roof Inspections</a></li>
+              <li><a href="#services" data-testid="link-footer-maintenance">Repairs &amp; Maintenance</a></li>
+            </ul>
+          </div>
+          <div>
             <h3>Quick Links</h3>
             <ul>
               {navItems.map((item) => (
@@ -708,7 +694,11 @@ function Home() {
       <main>
         <Hero />
         <Stats />
+        <Intro />
+        <Programs />
+        <FieldIntelligence />
         <WhyUs />
+        <ServiceArea />
         <BottomCta />
         <Contact />
       </main>
