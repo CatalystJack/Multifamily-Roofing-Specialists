@@ -4,8 +4,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import roofDetail from '@assets/image_1788528449639.png';
 import brandLogo from '@assets/3_1788871577496.png';
+import roofDetail from '@assets/image_1788528449639.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
 import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
 import constructionImage from '@assets/Gemini_Generated_Image_xkwxflxkwxflxkwx_1790002833976.jpg';
@@ -290,51 +290,44 @@ function Stats() {
   );
 }
 
-function Intro() {
+function AboutUs() {
   const { ref, isVisible } = useInView();
 
   return (
-    <section ref={ref} id="about" className={`intro reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="about-title">
-      <div className="container-shell intro-shell">
-        <div className="intro-topline" aria-hidden="true">
-          <span>01 / The work</span>
-          <span>Multifamily Roofing Specialists</span>
-        </div>
-        <div className="intro-main">
-          <div className="intro-heading">
-            <div className="intro-heading-meta">
-              <span>01</span>
-              <span>About the work</span>
-            </div>
-            <h2 id="about-title" className="serif" data-testid="text-about-headline">
-              One Roofing Strategy for Every Community
-            </h2>
-            <div className="intro-heading-rule" aria-hidden="true" />
+    <section ref={ref} id="about" className={`about-us reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="about-title">
+      <div className="container-shell about-us-grid">
+        <div className="about-us-heading">
+          <div className="about-us-kicker" aria-hidden="true">
+            <span>01</span>
+            <span>About us</span>
           </div>
-          <aside className="intro-text">
-            <div className="intro-panel-number" aria-hidden="true">01</div>
-            <div className="intro-panel-label">Exclusive focus / Multifamily</div>
-            <p>
-              Most roofing companies serve homeowners. We work exclusively with the people who build, own, and manage apartment communities.
-            </p>
-            <p>
-              From new development to portfolio reroofing, we scope, price, document, and deliver with one accountable team.
-            </p>
-            <a href="#services" className="text-link" data-testid="link-see-services">
-              See Our Services
-            </a>
-          </aside>
+          <h2 id="about-title" className="serif" data-testid="text-about-headline">
+            Roofing with a multifamily mindset.
+          </h2>
+          <div className="about-us-rule" aria-hidden="true" />
+          <a href="#services" className="btn-secondary about-us-link" data-testid="link-about-services">
+            Explore our approach
+          </a>
         </div>
-        <figure className="section-photo intro-photo">
-          <img
-            src={roofDetail}
-            alt="Close-up of a connected asphalt shingle roof system"
-          />
-          <figcaption>
-            <span>Roofing is one system.</span>
-            <span>We manage every handoff.</span>
-          </figcaption>
-        </figure>
+        <div className="about-us-content">
+          <figure className="about-us-photo">
+            <img src={roofDetail} alt="Close-up of a connected asphalt shingle roof system" />
+            <figcaption>Every building has a different roof story.</figcaption>
+          </figure>
+          <div className="about-us-panel">
+            <div className="about-us-panel-label">Built exclusively for multifamily</div>
+            <p>
+              Most roofing companies serve homeowners. We work with the people who build, own, and manage apartment communities.
+            </p>
+            <p>
+              That focus shapes how we plan, communicate, document, and deliver—from the first scope through the final warranty.
+            </p>
+            <div className="about-us-panel-footer">
+              <span>One accountable team</span>
+              <span>Charlotte / Southeast</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -703,7 +696,7 @@ function Home() {
       <main>
         <Hero />
         <Stats />
-        <Intro />
+        <AboutUs />
         <Programs />
         <FieldIntelligence />
         <WhyUs />
