@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from 'react';
-import { ArrowRight, Check, Menu, X } from 'lucide-react';
+import { Check, Menu, X } from 'lucide-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -165,7 +165,7 @@ function Header() {
           ))}
         </nav>
         <a href="#contact" className="btn-primary header-cta" data-testid="button-header-request-bid">
-          Request a Bid <ArrowRight size={15} aria-hidden="true" />
+          Request a Bid
         </a>
         <button
           type="button"
@@ -185,7 +185,7 @@ function Header() {
           </a>
         ))}
         <a href="#contact" className="btn-primary" onClick={closeMenu} data-testid="button-mobile-request-bid">
-          Request a Bid <ArrowRight size={15} aria-hidden="true" />
+          Request a Bid
         </a>
       </nav>
     </header>
@@ -240,10 +240,10 @@ function Hero() {
           </div>
           <div className="hero-actions">
             <a href="#contact" className="btn-primary" data-testid="button-hero-request-bid">
-              Request a Bid <ArrowRight size={15} aria-hidden="true" />
+              Request a Bid
             </a>
             <a href="#services" className="btn-secondary" data-testid="button-hero-see-work">
-              See Our Work <ArrowRight size={15} aria-hidden="true" />
+              See Our Work
             </a>
           </div>
         </div>
@@ -308,7 +308,6 @@ function Intro() {
     <section ref={ref} id="about" className={`intro reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="about-title">
       <div className="container-shell intro-grid">
         <div className="intro-heading">
-          <div className="eyebrow">The partner behind the roof</div>
           <h2 id="about-title" className="serif" data-testid="text-about-headline">
             One Community Deserves One Connected Roofing Strategy
           </h2>
@@ -331,7 +330,7 @@ function Intro() {
             Whether you&apos;re breaking ground on a new development or managing roof replacement across a growing portfolio, we scope it, price it, and deliver it the way an institutional partner expects.
           </p>
           <a href="#services" className="text-link" data-testid="link-see-services">
-            See Our Services <span aria-hidden="true">→</span>
+            See Our Services
           </a>
         </div>
       </div>
@@ -347,7 +346,6 @@ function Programs() {
       <div className="container-shell">
         <div className="section-lead">
           <div>
-            <div className="eyebrow">Six Core Programs</div>
             <h2 id="programs-title" className="serif" data-testid="text-programs-headline">
               From Groundbreaking to Long-Term Reserve
             </h2>
@@ -376,7 +374,6 @@ function Programs() {
                 <h3>{program.title}</h3>
                 <p>{program.description}</p>
               </div>
-              <ArrowRight className="item-arrow" size={17} aria-hidden="true" />
             </article>
           ))}
         </div>
@@ -392,7 +389,6 @@ function FieldIntelligence() {
     <section ref={ref} className={`field reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="field-title">
       <div className="container-shell field-grid">
         <div>
-          <div className="eyebrow">AI-Assisted. Experience-Led.</div>
           <h2 id="field-title" className="serif" data-testid="text-field-headline">
             Better Field Information. Cleaner Ownership Decisions.
           </h2>
@@ -431,7 +427,6 @@ function WhyUs() {
     <section ref={ref} className={`why reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="why-title">
       <div className="container-shell">
         <div className="why-head">
-          <div className="eyebrow">The standard we work to</div>
           <h2 id="why-title" className="serif" data-testid="text-why-headline">
             Built for Institutional Multifamily, Not Retail Roofing
           </h2>
@@ -446,7 +441,6 @@ function WhyUs() {
             >
               <h3 className="serif">{reason.title}</h3>
               <p>{reason.description}</p>
-              <ArrowRight className="item-arrow" size={17} aria-hidden="true" />
             </article>
           ))}
         </div>
@@ -462,7 +456,6 @@ function ServiceArea() {
     <section ref={ref} id="service-area" className={`area reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="area-title">
       <div className="container-shell area-grid">
         <div>
-          <div className="eyebrow">Where we work</div>
           <h2 id="area-title" className="serif" data-testid="text-area-headline">
             Serving the Southeast, Based in Charlotte
           </h2>
@@ -485,7 +478,7 @@ function ServiceArea() {
               <span>Georgia</span>
           </div>
           <a href="#contact" className="btn-secondary area-button" data-testid="button-area-contact">
-            Contact Us About Your Project <ArrowRight size={15} aria-hidden="true" />
+            Contact Us About Your Project
           </a>
         </div>
       </div>
@@ -508,7 +501,7 @@ function BottomCta() {
           </p>
         </div>
         <a href="#contact" className="btn-primary" data-testid="button-cta-request-bid">
-          Request a Bid <ArrowRight size={15} aria-hidden="true" />
+          Request a Bid
         </a>
       </div>
     </section>
@@ -528,9 +521,8 @@ function Contact() {
     <section ref={ref} id="contact" className={`contact reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="contact-title">
       <div className="container-shell contact-grid">
         <div>
-          <div className="eyebrow">Start a conversation</div>
           <h2 id="contact-title" className="serif" data-testid="text-contact-headline">
-            Let&apos;s Talk About the Work Ahead
+            Let&apos;s Nail Down Your Roofing Plan
           </h2>
           <p className="contact-note">
             Tell us what you&apos;re planning. We&apos;ll come prepared to talk scope, schedule, and the level of documentation your project requires.
@@ -591,7 +583,7 @@ function Contact() {
                 <textarea id="message" name="message" placeholder="Tell us about the property, scope, and timeline." required data-testid="textarea-message" />
               </div>
               <button type="submit" className="btn-primary form-submit" data-testid="button-submit-form">
-                Send Message <ArrowRight size={15} aria-hidden="true" />
+                Send Message
               </button>
             </form>
           )}
