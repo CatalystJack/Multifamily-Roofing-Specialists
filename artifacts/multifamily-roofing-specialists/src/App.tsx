@@ -253,17 +253,14 @@ function Hero() {
 }
 
 function Stats() {
-  const [experience, setExperience] = useState(0);
-  const [transactions, setTransactions] = useState(0);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const finalValues = { experience: 50, transactions: 5.5 };
     const duration = 1800;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (prefersReducedMotion) {
-      setExperience(finalValues.experience);
-      setTransactions(finalValues.transactions);
+      setProgress(1);
       return;
     }
 
@@ -273,8 +270,7 @@ function Stats() {
       const progress = Math.min((now - startTime) / duration, 1);
       const easedProgress = 1 - Math.pow(1 - progress, 3);
 
-      setExperience(finalValues.experience * easedProgress);
-      setTransactions(finalValues.transactions * easedProgress);
+      setProgress(easedProgress);
 
       if (progress < 1) {
         frameId = requestAnimationFrame(animate);
@@ -289,12 +285,20 @@ function Stats() {
     <section className="stats" aria-label="Company experience">
       <div className="container-shell stats-inner">
         <div className="stat" data-testid="stat-experience">
-          <div className="stat-number serif">{`${Math.round(experience)}+`}</div>
-          <div className="stat-label">Combined Roofing Experience</div>
+          <div className="stat-number serif">{`${Math.round(50 * progress)}+`}</div>
+          <div className="stat-label">Years Combined Experience</div>
         </div>
         <div className="stat" data-testid="stat-transactions">
-          <div className="stat-number serif">{`$${transactions.toFixed(1)}B+`}</div>
-          <div className="stat-label">Multifamily Transaction Experience</div>
+          <div className="stat-number serif">{`$${(5.5 * progress).toFixed(1)}B+`}</div>
+          <div className="stat-label">Multifamily Transactions</div>
+        </div>
+        <div className="stat" data-testid="stat-states">
+          <div className="stat-number serif">{`${Math.round(4 * progress)}`}</div>
+          <div className="stat-label">Southeast States</div>
+        </div>
+        <div className="stat" data-testid="stat-focus">
+          <div className="stat-number serif">{`${Math.round(100 * progress)}%`}</div>
+          <div className="stat-label">Multifamily Focus</div>
         </div>
       </div>
     </section>
@@ -344,6 +348,7 @@ function Programs() {
       <div className="container-shell">
         <div className="section-lead">
           <div>
+            <span className="eyebrow">Our Markets</span>
             <h2 id="programs-title" className="serif" data-testid="text-programs-headline">
               From Groundbreaking to Long-Term Reserve
             </h2>
@@ -386,6 +391,7 @@ function FieldIntelligence() {
     <section ref={ref} className={`field reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="field-title">
       <div className="container-shell field-grid">
         <div>
+          <span className="eyebrow">Field Intelligence</span>
           <h2 id="field-title" className="serif" data-testid="text-field-headline">
             Better Field Information. Cleaner Decisions.
           </h2>
@@ -423,6 +429,7 @@ function WhyUs() {
     <section ref={ref} className={`why reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="why-title">
       <div className="container-shell">
         <div className="why-head">
+          <span className="eyebrow">Our Approach</span>
           <h2 id="why-title" className="serif" data-testid="text-why-headline">
             Built for Institutional Multifamily
           </h2>
@@ -435,8 +442,14 @@ function WhyUs() {
               style={{ '--reveal-delay': `${index * 70}ms` } as CSSProperties}
               data-testid={`reason-${index + 1}`}
             >
-              <h3 className="serif">{reason.title}</h3>
-              <p>{reason.description}</p>
+              <div className="why-value">
+                <span className="eyebrow">Value</span>
+                <h3 className="serif">{reason.title}</h3>
+              </div>
+              <div className="why-commitment">
+                <span className="eyebrow">Commitment</span>
+                <p>{reason.description}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -452,6 +465,7 @@ function ServiceArea() {
     <section ref={ref} id="service-area" className={`area reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="area-title">
       <div className="container-shell area-grid">
         <div>
+          <span className="eyebrow">Service Area</span>
           <h2 id="area-title" className="serif" data-testid="text-area-headline">
             Serving the Southeast from Charlotte
           </h2>
@@ -516,6 +530,7 @@ function Contact() {
     <section ref={ref} id="contact" className={`contact reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="contact-title">
       <div className="container-shell contact-grid">
         <div>
+          <span className="eyebrow">Start a Conversation</span>
           <h2 id="contact-title" className="serif" data-testid="text-contact-headline">
             Let&apos;s Nail Down Your Roofing Plan
           </h2>
