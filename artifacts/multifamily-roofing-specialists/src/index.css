@@ -499,6 +499,74 @@
 .why { padding: 142px 0 154px; background: #fff; }
 .why-head { max-width: 700px; margin-bottom: 56px; }
 .why h2 { margin-top: 18px; color: #1b2b34; }
+.core-values-list {
+  overflow: hidden;
+  border-top: 1px solid rgba(27, 43, 52, .16);
+}
+.core-value-row {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  min-height: 92px;
+  border-bottom: 1px solid rgba(27, 43, 52, .16);
+  background: #fff;
+  transition: background-color .25s ease, transform .25s ease;
+}
+.core-value-row:hover {
+  background: #f7f6f2;
+  transform: translateX(6px);
+}
+.core-value-number {
+  display: grid;
+  place-items: center;
+  background: #1b2b34;
+  color: #f5f5f2;
+  font: 700 1.05rem var(--app-font-mono);
+}
+.core-value-row h3 {
+  align-self: center;
+  margin: 0;
+  padding: 22px 30px;
+  color: #1b2b34;
+  font: 500 italic clamp(1.2rem, 2.25vw, 1.8rem)/1.12 var(--app-font-serif);
+  letter-spacing: -.035em;
+}
+.core-focus {
+  display: grid;
+  grid-template-columns: minmax(150px, .25fr) minmax(0, 1fr);
+  margin-top: 42px;
+  border: 1px solid rgba(27, 43, 52, .16);
+}
+.core-focus-label {
+  display: grid;
+  place-items: start center;
+  padding: 28px 22px;
+  background: #1b2b34;
+}
+.core-focus-label .eyebrow {
+  margin: 0;
+  color: #f0d6ad;
+  text-align: center;
+}
+.core-focus-content { background: #fff; }
+.core-focus-row {
+  display: grid;
+  grid-template-columns: minmax(190px, .55fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 24px 28px;
+}
+.core-focus-row + .core-focus-row { border-top: 1px solid rgba(27, 43, 52, .16); }
+.core-focus-row h3 {
+  margin: 0;
+  color: #1b2b34;
+  font: 700 .78rem/1.35 var(--app-font-sans);
+}
+.core-focus-row p {
+  margin: 0;
+  color: #53616a;
+  font-size: .78rem;
+  font-style: italic;
+  line-height: 1.72;
+}
 .why-list { border-top: 1px solid rgba(27, 43, 52, .14); }
 .why-item {
   position: relative;
@@ -753,6 +821,12 @@
   .program { min-height: 0; aspect-ratio: 4 / 5; }
   .program h3 { font-size: 1.36rem; }
   .why-head { margin-bottom: 35px; }
+  .core-value-row { grid-template-columns: 64px minmax(0, 1fr); }
+  .core-value-row h3 { padding: 21px 19px; font-size: 1.15rem; }
+  .core-focus { grid-template-columns: 1fr; }
+  .core-focus-label { place-items: center start; padding: 18px 20px; }
+  .core-focus-label .eyebrow { text-align: left; }
+  .core-focus-row { grid-template-columns: 1fr; gap: 8px; padding: 20px; }
   .why-item { grid-template-columns: 1fr; gap: 10px; padding: 21px 0; }
   .why-item h3 { font-size: 1.2rem; }
   .region-states { gap: 5px; margin-top: 28px; }
