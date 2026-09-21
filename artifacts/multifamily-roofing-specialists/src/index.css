@@ -1089,6 +1089,10 @@
   0%, 100% { opacity: .48; }
   50% { opacity: .85; }
 }
+@keyframes map-state-in {
+  from { opacity: 0; transform: scale(.94) translateY(7px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
 @keyframes map-origin-pulse {
   0% { opacity: .7; transform: scale(.65); }
   70%, 100% { opacity: 0; transform: scale(1.8); }
@@ -1118,9 +1122,11 @@
     transition-duration: .001ms !important;
   }
   .hero::before { animation: none !important; }
-  .area.is-visible .area-route,
+  .area.is-visible .area-state,
   .area.is-visible .area-origin-pulse {
     animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
   .reveal,
   .reveal-item,
