@@ -7,10 +7,10 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import roofDetail from '@assets/image_1788528449639.png';
 import brandLogo from '@assets/3_1788871577496.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
-import areaImage from '@assets/ChatGPT_Image_Sep_8,_2026,_09_00_43_AM_1788872448627.png';
 import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
 import constructionImage from '@assets/Gemini_Generated_Image_xkwxflxkwxflxkwx_1790002833976.jpg';
 import newConstructionImage from '@assets/image_1790003076677.png';
+import occupiedRehabsImage from '@assets/image_1790013020294.png';
 import stormInspectionImage from '@assets/image_1790003116172.png';
 import maintenanceImage from '@assets/image_1790003123704.png';
 import warrantyImage from '@assets/image_1790003170403.png';
@@ -36,6 +36,7 @@ const programs = [
   {
     number: '02',
     title: 'Occupied Rehabs & Portfolio Reroofing',
+    image: occupiedRehabsImage,
     description:
       'Reroofing sequenced around residents, access, parking, cleanup, and property teams.',
   },
@@ -296,18 +297,17 @@ function Intro() {
     <section ref={ref} id="about" className={`intro reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="about-title">
       <div className="container-shell intro-grid">
         <div className="intro-heading">
-          <span className="eyebrow">About the Work</span>
+          <div className="intro-heading-meta" aria-hidden="true">
+            <span>01</span>
+            <span>About the work</span>
+          </div>
           <h2 id="about-title" className="serif" data-testid="text-about-headline">
             One Roofing Strategy for Every Community
           </h2>
-          <figure className="section-photo intro-photo">
-            <img
-              src={roofDetail}
-              alt="Close-up of a connected asphalt shingle roof system"
-            />
-          </figure>
+          <div className="intro-heading-rule" aria-hidden="true" />
         </div>
-        <div className="intro-text">
+        <aside className="intro-text">
+          <div className="intro-panel-label">Exclusive focus / Multifamily</div>
           <p>
             Most roofing companies serve homeowners. We work exclusively with the people who build, own, and manage apartment communities.
           </p>
@@ -317,7 +317,17 @@ function Intro() {
           <a href="#services" className="text-link" data-testid="link-see-services">
             See Our Services
           </a>
-        </div>
+        </aside>
+        <figure className="section-photo intro-photo">
+          <img
+            src={roofDetail}
+            alt="Close-up of a connected asphalt shingle roof system"
+          />
+          <figcaption>
+            <span>Roofing is one system.</span>
+            <span>We manage every handoff.</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
@@ -328,17 +338,26 @@ function Programs() {
 
   return (
     <section ref={ref} id="services" className={`programs reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="programs-title">
-      <div className="container-shell">
-        <div className="section-lead">
-          <div>
+      <div className="programs-header">
+        <div className="container-shell section-lead">
+          <div className="programs-title-block">
             <span className="eyebrow">Our Markets</span>
             <h2 id="programs-title" className="serif" data-testid="text-programs-headline">
               From Groundbreaking to Long-Term Reserve
             </h2>
+            <div className="programs-heading-rule" aria-hidden="true" />
           </div>
-          <p className="section-note">
-            Roofing support across the full asset lifecycle.
-          </p>
+          <div className="programs-note">
+            <span className="programs-note-index">02 / 06</span>
+            <p>Roofing support across the full asset lifecycle.</p>
+            <span className="programs-note-label">Multifamily markets</span>
+          </div>
+        </div>
+      </div>
+      <div className="container-shell programs-body">
+        <div className="programs-body-head">
+          <span>Scope of work</span>
+          <span>Six ways we keep the roofline moving</span>
         </div>
         <div className="program-grid">
           {programs.map((program) => (
@@ -370,17 +389,17 @@ function FieldIntelligence() {
   return (
     <section ref={ref} className={`field reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="field-title">
       <div className="container-shell field-grid">
-        <div>
+        <figure className="section-photo field-photo">
+          <img
+            src={fieldImage}
+            alt="Roofing crews working across a multifamily community at sunset"
+          />
+        </figure>
+        <div className="field-heading">
           <span className="eyebrow">Field Intelligence</span>
           <h2 id="field-title" className="serif" data-testid="text-field-headline">
             Better Field Information. Cleaner Decisions.
           </h2>
-          <figure className="section-photo field-photo">
-            <img
-              src={fieldImage}
-              alt="Roofing crews working across a multifamily community at sunset"
-            />
-          </figure>
         </div>
         <div className="field-copy">
           <p>
@@ -444,27 +463,66 @@ function ServiceArea() {
   return (
     <section ref={ref} id="service-area" className={`area reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="area-title">
       <div className="container-shell area-grid">
-        <div>
+        <div className="area-heading">
           <span className="eyebrow">Service Area</span>
           <h2 id="area-title" className="serif" data-testid="text-area-headline">
             Serving the Southeast from Charlotte
           </h2>
+          <div className="area-heading-line" aria-hidden="true">
+            <span>04</span>
+            <span>Regional coverage</span>
+          </div>
         </div>
-        <div className="area-copy">
+        <div className="area-content">
           <p>
             Charlotte-based roofing support for multifamily owners, developers, and GCs across NC, SC, TN, and GA.
           </p>
-          <figure className="area-photo">
-            <img
-              src={areaImage}
-              alt="Sunset view across a multifamily apartment community and connected rooflines"
-            />
-          </figure>
-            <div className="region-states" aria-label="Service region: North Carolina, South Carolina, Tennessee and Georgia" role="img">
-              <span>North Carolina</span>
-              <span>South Carolina</span>
-              <span>Tennessee</span>
-              <span>Georgia</span>
+          <div className="area-map-card">
+            <div className="area-map-topline">
+              <span>Coverage network</span>
+              <span>HQ / Charlotte</span>
+            </div>
+            <div className="area-map-stage">
+              <svg className="area-map" viewBox="0 0 520 350" role="img" aria-labelledby="area-map-title area-map-description">
+                <title id="area-map-title">Southeast project coverage map</title>
+                <desc id="area-map-description">Animated coverage routes from Charlotte through North Carolina, South Carolina, Tennessee, and Georgia.</desc>
+                <path className="area-route area-route--main" d="M285 151 C250 123 211 126 173 143 C144 156 119 178 103 204" />
+                <path className="area-route area-route--branch" d="M285 151 C310 158 337 178 351 208 C363 235 365 260 355 292" />
+                <path className="area-route area-route--branch" d="M285 151 C324 131 364 121 408 127 C438 131 457 144 470 163" />
+                <path className="area-route area-route--branch" d="M285 151 C263 183 247 218 231 254 C222 274 206 286 183 293" />
+                <g className="area-state area-state--tn">
+                  <path d="M94 108 L239 108 L274 127 L258 151 L213 159 L155 154 L112 143 L87 126 Z" />
+                  <text x="177" y="137">TN</text>
+                </g>
+                <g className="area-state area-state--nc">
+                  <path d="M286 119 L365 108 L430 122 L450 145 L421 162 L382 158 L352 177 L311 167 L279 148 Z" />
+                  <text x="370" y="143">NC</text>
+                </g>
+                <g className="area-state area-state--sc">
+                  <path d="M311 171 L352 178 L382 164 L407 181 L390 218 L347 239 L316 220 L294 194 Z" />
+                  <text x="352" y="205">SC</text>
+                </g>
+                <g className="area-state area-state--ga">
+                  <path d="M218 174 L294 174 L316 220 L294 288 L247 306 L213 274 L199 224 Z" />
+                  <text x="260" y="246">GA</text>
+                </g>
+                <g className="area-origin">
+                  <circle cx="285" cy="151" r="7" />
+                  <circle className="area-origin-pulse" cx="285" cy="151" r="14" />
+                  <text x="298" y="146">CHARLOTTE</text>
+                </g>
+              </svg>
+            </div>
+            <div className="area-map-key">
+              <span><i className="area-key-dot area-key-dot--hq" />Charlotte HQ</span>
+              <span><i className="area-key-dot area-key-dot--route" />Active project region</span>
+            </div>
+          </div>
+          <div className="region-states" aria-label="Service region: North Carolina, South Carolina, Tennessee and Georgia" role="list">
+            <span role="listitem">North Carolina</span>
+            <span role="listitem">South Carolina</span>
+            <span role="listitem">Tennessee</span>
+            <span role="listitem">Georgia</span>
           </div>
           <a href="#contact" className="btn-secondary area-button" data-testid="button-area-contact">
             Contact Us About Your Project
