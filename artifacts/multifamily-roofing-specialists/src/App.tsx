@@ -295,29 +295,36 @@ function Intro() {
 
   return (
     <section ref={ref} id="about" className={`intro reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="about-title">
-      <div className="container-shell intro-grid">
-        <div className="intro-heading">
-          <div className="intro-heading-meta" aria-hidden="true">
-            <span>01</span>
-            <span>About the work</span>
-          </div>
-          <h2 id="about-title" className="serif" data-testid="text-about-headline">
-            One Roofing Strategy for Every Community
-          </h2>
-          <div className="intro-heading-rule" aria-hidden="true" />
+      <div className="container-shell intro-shell">
+        <div className="intro-topline" aria-hidden="true">
+          <span>01 / The work</span>
+          <span>Multifamily Roofing Specialists</span>
         </div>
-        <aside className="intro-text">
-          <div className="intro-panel-label">Exclusive focus / Multifamily</div>
-          <p>
-            Most roofing companies serve homeowners. We work exclusively with the people who build, own, and manage apartment communities.
-          </p>
-          <p>
-            From new development to portfolio reroofing, we scope, price, document, and deliver with one accountable team.
-          </p>
-          <a href="#services" className="text-link" data-testid="link-see-services">
-            See Our Services
-          </a>
-        </aside>
+        <div className="intro-main">
+          <div className="intro-heading">
+            <div className="intro-heading-meta">
+              <span>01</span>
+              <span>About the work</span>
+            </div>
+            <h2 id="about-title" className="serif" data-testid="text-about-headline">
+              One Roofing Strategy for Every Community
+            </h2>
+            <div className="intro-heading-rule" aria-hidden="true" />
+          </div>
+          <aside className="intro-text">
+            <div className="intro-panel-number" aria-hidden="true">01</div>
+            <div className="intro-panel-label">Exclusive focus / Multifamily</div>
+            <p>
+              Most roofing companies serve homeowners. We work exclusively with the people who build, own, and manage apartment communities.
+            </p>
+            <p>
+              From new development to portfolio reroofing, we scope, price, document, and deliver with one accountable team.
+            </p>
+            <a href="#services" className="text-link" data-testid="link-see-services">
+              See Our Services
+            </a>
+          </aside>
+        </div>
         <figure className="section-photo intro-photo">
           <img
             src={roofDetail}
@@ -354,29 +361,31 @@ function Programs() {
           </div>
         </div>
       </div>
-      <div className="container-shell programs-body">
-        <div className="programs-body-head">
-          <span>Scope of work</span>
-          <span>Six ways we keep the roofline moving</span>
-        </div>
-        <div className="program-grid">
-          {programs.map((program) => (
-            <article
-              className={`program program-card ${program.image ? '' : 'program-card--plain'} reveal-item`}
-              key={program.number}
-              style={{
-                '--reveal-delay': `${Number(program.number) * 70}ms`,
-                ...(program.image ? { '--program-image': `url(${program.image})` } : {}),
-              } as CSSProperties}
-              data-testid={`program-${program.number}`}
-            >
-              <div className="program-card-content">
-                <div className="program-number">{program.number}</div>
-                <h3>{program.title}</h3>
-                <p>{program.description}</p>
-              </div>
-            </article>
-          ))}
+      <div className="programs-body">
+        <div className="container-shell">
+          <div className="programs-body-head">
+            <span>Scope of work</span>
+            <span>Six ways we keep the roofline moving</span>
+          </div>
+          <div className="program-grid">
+            {programs.map((program) => (
+              <article
+                className={`program program-card ${program.image ? '' : 'program-card--plain'} reveal-item`}
+                key={program.number}
+                style={{
+                  '--reveal-delay': `${Number(program.number) * 70}ms`,
+                  ...(program.image ? { '--program-image': `url(${program.image})` } : {}),
+                } as CSSProperties}
+                data-testid={`program-${program.number}`}
+              >
+                <div className="program-card-content">
+                  <div className="program-number">{program.number}</div>
+                  <h3>{program.title}</h3>
+                  <p>{program.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
