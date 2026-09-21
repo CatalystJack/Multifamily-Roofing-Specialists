@@ -26,37 +26,37 @@ const programs = [
     number: '01',
     title: 'New Construction',
     description:
-      'Production roofing for apartment developments, with coordinated material loading, repeatable install details, and disciplined closeout across every building on the job.',
+      'Production roofing coordinated to your schedule, materials, and closeout requirements.',
   },
   {
     number: '02',
     title: 'Occupied Rehabs & Portfolio Reroofing',
     description:
-      'Multi-building replacements sequenced around residents: access, parking, landscaping, daily cleanup, and clear communication with property staff throughout.',
+      'Reroofing sequenced around residents, access, parking, cleanup, and property teams.',
   },
   {
     number: '03',
     title: 'Storm & Damage Inspections',
     description:
-      'Prompt, photo-documented field assessments organized by building, so ownership and management teams know exactly what needs action and what doesn’t.',
+      'Photo-documented inspections organized by building, with clear next actions.',
   },
   {
     number: '04',
     title: 'Capital Planning Support',
     description:
-      'Roof condition data translated into real priorities: replacement windows, phasing options, and budget numbers your capital plan can actually use.',
+      'Roof condition data turned into replacement windows, phasing, and usable budgets.',
   },
   {
     number: '05',
     title: 'Warranty & Closeout Documentation',
     description:
-      'Manufacturer and workmanship warranties, inspection records, and closeout packages delivered in a format that holds up for lenders, insurers, and future ownership transitions.',
+      'Warranty, inspection, and closeout records ready for lenders, insurers, and ownership.',
   },
   {
     number: '06',
     title: 'Maintenance Programs',
     description:
-      'Recurring inspection and maintenance built around defined checkpoints (year 3, year 5, year 10), with documentation that carries forward as the roof ages.',
+      'Scheduled inspections and maintenance that keep roof conditions visible over time.',
   },
 ];
 
@@ -64,27 +64,27 @@ const reasons = [
   {
     title: 'GC-Ready Process',
     description:
-      'We work inside your construction schedule, not around it. Clear specs, submittals, and communication your project team can rely on.',
+      'Specs, submittals, and communication that fit your schedule.',
   },
   {
     title: 'Licensed, Vetted Crews',
     description:
-      'Every crew on site carries its own general liability and workers’ comp coverage, with certificates provided before work begins.',
+      'Vetted crews with required liability and workers’ comp coverage.',
   },
   {
     title: 'Supplier Relationships That Protect Your Timeline',
     description:
-      'Established accounts with major manufacturers and distributors mean material availability and pricing you can plan around.',
+      'Established relationships that protect material availability and pricing.',
   },
   {
     title: 'One Point of Contact',
     description:
-      'No chasing subcontractors or translating between trades. One team owns the job from bid to warranty.',
+      'One team owns the job from bid to warranty.',
   },
   {
     title: 'Manufacturer-Backed Warranties',
     description:
-      'Material and workmanship warranties documented and delivered at closeout, not promised and forgotten.',
+      'Documented material and workmanship warranties at closeout.',
   },
 ];
 
@@ -235,7 +235,7 @@ function Hero() {
           </p>
           <div className="hero-copy">
             <p>
-              We don&apos;t split our attention across residential, commercial, and industrial work. That focus means crews who&apos;ve seen the same building types over and over, and pricing built on real production data instead of a generalist&apos;s guess.
+              We focus exclusively on multifamily roofing, so our crews know the buildings, schedules, and budgets that keep projects moving.
             </p>
           </div>
           <div className="hero-actions">
@@ -290,11 +290,11 @@ function Stats() {
       <div className="container-shell stats-inner">
         <div className="stat" data-testid="stat-experience">
           <div className="stat-number serif">{`${Math.round(experience)}+`}</div>
-          <div className="stat-label">Years of Combined Roofing Experience</div>
+          <div className="stat-label">Combined Roofing Experience</div>
         </div>
         <div className="stat" data-testid="stat-transactions">
           <div className="stat-number serif">{`$${transactions.toFixed(1)}B+`}</div>
-          <div className="stat-label">In Multifamily Transaction Experience</div>
+          <div className="stat-label">Multifamily Transaction Experience</div>
         </div>
       </div>
     </section>
@@ -309,25 +309,23 @@ function Intro() {
       <div className="container-shell intro-grid">
         <div className="intro-heading">
           <h2 id="about-title" className="serif" data-testid="text-about-headline">
-            One Community Deserves One Connected Roofing Strategy
+            One Roofing Strategy for Every Community
           </h2>
           <figure className="section-photo intro-photo">
             <img
               src={roofDetail}
               alt="Close-up of a connected asphalt shingle roof system"
             />
-            <figcaption>Multibuilding communities require one coordinated roof plan.</figcaption>
           </figure>
         </div>
         <div className="intro-text">
           <p>
-            Most roofing companies are built for homeowners. We&apos;re built for the people who build and own apartment communities.
+            Most roofing companies serve homeowners. We work exclusively with the people who build, own, and manage apartment communities.
           </p>
           <p>
-            We work exclusively on multifamily properties, which means we understand what a general contractor&apos;s schedule actually requires, what a REIT&apos;s capital planning process looks like, and why a property manager can&apos;t afford a crew that shows up unannounced. Every job runs on clear specs, real documentation, and a single point of accountability from bid to closeout.
+            From new development to portfolio reroofing, we scope, price, document, and deliver with one accountable team.
           </p>
           <p>
-            Whether you&apos;re breaking ground on a new development or managing roof replacement across a growing portfolio, we scope it, price it, and deliver it the way an institutional partner expects.
           </p>
           <a href="#services" className="text-link" data-testid="link-see-services">
             See Our Services
@@ -351,7 +349,7 @@ function Programs() {
             </h2>
           </div>
           <p className="section-note">
-            A roofing partner for every phase of the asset lifecycle, with the field discipline and documentation to keep the next phase moving.
+            Roofing support across the full asset lifecycle.
           </p>
         </div>
         <figure className="wide-photo programs-photo">
@@ -359,7 +357,6 @@ function Programs() {
             src={programsImage}
             alt="Roofing crews working above a multifamily apartment community"
           />
-          <figcaption>New construction, occupied assets, and portfolio-scale programs.</figcaption>
         </figure>
         <div className="program-grid">
           {programs.map((program) => (
@@ -390,26 +387,25 @@ function FieldIntelligence() {
       <div className="container-shell field-grid">
         <div>
           <h2 id="field-title" className="serif" data-testid="text-field-headline">
-            Better Field Information. Cleaner Ownership Decisions.
+            Better Field Information. Cleaner Decisions.
           </h2>
           <figure className="section-photo field-photo">
             <img
               src={fieldImage}
               alt="Roofing crews working across a multifamily community at sunset"
             />
-            <figcaption>Field conditions documented at the roof-system level.</figcaption>
           </figure>
         </div>
         <div className="field-copy">
           <p>
-            Our inspection workflows use AI-assisted organization and automation to help structure imagery, observations, building-level conditions, and follow-up. That means less friction between the field, the report, and the capital plan, while experienced people remain responsible for every conclusion.
+            AI-assisted organization structures photos, observations, and building conditions. Experienced people remain responsible for every conclusion.
           </p>
           <ul className="field-list">
             {[
-              'Building-by-building condition organization',
-              'Photo-supported documentation',
-              'Repeatable inspection checkpoints',
-              'Clearer priorities and next actions',
+              'Building-level condition organization',
+              'Photo-supported reports',
+              'Repeatable checkpoints',
+              'Clear next actions',
             ].map((item, index) => (
               <li key={item} data-testid={`field-capability-${index + 1}`}>{item}</li>
             ))}
@@ -428,7 +424,7 @@ function WhyUs() {
       <div className="container-shell">
         <div className="why-head">
           <h2 id="why-title" className="serif" data-testid="text-why-headline">
-            Built for Institutional Multifamily, Not Retail Roofing
+            Built for Institutional Multifamily
           </h2>
         </div>
         <div className="why-list">
@@ -457,19 +453,18 @@ function ServiceArea() {
       <div className="container-shell area-grid">
         <div>
           <h2 id="area-title" className="serif" data-testid="text-area-headline">
-            Serving the Southeast, Based in Charlotte
+            Serving the Southeast from Charlotte
           </h2>
         </div>
         <div className="area-copy">
           <p>
-            Multifamily Roofing Specialists is based in Charlotte, NC and serves institutional multifamily owners, developers, and general contractors across North Carolina, South Carolina, Tennessee, and Georgia.
+            Charlotte-based roofing support for multifamily owners, developers, and GCs across NC, SC, TN, and GA.
           </p>
           <figure className="area-photo">
             <img
               src={areaImage}
               alt="Sunset view across a multifamily apartment community and connected rooflines"
             />
-            <figcaption>Charlotte-based coverage across the Southeast.</figcaption>
           </figure>
             <div className="region-states" aria-label="Service region: North Carolina, South Carolina, Tennessee and Georgia" role="img">
               <span>North Carolina</span>
@@ -494,10 +489,10 @@ function BottomCta() {
       <div className="container-shell cta-grid">
         <div>
           <h2 id="cta-title" className="serif" data-testid="text-cta-headline">
-            Have a Multifamily Roofing Project on the Schedule?
+            Have a Roofing Project Ahead?
           </h2>
           <p>
-            Whether it&apos;s one building or a full portfolio, let&apos;s talk about scope, timeline, and budget before you finalize your bid list.
+            Let&apos;s talk scope, timeline, and budget before you finalize your bid list.
           </p>
         </div>
         <a href="#contact" className="btn-primary" data-testid="button-cta-request-bid">
@@ -525,7 +520,7 @@ function Contact() {
             Let&apos;s Nail Down Your Roofing Plan
           </h2>
           <p className="contact-note">
-            Tell us what you&apos;re planning. We&apos;ll come prepared to talk scope, schedule, and the level of documentation your project requires.
+            Tell us what you&apos;re planning. We&apos;ll come prepared to talk scope and schedule.
           </p>
           <div className="contact-details">
             <a href="tel:+17045550184" data-testid="link-contact-phone">[Phone]</a>
@@ -538,7 +533,7 @@ function Contact() {
               <div className="success-mark" aria-hidden="true"><Check size={17} /></div>
               <h3 className="serif">Message received.</h3>
               <p>
-                Thank you for reaching out. Our team will review the project details and follow up to discuss scope, schedule, and next steps.
+                Thank you. Our team will review the details and follow up on scope and next steps.
               </p>
               <button type="button" className="btn-reset" onClick={() => setSubmitted(false)} data-testid="button-submit-another">
                 Send another message
@@ -604,15 +599,15 @@ function Footer() {
             <p className="footer-brand-copy">
               Not Generalists. Multifamily Specialists.
               <br />
-              Roofing for apartment communities. New construction, capital projects, and portfolio roofing across the Southeast.
+              Roofing for apartment communities across the Southeast.
             </p>
           </div>
           <div>
             <h3>Services</h3>
             <ul>
-              <li><a href="#services" data-testid="link-footer-new-construction">New Construction Roofing</a></li>
-              <li><a href="#services" data-testid="link-footer-portfolio">Portfolio Reroofing &amp; Capital Projects</a></li>
-              <li><a href="#services" data-testid="link-footer-inspections">Roof Inspections &amp; Condition Reports</a></li>
+              <li><a href="#services" data-testid="link-footer-new-construction">New Construction</a></li>
+              <li><a href="#services" data-testid="link-footer-portfolio">Portfolio Reroofing</a></li>
+              <li><a href="#services" data-testid="link-footer-inspections">Roof Inspections</a></li>
               <li><a href="#services" data-testid="link-footer-maintenance">Repairs &amp; Maintenance</a></li>
             </ul>
           </div>
