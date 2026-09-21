@@ -295,26 +295,19 @@ function AboutUs() {
 
   return (
     <section ref={ref} id="about" className={`about-us reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="about-title">
-      <div className="container-shell about-us-grid">
-        <div className="about-us-heading">
-          <div className="about-us-kicker" aria-hidden="true">
-            <span>01</span>
-            <span>About us</span>
-          </div>
-          <h2 id="about-title" className="serif" data-testid="text-about-headline">
-            Roofing with a multifamily mindset.
-          </h2>
-          <div className="about-us-rule" aria-hidden="true" />
-          <a href="#services" className="btn-secondary about-us-link" data-testid="link-about-services">
-            Explore our approach
-          </a>
-        </div>
-        <div className="about-us-content">
-          <figure className="about-us-photo">
-            <img src={roofDetail} alt="Close-up of a connected asphalt shingle roof system" />
-            <figcaption>Every building has a different roof story.</figcaption>
-          </figure>
-          <div className="about-us-panel">
+      <div className="about-us-split">
+        <figure className="about-us-photo">
+          <img src={roofDetail} alt="Close-up of a connected asphalt shingle roof system" />
+          <figcaption>Every building has a different roof story.</figcaption>
+        </figure>
+        <div className="about-us-panel">
+          <div className="about-us-panel-inner">
+            <div className="about-us-kicker" aria-hidden="true">
+              <span>01 / About us</span>
+            </div>
+            <h2 id="about-title" className="serif" data-testid="text-about-headline">
+              People, process, and multifamily expertise.
+            </h2>
             <div className="about-us-panel-label">Built exclusively for multifamily</div>
             <p>
               Most roofing companies serve homeowners. We work with the people who build, own, and manage apartment communities.
@@ -326,6 +319,9 @@ function AboutUs() {
               <span>One accountable team</span>
               <span>Charlotte / Southeast</span>
             </div>
+            <a href="#services" className="text-link about-us-link" data-testid="link-about-services">
+              Who we are
+            </a>
           </div>
         </div>
       </div>
