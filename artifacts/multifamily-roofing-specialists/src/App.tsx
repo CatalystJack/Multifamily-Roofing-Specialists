@@ -7,10 +7,13 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import roofDetail from '@assets/image_1788528449639.png';
 import brandLogo from '@assets/3_1788871577496.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
-import programsImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_59_06_AM_1788872386373.png';
 import areaImage from '@assets/ChatGPT_Image_Sep_8,_2026,_09_00_43_AM_1788872448627.png';
 import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
 import constructionImage from '@assets/Gemini_Generated_Image_xkwxflxkwxflxkwx_1790002833976.jpg';
+import newConstructionImage from '@assets/image_1790003076677.png';
+import stormInspectionImage from '@assets/image_1790003116172.png';
+import maintenanceImage from '@assets/image_1790003123704.png';
+import warrantyImage from '@assets/image_1790003170403.png';
 
 const queryClient = new QueryClient();
 
@@ -26,7 +29,7 @@ const programs = [
   {
     number: '01',
     title: 'New Construction',
-    image: programsImage,
+    image: newConstructionImage,
     description:
       'Production roofing coordinated to your schedule, materials, and closeout requirements.',
   },
@@ -39,6 +42,7 @@ const programs = [
   {
     number: '03',
     title: 'Storm & Damage Inspections',
+    image: stormInspectionImage,
     description:
       'Photo-documented inspections organized by building, with clear next actions.',
   },
@@ -52,12 +56,14 @@ const programs = [
   {
     number: '05',
     title: 'Warranty & Closeout Documentation',
+    image: warrantyImage,
     description:
       'Warranty, inspection, and closeout records ready for lenders, insurers, and ownership.',
   },
   {
     number: '06',
     title: 'Maintenance Programs',
+    image: maintenanceImage,
     description:
       'Scheduled inspections and maintenance that keep roof conditions visible over time.',
   },
