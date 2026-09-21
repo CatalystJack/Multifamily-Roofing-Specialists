@@ -1055,7 +1055,7 @@
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.35fr .8fr .8fr .85fr;
+  grid-template-columns: 1.35fr .8fr .85fr;
   gap: 50px;
   padding-bottom: 59px;
   text-align: center;
@@ -1192,15 +1192,14 @@
   .stat:nth-child(odd) { padding-left: 0; border-left: 0; }
   .stat:nth-child(n + 3) { padding-top: 27px; border-top: 1px solid rgba(245, 245, 242, .35); }
   .stat-number { font-size: 3.5rem; }
-  .about-us { padding: 94px 0 102px; }
-  .about-us-grid { grid-template-columns: 1fr; gap: 42px; }
-  .about-us-heading { padding-left: 18px; }
-  .about-us-kicker { margin-bottom: 28px; }
+  .about-us-split { grid-template-columns: 1fr; min-height: 0; }
+  .about-us-photo { min-height: 310px; aspect-ratio: 1.15 / 1; }
+  .about-us-photo figcaption { padding: 10px 12px; font-size: .49rem; }
+  .about-us-panel { padding: 66px 28px 70px; }
+  .about-us-panel-inner { width: min(100%, 430px); }
+  .about-us-kicker { margin-bottom: 25px; }
   .about-us h2 { max-width: 360px; font-size: clamp(2.7rem, 12vw, 4rem); }
-  .about-us-rule { margin-top: 28px; }
-  .about-us-link { margin-top: 28px; }
-  .about-us-content { padding-top: 0; }
-  .about-us-panel { padding: 30px 28px 28px; box-shadow: 10px 10px 0 rgba(199, 167, 127, .2); }
+  .about-us-panel-label { margin-top: 29px; }
   .about-us-panel-footer { align-items: flex-start; flex-direction: column; gap: 9px; }
   .about-us-panel-footer span:last-child { text-align: left; }
   .intro, .field, .why, .area, .contact { padding: 94px 0 102px; }
