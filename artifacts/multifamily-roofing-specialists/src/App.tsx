@@ -194,7 +194,6 @@ function Hero() {
     >
       <div className="container-shell hero-content">
         <div className="hero-heading">
-          <span className="eyebrow">Built for Multifamily</span>
           <h1 id="hero-title" className="serif" data-testid="text-hero-headline">
             Multifamily
             <br />
@@ -306,8 +305,6 @@ function Intro() {
           </p>
           <p>
             From new development to portfolio reroofing, we scope, price, document, and deliver with one accountable team.
-          </p>
-          <p>
           </p>
           <a href="#services" className="text-link" data-testid="link-see-services">
             See Our Services
