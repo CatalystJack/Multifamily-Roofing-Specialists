@@ -25,36 +25,42 @@ const programs = [
   {
     number: '01',
     title: 'New Construction',
+    image: programsImage,
     description:
       'Production roofing coordinated to your schedule, materials, and closeout requirements.',
   },
   {
     number: '02',
     title: 'Occupied Rehabs & Portfolio Reroofing',
+    image: areaImage,
     description:
       'Reroofing sequenced around residents, access, parking, cleanup, and property teams.',
   },
   {
     number: '03',
     title: 'Storm & Damage Inspections',
+    image: fieldImage,
     description:
       'Photo-documented inspections organized by building, with clear next actions.',
   },
   {
     number: '04',
     title: 'Capital Planning Support',
+    image: roofDetail,
     description:
       'Roof condition data turned into replacement windows, phasing, and usable budgets.',
   },
   {
     number: '05',
     title: 'Warranty & Closeout Documentation',
+    image: programsImage,
     description:
       'Warranty, inspection, and closeout records ready for lenders, insurers, and ownership.',
   },
   {
     number: '06',
     title: 'Maintenance Programs',
+    image: areaImage,
     description:
       'Scheduled inspections and maintenance that keep roof conditions visible over time.',
   },
@@ -221,6 +227,7 @@ function Hero() {
     >
       <div className="container-shell hero-content">
         <div className="hero-heading">
+          <span className="eyebrow">Built for Multifamily</span>
           <h1 id="hero-title" className="serif" data-testid="text-hero-headline">
             Multifamily
             <br />
@@ -254,8 +261,11 @@ function Hero() {
 
 function Stats() {
   const [progress, setProgress] = useState(0);
+  const { ref, isVisible } = useInView();
 
   useEffect(() => {
+    if (!isVisible) return;
+
     const duration = 1800;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -279,10 +289,10 @@ function Stats() {
 
     frameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frameId);
-  }, []);
+  }, [isVisible]);
 
   return (
-    <section className="stats" aria-label="Company experience">
+    <section ref={ref} className="stats" aria-label="Company experience">
       <div className="container-shell stats-inner">
         <div className="stat" data-testid="stat-experience">
           <div className="stat-number serif">{`${Math.round(50 * progress)}+`}</div>
@@ -312,6 +322,7 @@ function Intro() {
     <section ref={ref} id="about" className={`intro reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="about-title">
       <div className="container-shell intro-grid">
         <div className="intro-heading">
+          <span className="eyebrow">About the Work</span>
           <h2 id="about-title" className="serif" data-testid="text-about-headline">
             One Roofing Strategy for Every Community
           </h2>
@@ -357,22 +368,19 @@ function Programs() {
             Roofing support across the full asset lifecycle.
           </p>
         </div>
-        <figure className="wide-photo programs-photo">
-          <img
-            src={programsImage}
-            alt="Roofing crews working above a multifamily apartment community"
-          />
-        </figure>
         <div className="program-grid">
           {programs.map((program) => (
             <article
-              className="program reveal-item"
+              className="program program-card reveal-item"
               key={program.number}
-              style={{ '--reveal-delay': `${Number(program.number) * 70}ms` } as CSSProperties}
+              style={{
+                '--reveal-delay': `${Number(program.number) * 70}ms`,
+                '--program-image': `url(${program.image})`,
+              } as CSSProperties}
               data-testid={`program-${program.number}`}
             >
-              <div className="program-number">{program.number}</div>
-              <div>
+              <div className="program-card-content">
+                <div className="program-number">{program.number}</div>
                 <h3>{program.title}</h3>
                 <p>{program.description}</p>
               </div>
