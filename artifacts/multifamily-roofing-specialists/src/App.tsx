@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from 'react';
-import { Check, Facebook, Instagram, Linkedin, Menu, X, Youtube } from 'lucide-react';
+import { Check, Menu, X } from 'lucide-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -427,7 +427,7 @@ function FieldIntelligence() {
   const activeCapabilityIndex = fieldCapabilities.findIndex((capability) => capability.id === activeCapability.id) + 1;
 
   return (
-    <section ref={ref} className={`field reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="field-title">
+    <section ref={ref} id="field-intelligence" className={`field reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="field-title">
       <div className="container-shell field-experience">
         <div className="field-intro">
           <span className="eyebrow">Field Intelligence</span>
@@ -486,7 +486,7 @@ function WhyUs() {
   const { ref, isVisible } = useInView();
 
   return (
-    <section ref={ref} className={`why reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="why-title">
+    <section ref={ref} id="approach" className={`why reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="why-title">
       <div className="container-shell">
         <div className="why-head">
           <span className="eyebrow">Our Approach</span>
@@ -715,44 +715,51 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="footer">
-      <div className="footer-shell">
-        <div className="footer-top">
-          <div className="footer-brand">
+      <div className="container-shell footer-shell">
+        <div className="footer-main">
+          <div className="footer-branding">
             <Brand />
+            <p className="footer-description">
+              Multifamily roofing for the people who build, own, and manage apartment communities.
+            </p>
+            <div className="footer-region">
+              <span>Based in Charlotte, NC</span>
+              <span>Serving NC · SC · TN · GA</span>
+            </div>
           </div>
-          <nav className="footer-nav" aria-label="Footer navigation">
-            <a href="#about" data-testid="link-footer-about">Our Company</a>
-            <a href="#services" data-testid="link-footer-services">Our Services</a>
-            <a href="#services" data-testid="link-footer-projects">Our Projects</a>
-            <a href="#services" data-testid="link-footer-insights">Insights</a>
-            <a href="#contact" data-testid="link-footer-careers">Careers</a>
-            <a href="#contact" data-testid="link-footer-contact">Contact</a>
-          </nav>
-          <div className="footer-socials" aria-label="Social media">
-            <a href="#contact" aria-label="Facebook" data-testid="link-footer-facebook"><Facebook size={18} aria-hidden="true" /></a>
-            <a href="#contact" aria-label="Instagram" data-testid="link-footer-instagram"><Instagram size={18} aria-hidden="true" /></a>
-            <a href="#contact" aria-label="LinkedIn" data-testid="link-footer-linkedin"><Linkedin size={18} aria-hidden="true" /></a>
-            <a href="#contact" aria-label="YouTube" data-testid="link-footer-youtube"><Youtube size={18} aria-hidden="true" /></a>
+          <div className="footer-link-groups">
+            <nav className="footer-nav" aria-label="Footer navigation">
+              <span className="footer-column-title">Explore</span>
+              <a href="#home" data-testid="link-footer-home">Home</a>
+              <a href="#about" data-testid="link-footer-about">About Us</a>
+              <a href="#services" data-testid="link-footer-services">Services</a>
+              <a href="#contact" data-testid="link-footer-contact">Contact</a>
+            </nav>
+            <nav className="footer-nav" aria-label="Footer capabilities">
+              <span className="footer-column-title">Capabilities</span>
+              <a href="#services" data-testid="link-footer-projects">Our Work</a>
+              <a href="#field-intelligence" data-testid="link-footer-field-intelligence">Field Intelligence</a>
+              <a href="#approach" data-testid="link-footer-approach">Our Approach</a>
+            </nav>
+          </div>
+          <div className="footer-contact">
+            <span className="footer-column-title">Start a conversation</span>
+            <p>Tell us what you&apos;re planning. We&apos;ll come prepared to talk scope and schedule.</p>
+            <a href="mailto:projects@multifamilyroofingspecialists.com" data-testid="link-footer-email">
+              projects@multifamilyroofingspecialists.com
+            </a>
+            <a href="#contact" className="footer-contact-link" data-testid="link-footer-request-bid">
+              Request a Bid <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
-        <div className="footer-legal">
-          <div className="footer-copyright" data-testid="text-copyright">
-            © {year} Multifamily Roofing Specialists
-            <br />
-            All rights reserved
-          </div>
-          <div className="footer-compliance">
-            <p>
-              Multifamily Roofing Specialists is an Equal Opportunity Employer — race, color, religion, sex, sexual orientation, gender identity, national origin, disability, status as a protected veteran, or other characteristics protected by applicable law.
-            </p>
-            <a href="#contact" data-testid="link-footer-human-rights">Human Rights Policy</a>
-          </div>
-          <div className="footer-legal-links">
-            <a href="#contact" data-testid="link-footer-privacy">Privacy Policy</a>
-            <span aria-hidden="true">|</span>
-            <a href="#contact" data-testid="link-footer-fraud-alert">Fraud Alert</a>
-            <br />
-            <a href="#contact" data-testid="link-footer-cookie">Cookie Settings</a>
+        <div className="footer-bottom">
+          <p className="footer-legal-note">
+            Multifamily Roofing Specialists is an Equal Opportunity Employer — race, color, religion, sex, sexual orientation, gender identity, national origin, disability, status as a protected veteran, or other characteristics protected by applicable law.
+          </p>
+          <div className="footer-bottom-meta">
+            <span data-testid="text-copyright">© {year} Multifamily Roofing Specialists</span>
+            <span>All rights reserved</span>
           </div>
         </div>
       </div>
