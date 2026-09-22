@@ -8,6 +8,8 @@ import brandLogo from '@assets/3_1788871577496.png';
 import roofDetail from '@assets/image_1788528449639.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
 import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
+import fieldInspectionImage from '@assets/Gemini_Generated_Image_yezj1uyezj1uyezj_1790081807683.jpg';
+import teamPlanningImage from '@assets/Gemini_Generated_Image_oswqyioswqyioswq_1790081808886.jpg';
 import constructionImage from '@assets/Gemini_Generated_Image_xkwxflxkwxflxkwx_1790002833976.jpg';
 import newConstructionImage from '@assets/image_1790003076677.png';
 import occupiedRehabsImage from '@assets/image_1790013020294.png';
@@ -354,7 +356,7 @@ function AboutUs() {
     <section ref={ref} id="about" className={`about-us reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="about-title">
       <div className="about-us-split">
         <figure className="about-us-photo">
-          <img src={roofDetail} alt="Close-up of a connected asphalt shingle roof system" />
+          <img src={teamPlanningImage} alt="Multifamily roofing team reviewing plans together on a roof" />
           <figcaption>Every building has a different roof story.</figcaption>
         </figure>
         <div className="about-us-panel">
@@ -374,7 +376,7 @@ function AboutUs() {
             <p>
               That focus shapes how we plan, communicate, document, and deliver—from the first scope through the final warranty.
             </p>
-            <a href="#services" className="text-link about-us-link" data-testid="link-about-services">
+            <a href="#services" className="btn-primary about-us-link" data-testid="link-about-services">
               Who we are
             </a>
           </div>
@@ -460,8 +462,8 @@ function FieldIntelligence() {
           aria-labelledby={`field-tab-${activeCapability.id}`}
         >
           <img
-            src={fieldImage}
-            alt="Roofing crews working across a multifamily community at sunset"
+            src={fieldInspectionImage}
+            alt="Roofing specialist documenting multifamily roof conditions with a tablet"
           />
           <div className="field-feature-overlay">
             <div className="field-feature-topline">
@@ -471,7 +473,7 @@ function FieldIntelligence() {
             <div className="field-feature-copy">
               <h3 className="serif">{activeCapability.title}</h3>
               <p>{activeCapability.description}</p>
-              <a href="#contact" className="field-feature-link" data-testid="link-field-explore">
+            <a href="#contact" className="btn-primary field-feature-link" data-testid="link-field-explore">
                 Explore more
               </a>
             </div>
@@ -585,7 +587,7 @@ function ServiceArea() {
               >
                 <div className="region-card-topline">
                   <span>{state.code}</span>
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true" />
                 </div>
                 <div className="region-card-copy">
                   <h3>{state.name}</h3>
@@ -594,7 +596,7 @@ function ServiceArea() {
               </article>
             ))}
           </div>
-          <a href="#contact" className="btn-secondary area-button" data-testid="button-area-contact">
+          <a href="#contact" className="btn-primary area-button" data-testid="button-area-contact">
             Contact Us About Your Project
           </a>
         </div>
@@ -658,7 +660,7 @@ function Contact() {
               <p>
                 Thank you. Our team will review the details and follow up on scope and next steps.
               </p>
-              <button type="button" className="btn-reset" onClick={() => setSubmitted(false)} data-testid="button-submit-another">
+              <button type="button" className="btn-primary btn-reset" onClick={() => setSubmitted(false)} data-testid="button-submit-another">
                 Send another message
               </button>
             </div>
@@ -748,8 +750,8 @@ function Footer() {
             <a href="mailto:projects@multifamilyroofingspecialists.com" data-testid="link-footer-email">
               projects@multifamilyroofingspecialists.com
             </a>
-            <a href="#contact" className="footer-contact-link" data-testid="link-footer-request-bid">
-              Request a Bid <span aria-hidden="true">↗</span>
+            <a href="#contact" className="btn-primary footer-contact-link" data-testid="link-footer-request-bid">
+              Request a Bid
             </a>
           </div>
         </div>
