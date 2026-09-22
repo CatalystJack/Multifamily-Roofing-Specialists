@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import whiteBrandLogo from '@assets/MULTIFAMILY_ROOFING_SPECIALISTS_(2)_1790090741481.png';
+import whiteBrandLogo from '@assets/MULTIFAMILY_ROOFING_SPECIALISTS_(3)_1790091609310.png';
 import roofDetail from '@assets/image_1788528449639.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
 import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
