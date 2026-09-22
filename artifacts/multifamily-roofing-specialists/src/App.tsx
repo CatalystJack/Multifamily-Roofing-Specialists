@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from 'react';
-import { Check, Menu, X } from 'lucide-react';
+import { Check, Facebook, Instagram, Linkedin, Menu, X, Youtube } from 'lucide-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -21,7 +21,6 @@ const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
-  { label: 'Service Area', href: '#service-area' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -72,29 +71,87 @@ const programs = [
 
 const reasons = [
   {
-    title: 'GC-Ready Process',
+    title: 'Check your ego at the door',
     description:
-      'Specs, submittals, and communication that fit your schedule.',
+      'Bring curiosity, accountability, and a willingness to do the work together.',
   },
   {
-    title: 'Licensed, Vetted Crews',
+    title: 'Relentless pursuit of excellence',
     description:
-      'Vetted crews with required liability and workers’ comp coverage.',
+      'Raise the standard in every scope, inspection, handoff, and closeout.',
   },
   {
-    title: 'Supplier Relationships That Protect Your Timeline',
+    title: 'Partner first, always',
     description:
-      'Established relationships that protect material availability and pricing.',
+      'Make decisions around what protects the partner’s project and long-term goals.',
   },
   {
-    title: 'One Point of Contact',
+    title: 'Do what you say you’ll do',
     description:
-      'One team owns the job from bid to warranty.',
+      'Communicate clearly, follow through, and own the outcome.',
   },
   {
-    title: 'Manufacturer-Backed Warranties',
+    title: 'Take care of the crew, take care of the partner',
     description:
-      'Documented material and workmanship warranties at closeout.',
+      'Respect the people doing the work and the people trusting us with it.',
+  },
+];
+
+const fieldCapabilities = [
+  {
+    id: 'conditions',
+    label: 'Building conditions',
+    title: 'See the condition of every building clearly.',
+    description:
+      'Organize observations at the building level so the next decision starts with usable field information.',
+  },
+  {
+    id: 'reports',
+    label: 'Photo-supported reports',
+    title: 'Turn field photos into clear reporting.',
+    description:
+      'Bring photos, observations, and scope notes together in a format owners, GCs, and property teams can use.',
+  },
+  {
+    id: 'checkpoints',
+    label: 'Repeatable checkpoints',
+    title: 'Create consistency across every visit.',
+    description:
+      'Use repeatable checkpoints to compare conditions over time and keep projects moving with fewer surprises.',
+  },
+  {
+    id: 'actions',
+    label: 'Clear next actions',
+    title: 'Move from issue to informed action.',
+    description:
+      'Make the next step visible, practical, and connected to the project’s timeline and budget.',
+  },
+];
+
+const operatingStates = [
+  {
+    code: 'NC',
+    name: 'North Carolina',
+    description: 'Charlotte-based coverage for owners, developers, and GCs.',
+    image: fieldImage,
+  },
+  {
+    code: 'SC',
+    name: 'South Carolina',
+    description: 'Roofing support for new construction and occupied rehabs.',
+    image: constructionImage,
+  },
+  {
+    code: 'TN',
+    name: 'Tennessee',
+    description: 'Inspections, reroofing, and capital planning support.',
+    image: newConstructionImage,
+  },
+  {
+    code: 'GA',
+    name: 'Georgia',
+    description: 'Portfolio-wide coordination from scope through closeout.',
+    image: maintenanceImage,
   },
 ];
 
@@ -306,7 +363,9 @@ function AboutUs() {
               <span>01 / About us</span>
             </div>
             <h2 id="about-title" className="serif" data-testid="text-about-headline">
-              People, process, and multifamily expertise.
+              <span>Extraordinary teams</span>
+              <span>building inspiring</span>
+              <span>projects.</span>
             </h2>
             <div className="about-us-panel-label">Built exclusively for multifamily</div>
             <p>
@@ -315,10 +374,6 @@ function AboutUs() {
             <p>
               That focus shapes how we plan, communicate, document, and deliver—from the first scope through the final warranty.
             </p>
-            <div className="about-us-panel-footer">
-              <span>One accountable team</span>
-              <span>Charlotte / Southeast</span>
-            </div>
             <a href="#services" className="text-link about-us-link" data-testid="link-about-services">
               Who we are
             </a>
@@ -333,23 +388,7 @@ function Programs() {
   const { ref, isVisible } = useInView();
 
   return (
-    <section ref={ref} id="services" className={`programs reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="programs-title">
-      <div className="programs-header">
-        <div className="container-shell section-lead">
-          <div className="programs-title-block">
-            <span className="eyebrow">Our Markets</span>
-            <h2 id="programs-title" className="serif" data-testid="text-programs-headline">
-              From Groundbreaking to Long-Term Reserve
-            </h2>
-            <div className="programs-heading-rule" aria-hidden="true" />
-          </div>
-          <div className="programs-note">
-            <span className="programs-note-index">02 / 06</span>
-            <p>Roofing support across the full asset lifecycle.</p>
-            <span className="programs-note-label">Multifamily markets</span>
-          </div>
-        </div>
-      </div>
+    <section ref={ref} id="services" className={`programs reveal ${isVisible ? 'is-visible' : ''}`} aria-label="Services and scope of work">
       <div className="programs-body">
         <div className="container-shell">
           <div className="programs-body-head">
@@ -383,37 +422,61 @@ function Programs() {
 
 function FieldIntelligence() {
   const { ref, isVisible } = useInView();
+  const [activeCapabilityId, setActiveCapabilityId] = useState(fieldCapabilities[0].id);
+  const activeCapability = fieldCapabilities.find((capability) => capability.id === activeCapabilityId) ?? fieldCapabilities[0];
+  const activeCapabilityIndex = fieldCapabilities.findIndex((capability) => capability.id === activeCapability.id) + 1;
 
   return (
     <section ref={ref} className={`field reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="field-title">
-      <div className="container-shell field-grid">
-        <figure className="section-photo field-photo">
+      <div className="container-shell field-experience">
+        <div className="field-intro">
+          <span className="eyebrow">Field Intelligence</span>
+          <h2 id="field-title" className="serif" data-testid="text-field-headline">
+            Better Field Information.
+            <br />
+            Cleaner Decisions.
+          </h2>
+          <div className="field-tabs" role="tablist" aria-label="Field intelligence capabilities">
+            {fieldCapabilities.map((capability, index) => (
+              <button
+                key={capability.id}
+                type="button"
+                role="tab"
+                aria-selected={activeCapability.id === capability.id}
+                aria-controls="field-capability-panel"
+                className={`field-tab ${activeCapability.id === capability.id ? 'is-active' : ''}`}
+                onClick={() => setActiveCapabilityId(capability.id)}
+                data-testid={`field-tab-${index + 1}`}
+              >
+                {capability.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <article
+          id="field-capability-panel"
+          className="field-feature"
+          role="tabpanel"
+          aria-labelledby={`field-tab-${activeCapability.id}`}
+        >
           <img
             src={fieldImage}
             alt="Roofing crews working across a multifamily community at sunset"
           />
-        </figure>
-        <div className="field-heading">
-          <span className="eyebrow">Field Intelligence</span>
-          <h2 id="field-title" className="serif" data-testid="text-field-headline">
-            Better Field Information. Cleaner Decisions.
-          </h2>
-        </div>
-        <div className="field-copy">
-          <p>
-            AI-assisted organization structures photos, observations, and building conditions. Experienced people remain responsible for every conclusion.
-          </p>
-          <ul className="field-list">
-            {[
-              'Building-level condition organization',
-              'Photo-supported reports',
-              'Repeatable checkpoints',
-              'Clear next actions',
-            ].map((item, index) => (
-              <li key={item} data-testid={`field-capability-${index + 1}`}>{item}</li>
-            ))}
-          </ul>
-        </div>
+          <div className="field-feature-overlay">
+            <div className="field-feature-topline">
+              <span>Field intelligence</span>
+              <span>{String(activeCapabilityIndex).padStart(2, '0')} / 04</span>
+            </div>
+            <div className="field-feature-copy">
+              <h3 className="serif">{activeCapability.title}</h3>
+              <p>{activeCapability.description}</p>
+              <a href="#contact" className="field-feature-link" data-testid="link-field-explore">
+                Explore more
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   );
@@ -513,10 +576,23 @@ function ServiceArea() {
             </div>
           </div>
           <div className="region-states" aria-label="Service region: North Carolina, South Carolina, Tennessee and Georgia" role="list">
-            <span role="listitem">North Carolina</span>
-            <span role="listitem">South Carolina</span>
-            <span role="listitem">Tennessee</span>
-            <span role="listitem">Georgia</span>
+            {operatingStates.map((state) => (
+              <article
+                key={state.code}
+                className={`region-card region-card--${state.code.toLowerCase()}`}
+                style={{ '--state-image': `url(${state.image})` } as CSSProperties}
+                role="listitem"
+              >
+                <div className="region-card-topline">
+                  <span>{state.code}</span>
+                  <span aria-hidden="true">↗</span>
+                </div>
+                <div className="region-card-copy">
+                  <h3>{state.name}</h3>
+                  <p>{state.description}</p>
+                </div>
+              </article>
+            ))}
           </div>
           <a href="#contact" className="btn-secondary area-button" data-testid="button-area-contact">
             Contact Us About Your Project
@@ -639,43 +715,46 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="footer">
-      <div className="container-shell">
-        <div className="footer-grid">
-          <div>
+      <div className="footer-shell">
+        <div className="footer-top">
+          <div className="footer-brand">
             <Brand />
-            <p className="footer-brand-copy">
-              Not Generalists. Multifamily Specialists.
-              <br />
-              Roofing for apartment communities across the Southeast.
-            </p>
           </div>
-          <div>
-            <h3>Services</h3>
-            <ul>
-              <li><a href="#services" data-testid="link-footer-new-construction">New Construction</a></li>
-              <li><a href="#services" data-testid="link-footer-portfolio">Portfolio Reroofing</a></li>
-              <li><a href="#services" data-testid="link-footer-inspections">Roof Inspections</a></li>
-              <li><a href="#services" data-testid="link-footer-maintenance">Repairs &amp; Maintenance</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Quick Links</h3>
-            <ul>
-              {navItems.map((item) => (
-                <li key={item.href}><a href={item.href} data-testid={`link-footer-${item.label.toLowerCase().replaceAll(' ', '-')}`}>{item.label}</a></li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3>Get in Touch</h3>
-            <ul>
-              <li><a href="tel:+17045550184" data-testid="link-footer-phone">[Phone]</a></li>
-              <li><a href="mailto:projects@multifamilyroofingspecialists.com" data-testid="link-footer-email">[Email]</a></li>
-              <li>Serving Charlotte, NC and the greater NC, SC, TN, GA region</li>
-            </ul>
+          <nav className="footer-nav" aria-label="Footer navigation">
+            <a href="#about" data-testid="link-footer-about">Our Company</a>
+            <a href="#services" data-testid="link-footer-services">Our Services</a>
+            <a href="#services" data-testid="link-footer-projects">Our Projects</a>
+            <a href="#services" data-testid="link-footer-insights">Insights</a>
+            <a href="#contact" data-testid="link-footer-careers">Careers</a>
+            <a href="#contact" data-testid="link-footer-contact">Contact</a>
+          </nav>
+          <div className="footer-socials" aria-label="Social media">
+            <a href="#contact" aria-label="Facebook" data-testid="link-footer-facebook"><Facebook size={18} aria-hidden="true" /></a>
+            <a href="#contact" aria-label="Instagram" data-testid="link-footer-instagram"><Instagram size={18} aria-hidden="true" /></a>
+            <a href="#contact" aria-label="LinkedIn" data-testid="link-footer-linkedin"><Linkedin size={18} aria-hidden="true" /></a>
+            <a href="#contact" aria-label="YouTube" data-testid="link-footer-youtube"><Youtube size={18} aria-hidden="true" /></a>
           </div>
         </div>
-        <div className="footer-bottom" data-testid="text-copyright">© {year} Multifamily Roofing Specialists. All Rights Reserved.</div>
+        <div className="footer-legal">
+          <div className="footer-copyright" data-testid="text-copyright">
+            © {year} Multifamily Roofing Specialists
+            <br />
+            All rights reserved
+          </div>
+          <div className="footer-compliance">
+            <p>
+              Multifamily Roofing Specialists is an Equal Opportunity Employer — race, color, religion, sex, sexual orientation, gender identity, national origin, disability, status as a protected veteran, or other characteristics protected by applicable law.
+            </p>
+            <a href="#contact" data-testid="link-footer-human-rights">Human Rights Policy</a>
+          </div>
+          <div className="footer-legal-links">
+            <a href="#contact" data-testid="link-footer-privacy">Privacy Policy</a>
+            <span aria-hidden="true">|</span>
+            <a href="#contact" data-testid="link-footer-fraud-alert">Fraud Alert</a>
+            <br />
+            <a href="#contact" data-testid="link-footer-cookie">Cookie Settings</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
@@ -692,7 +771,6 @@ function Home() {
         <Programs />
         <FieldIntelligence />
         <WhyUs />
-        <ServiceArea />
         <BottomCta />
         <Contact />
       </main>
