@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from 'react';
-import { Check, Menu, X } from 'lucide-react';
+import { Check, Facebook, Instagram, Linkedin, Menu, X, Youtube } from 'lucide-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -715,48 +715,45 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="footer">
-      <div className="container-shell footer-shell">
-        <div className="footer-main">
-          <div className="footer-branding">
+      <div className="footer-shell">
+        <div className="footer-top">
+          <div className="footer-brand">
             <Brand />
-            <p>
-              Multifamily roofing, built for the people who build, own, and manage apartment communities.
-            </p>
-            <div className="footer-region">
-              <span>Charlotte, North Carolina</span>
-              <span>Serving NC · SC · TN · GA</span>
-            </div>
           </div>
-          <nav className="footer-links" aria-label="Footer navigation">
-            <div className="footer-link-group">
-              <span className="footer-kicker">Explore</span>
-              <a href="#home" data-testid="link-footer-home">Home</a>
-              <a href="#about" data-testid="link-footer-about">About Us</a>
-              <a href="#services" data-testid="link-footer-services">Services</a>
-              <a href="#contact" data-testid="link-footer-contact">Contact</a>
-            </div>
-            <div className="footer-link-group">
-              <span className="footer-kicker">Capabilities</span>
-              <a href="#services" data-testid="link-footer-projects">Our Work</a>
-              <a href="#field-intelligence" data-testid="link-footer-field-intelligence">Field Intelligence</a>
-              <a href="#approach" data-testid="link-footer-approach">Our Approach</a>
-            </div>
+          <nav className="footer-nav" aria-label="Footer navigation">
+            <a href="#about" data-testid="link-footer-about">Our Company</a>
+            <a href="#services" data-testid="link-footer-services">Our Services</a>
+            <a href="#services" data-testid="link-footer-projects">Our Projects</a>
+            <a href="#field-intelligence" data-testid="link-footer-insights">Insights</a>
+            <a href="#contact" data-testid="link-footer-careers">Careers</a>
+            <a href="#contact" data-testid="link-footer-contact">Contact</a>
           </nav>
-          <div className="footer-contact">
-            <span className="footer-kicker">Start a project</span>
-            <h2 className="serif">Let&apos;s talk roofing.</h2>
-            <a href="mailto:projects@multifamilyroofingspecialists.com" data-testid="link-footer-email">
-              projects@multifamilyroofingspecialists.com
-            </a>
-            <a href="#contact" className="footer-contact-cta" data-testid="button-footer-request-bid">
-              Request a Bid <span aria-hidden="true">↗</span>
-            </a>
+          <div className="footer-socials" aria-label="Social media">
+            <a href="#contact" aria-label="Facebook" data-testid="link-footer-facebook"><Facebook size={18} aria-hidden="true" /></a>
+            <a href="#contact" aria-label="Instagram" data-testid="link-footer-instagram"><Instagram size={18} aria-hidden="true" /></a>
+            <a href="#contact" aria-label="LinkedIn" data-testid="link-footer-linkedin"><Linkedin size={18} aria-hidden="true" /></a>
+            <a href="#contact" aria-label="YouTube" data-testid="link-footer-youtube"><Youtube size={18} aria-hidden="true" /></a>
           </div>
         </div>
-        <div className="footer-bottom">
-          <span data-testid="text-copyright">© {year} Multifamily Roofing Specialists</span>
-          <span>All rights reserved</span>
-          <span>Charlotte / Southeast</span>
+        <div className="footer-legal">
+          <div className="footer-copyright" data-testid="text-copyright">
+            © {year} Multifamily Roofing Specialists
+            <br />
+            All rights reserved
+          </div>
+          <div className="footer-compliance">
+            <p>
+              Multifamily Roofing Specialists is an Equal Opportunity Employer — race, color, religion, sex, sexual orientation, gender identity, national origin, disability, status as a protected veteran, or other characteristics protected by applicable law.
+            </p>
+            <a href="#contact" data-testid="link-footer-human-rights">Human Rights Policy</a>
+          </div>
+          <div className="footer-legal-links">
+            <a href="#contact" data-testid="link-footer-privacy">Privacy Policy</a>
+            <span aria-hidden="true">|</span>
+            <a href="#contact" data-testid="link-footer-fraud-alert">Fraud Alert</a>
+            <br />
+            <a href="#contact" data-testid="link-footer-cookie">Cookie Settings</a>
+          </div>
         </div>
       </div>
     </footer>
