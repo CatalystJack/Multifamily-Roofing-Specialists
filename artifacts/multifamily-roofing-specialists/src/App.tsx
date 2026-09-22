@@ -8,8 +8,11 @@ import brandLogo from '@assets/3_1788871577496.png';
 import roofDetail from '@assets/image_1788528449639.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
 import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
-import fieldInspectionImage from '@assets/Gemini_Generated_Image_yezj1uyezj1uyezj_1790081807683.jpg';
 import teamPlanningImage from '@assets/Gemini_Generated_Image_oswqyioswqyioswq_1790081808886.jpg';
+import fieldConditionsImage from '@assets/Gemini_Generated_Image_3attqx3attqx3att_1790082057846.jpg';
+import fieldReportsImage from '@assets/Gemini_Generated_Image_oj6lw4oj6lw4oj6l_1790082074140.jpg';
+import fieldCheckpointsImage from '@assets/Gemini_Generated_Image_b2ftsib2ftsib2ft_1790082093705.jpg';
+import fieldActionsImage from '@assets/Gemini_Generated_Image_irlxrqirlxrqirlx_1790082106322.jpg';
 import constructionImage from '@assets/Gemini_Generated_Image_xkwxflxkwxflxkwx_1790002833976.jpg';
 import newConstructionImage from '@assets/image_1790003076677.png';
 import occupiedRehabsImage from '@assets/image_1790013020294.png';
@@ -106,6 +109,8 @@ const fieldCapabilities = [
     title: 'See the condition of every building clearly.',
     description:
       'Organize observations at the building level so the next decision starts with usable field information.',
+    image: fieldConditionsImage,
+    imageAlt: 'Roofing inspector documenting conditions across a multifamily roof',
   },
   {
     id: 'reports',
@@ -113,6 +118,8 @@ const fieldCapabilities = [
     title: 'Turn field photos into clear reporting.',
     description:
       'Bring photos, observations, and scope notes together in a format owners, GCs, and property teams can use.',
+    image: fieldReportsImage,
+    imageAlt: 'Roofing specialist photographing a roof vent while reviewing tablet notes',
   },
   {
     id: 'checkpoints',
@@ -120,6 +127,8 @@ const fieldCapabilities = [
     title: 'Create consistency across every visit.',
     description:
       'Use repeatable checkpoints to compare conditions over time and keep projects moving with fewer surprises.',
+    image: fieldCheckpointsImage,
+    imageAlt: 'Two roofing professionals reviewing a roof checkpoint together',
   },
   {
     id: 'actions',
@@ -127,6 +136,8 @@ const fieldCapabilities = [
     title: 'Move from issue to informed action.',
     description:
       'Make the next step visible, practical, and connected to the project’s timeline and budget.',
+    image: fieldActionsImage,
+    imageAlt: 'Roofing team discussing next steps on a multifamily roof',
   },
 ];
 
@@ -357,7 +368,6 @@ function AboutUs() {
       <div className="about-us-split">
         <figure className="about-us-photo">
           <img src={teamPlanningImage} alt="Multifamily roofing team reviewing plans together on a roof" />
-          <figcaption>Every building has a different roof story.</figcaption>
         </figure>
         <div className="about-us-panel">
           <div className="about-us-panel-inner">
@@ -462,20 +472,16 @@ function FieldIntelligence() {
           aria-labelledby={`field-tab-${activeCapability.id}`}
         >
           <img
-            src={fieldInspectionImage}
-            alt="Roofing specialist documenting multifamily roof conditions with a tablet"
+            src={activeCapability.image}
+            alt={activeCapability.imageAlt}
           />
           <div className="field-feature-overlay">
             <div className="field-feature-topline">
-              <span>Field intelligence</span>
               <span>{String(activeCapabilityIndex).padStart(2, '0')} / 04</span>
             </div>
             <div className="field-feature-copy">
               <h3 className="serif">{activeCapability.title}</h3>
               <p>{activeCapability.description}</p>
-            <a href="#contact" className="btn-primary field-feature-link" data-testid="link-field-explore">
-                Explore more
-              </a>
             </div>
           </div>
         </article>
