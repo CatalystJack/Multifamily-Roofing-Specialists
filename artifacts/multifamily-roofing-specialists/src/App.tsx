@@ -4,7 +4,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import brandLogo from '@assets/3_1788871577496.png';
+import whiteBrandLogo from '@assets/MULTIFAMILY_ROOFING_SPECIALISTS_(2)_1790090741481.png';
+import accentBrandLogo from '@assets/MULTIFAMILY_ROOFING_SPECIALISTS_(1)_1790090743195.png';
 import roofDetail from '@assets/image_1788528449639.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
 import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
@@ -170,10 +171,14 @@ function useInView() {
   return { ref, isVisible };
 }
 
-function Brand() {
+function Brand({ variant = 'white' }: { variant?: 'white' | 'accent' }) {
   return (
     <a href="#home" className="brand" data-testid="link-brand">
-      <img className="brand-logo" src={brandLogo} alt="Multifamily Roofing Specialists" />
+      <img
+        className="brand-logo"
+        src={variant === 'accent' ? accentBrandLogo : whiteBrandLogo}
+        alt="Multifamily Roofing Specialists"
+      />
     </a>
   );
 }
@@ -662,7 +667,7 @@ function Footer() {
       <div className="container-shell footer-shell">
         <div className="footer-main">
           <div className="footer-branding">
-            <Brand />
+            <Brand variant="accent" />
             <p className="footer-description">
               Multifamily roofing for the people who build, own, and manage apartment communities.
             </p>
