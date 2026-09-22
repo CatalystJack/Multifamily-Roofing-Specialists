@@ -74,55 +74,6 @@ const programs = [
   },
 ];
 
-const reasons = [
-  {
-    title: 'Check your ego at the door',
-    description:
-      'Bring curiosity, accountability, and a willingness to do the work together.',
-  },
-  {
-    title: 'Relentless pursuit of excellence',
-    description:
-      'Raise the standard in every scope, inspection, handoff, and closeout.',
-  },
-  {
-    title: 'Partner first, always',
-    description:
-      'Make decisions around what protects the partner’s project and long-term goals.',
-  },
-  {
-    title: 'Do what you say you’ll do',
-    description:
-      'Communicate clearly, follow through, and own the outcome.',
-  },
-  {
-    title: 'Take care of the crew, take care of the partner',
-    description:
-      'Respect the people doing the work and the people trusting us with it.',
-  },
-];
-
-const approachCards = [
-  {
-    label: 'How we work',
-    title: 'Teams aligned in every phase.',
-    description:
-      'Bring curiosity, accountability, and care to the crew into every scope, handoff, and partner conversation.',
-    image: teamPlanningImage,
-    values: [reasons[0].title, reasons[2].title, reasons[4].title],
-    cta: 'Meet the team',
-  },
-  {
-    label: 'How we decide',
-    title: 'Follow-through that keeps projects moving.',
-    description:
-      'Raise the standard, communicate clearly, and own the outcome from the first inspection through closeout.',
-    image: fieldActionsImage,
-    values: [reasons[1].title, reasons[3].title],
-    cta: 'Talk through your project',
-  },
-];
-
 const fieldCapabilities = [
   {
     id: 'conditions',
@@ -511,50 +462,6 @@ function FieldIntelligence() {
   );
 }
 
-function WhyUs() {
-  const { ref, isVisible } = useInView();
-
-  return (
-    <section ref={ref} id="approach" className={`why reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="why-title">
-      <div className="container-shell">
-        <div className="why-head">
-          <span className="eyebrow">Our Approach</span>
-          <h2 id="why-title" className="serif" data-testid="text-why-headline">
-            Built for Institutional Multifamily
-          </h2>
-        </div>
-        <div className="why-cards">
-          {approachCards.map((card, index) => (
-            <article
-              className="why-card reveal-item"
-              key={card.title}
-              style={{
-                '--reveal-delay': `${index * 100}ms`,
-                '--why-image': `url(${card.image})`,
-              } as CSSProperties}
-              data-testid={`approach-card-${index + 1}`}
-            >
-              <div className="why-card-content">
-                <span className="why-card-label">{card.label}</span>
-                <h3 className="serif">{card.title}</h3>
-                <p>{card.description}</p>
-                <div className="why-card-values" aria-label="Values represented">
-                  {card.values.map((value) => (
-                    <span key={value}>{value}</span>
-                  ))}
-                </div>
-                <a href="#contact" className="btn-primary why-card-link" data-testid={`link-approach-card-${index + 1}`}>
-                  {card.cta}
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function ServiceArea() {
   const { ref, isVisible } = useInView();
 
@@ -776,7 +683,6 @@ function Footer() {
               <span className="footer-column-title">Capabilities</span>
               <a href="#services" data-testid="link-footer-projects">Our Work</a>
               <a href="#field-intelligence" data-testid="link-footer-field-intelligence">Field Intelligence</a>
-              <a href="#approach" data-testid="link-footer-approach">Our Approach</a>
             </nav>
           </div>
           <div className="footer-contact">
@@ -814,7 +720,6 @@ function Home() {
         <AboutUs />
         <Programs />
         <FieldIntelligence />
-        <WhyUs />
         <BottomCta />
         <Contact />
       </main>
