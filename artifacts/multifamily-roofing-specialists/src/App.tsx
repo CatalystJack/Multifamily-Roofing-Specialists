@@ -102,6 +102,27 @@ const reasons = [
   },
 ];
 
+const approachCards = [
+  {
+    label: 'How we work',
+    title: 'Teams aligned in every phase.',
+    description:
+      'Bring curiosity, accountability, and care to the crew into every scope, handoff, and partner conversation.',
+    image: teamPlanningImage,
+    values: [reasons[0].title, reasons[2].title, reasons[4].title],
+    cta: 'Meet the team',
+  },
+  {
+    label: 'How we decide',
+    title: 'Follow-through that keeps projects moving.',
+    description:
+      'Raise the standard, communicate clearly, and own the outcome from the first inspection through closeout.',
+    image: fieldActionsImage,
+    values: [reasons[1].title, reasons[3].title],
+    cta: 'Talk through your project',
+  },
+];
+
 const fieldCapabilities = [
   {
     id: 'conditions',
@@ -502,21 +523,29 @@ function WhyUs() {
             Built for Institutional Multifamily
           </h2>
         </div>
-        <div className="why-list">
-          {reasons.map((reason, index) => (
+        <div className="why-cards">
+          {approachCards.map((card, index) => (
             <article
-              className="why-item reveal-item"
-              key={reason.title}
-              style={{ '--reveal-delay': `${index * 70}ms` } as CSSProperties}
-              data-testid={`reason-${index + 1}`}
+              className="why-card reveal-item"
+              key={card.title}
+              style={{
+                '--reveal-delay': `${index * 100}ms`,
+                '--why-image': `url(${card.image})`,
+              } as CSSProperties}
+              data-testid={`approach-card-${index + 1}`}
             >
-              <div className="why-value">
-                <span className="eyebrow">Value</span>
-                <h3 className="serif">{reason.title}</h3>
-              </div>
-              <div className="why-commitment">
-                <span className="eyebrow">Commitment</span>
-                <p>{reason.description}</p>
+              <div className="why-card-content">
+                <span className="why-card-label">{card.label}</span>
+                <h3 className="serif">{card.title}</h3>
+                <p>{card.description}</p>
+                <div className="why-card-values" aria-label="Values represented">
+                  {card.values.map((value) => (
+                    <span key={value}>{value}</span>
+                  ))}
+                </div>
+                <a href="#contact" className="btn-primary why-card-link" data-testid={`link-approach-card-${index + 1}`}>
+                  {card.cta}
+                </a>
               </div>
             </article>
           ))}
