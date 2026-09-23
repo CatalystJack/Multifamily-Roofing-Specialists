@@ -350,7 +350,7 @@
 }
 .about-us-panel {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding: clamp(12px, 1.2vw, 18px) clamp(30px, 5vw, 72px);
   background: #1b2b34;
 }
