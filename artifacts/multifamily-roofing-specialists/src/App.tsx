@@ -362,6 +362,9 @@ function AboutUs() {
             <p>
               That focus shapes how we plan, communicate, document, and deliver—from the first scope through the final warranty.
             </p>
+            <p>
+              Jonathan Keating brings roofing operations and project management experience dating to approximately 2009 in the Charlotte region. His background spans steep-slope replacements, complex rooflines, specialty copper and metal details, insurance restoration, and coordination of crews and property protection.
+            </p>
             <a href="#services" className="btn-primary about-us-link" data-testid="link-about-services">
               Who we are
             </a>
