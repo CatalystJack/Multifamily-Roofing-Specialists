@@ -331,11 +331,11 @@
 .about-us-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: min(520px, 42vw);
+  min-height: min(450px, 37vw);
 }
 .about-us-photo {
   position: relative;
-  min-height: 370px;
+  min-height: 320px;
   margin: 0;
   overflow: hidden;
   background: #1b2b34;
@@ -351,7 +351,7 @@
 .about-us-panel {
   display: flex;
   align-items: center;
-  padding: clamp(18px, 2.2vw, 28px) clamp(30px, 6vw, 88px);
+  padding: clamp(14px, 1.6vw, 22px) clamp(30px, 5vw, 72px);
   background: #1b2b34;
 }
 .about-us-panel-inner { width: min(100%, 470px); }
@@ -488,11 +488,12 @@
 .property-managers-expectations {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-  padding: 35px 36px 36px;
+  align-self: start;
+  padding: 30px 34px 29px;
+  border-top: 2px solid #c7a77f;
   background: #0b0e11;
   color: #f5f5f2;
-  box-shadow: 16px 16px 0 rgba(199, 167, 127, .2);
+  box-shadow: 14px 14px 0 rgba(199, 167, 127, .2);
 }
 .property-managers-expectations-topline,
 .credentials-group-topline {
@@ -515,26 +516,25 @@
   color: rgba(245, 245, 242, .55);
 }
 .property-managers-list {
-  flex: 1;
-  margin: 12px 0 0;
+  margin: 10px 0 0;
   padding: 0;
   list-style: none;
 }
 .property-managers-list li {
   display: flex;
   align-items: baseline;
-  gap: 18px;
-  padding: 16px 0;
+  gap: 20px;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(245, 245, 242, .14);
 }
 .property-managers-list li span {
-  flex: 0 0 22px;
+  flex: 0 0 24px;
   color: #f0d6ad;
   font: .62rem var(--app-font-mono);
 }
 .property-managers-list li strong {
   color: #f5f5f2;
-  font-size: .78rem;
+  font-size: .76rem;
   font-weight: 500;
   line-height: 1.45;
 }
