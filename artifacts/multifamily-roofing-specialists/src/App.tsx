@@ -371,15 +371,6 @@ function AboutUs() {
   );
 }
 
-const propertyManagerQuestions = [
-  'When will crews arrive?',
-  'Which buildings are being worked on?',
-  'How will residents be affected?',
-  'Where will materials go?',
-  'How will vehicles and landscaping be protected?',
-  'Who do I call when something changes?',
-];
-
 const propertyManagerExpectations = [
   'Clear project communication',
   'Organized scheduling',
@@ -422,14 +413,6 @@ function PropertyManagers() {
             A Roofing Partner for Property Managers
           </h2>
           <div className="property-managers-rule" aria-hidden="true" />
-          <p className="property-managers-lead">
-            Roofing projects create questions for property managers:
-          </p>
-          <ul className="property-managers-questions">
-            {propertyManagerQuestions.map((question) => (
-              <li key={question}>{question}</li>
-            ))}
-          </ul>
           <p className="property-managers-description">
             We understand that roofing doesn&apos;t happen in isolation.
           </p>

@@ -476,35 +476,14 @@
   margin-top: 39px;
   background: #c7a77f;
 }
-.property-managers-lead,
 .property-managers-description {
   max-width: 450px;
   color: #53616a;
   font-size: .82rem;
   line-height: 1.9;
 }
-.property-managers-lead { margin-top: 33px; }
-.property-managers-description { margin-top: 22px; }
+.property-managers-description { margin-top: 30px; }
 .property-managers-description + .property-managers-description { margin-top: 8px; }
-.property-managers-questions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 24px;
-  max-width: 520px;
-  margin: 22px 0 0;
-  padding: 0;
-  list-style: none;
-}
-.property-managers-questions li {
-  padding: 13px 0;
-  border-top: 1px solid rgba(27, 43, 52, .16);
-  color: #1b2b34;
-  font-size: .72rem;
-  line-height: 1.45;
-}
-.property-managers-questions li:nth-last-child(-n + 2) {
-  border-bottom: 1px solid rgba(27, 43, 52, .16);
-}
 .property-managers-link { margin-top: 30px; }
 .property-managers-expectations {
   display: flex;
@@ -527,6 +506,10 @@
   letter-spacing: .14em;
   line-height: 1.4;
   text-transform: uppercase;
+}
+.credentials-group-topline {
+  justify-content: flex-start;
+  gap: clamp(18px, 3vw, 42px);
 }
 .property-managers-expectations-topline span:last-child {
   color: rgba(245, 245, 242, .55);
@@ -1586,12 +1569,6 @@
   .property-managers-grid,
   .credentials-grid { grid-template-columns: 1fr; gap: 44px; }
   .property-managers h2 { font-size: clamp(2.45rem, 11vw, 3.7rem); }
-  .property-managers-questions {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .property-managers-questions li:nth-last-child(-n + 2) { border-bottom: 0; }
-  .property-managers-questions li:last-child { border-bottom: 1px solid rgba(27, 43, 52, .16); }
   .property-managers-expectations { padding: 26px 22px 29px; box-shadow: 10px 10px 0 rgba(199, 167, 127, .2); }
   .credentials h2 { font-size: clamp(2.45rem, 11vw, 3.7rem); }
   .credentials-group ul { grid-template-columns: 1fr; }
