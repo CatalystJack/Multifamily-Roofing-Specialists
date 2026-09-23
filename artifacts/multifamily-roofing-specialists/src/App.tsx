@@ -19,6 +19,9 @@ import occupiedRehabsImage from '@assets/image_1790013020294.png';
 import stormInspectionImage from '@assets/image_1790003116172.png';
 import maintenanceImage from '@assets/image_1790003123704.png';
 import warrantyImage from '@assets/image_1790003170403.png';
+import owensCorningLogo from '@assets/brand-logos/owens-corning-logo.png';
+import tamkoLogo from '@assets/brand-logos/tamko-logo-black.png';
+import atlasLogo from '@assets/brand-logos/atlas-logo-black-red.jpg';
 
 const queryClient = new QueryClient();
 
@@ -392,12 +395,12 @@ const propertyManagerExpectations = [
 ];
 
 const manufacturerCredentials = [
-  'Owens Corning',
-  'CertainTeed',
-  'TAMKO',
-  'Atlas',
-  'Mule-Hide',
-  'EPDM / TPO Systems',
+  { name: 'Owens Corning', logo: owensCorningLogo, alt: 'Owens Corning logo' },
+  { name: 'CertainTeed' },
+  { name: 'TAMKO', logo: tamkoLogo, alt: 'TAMKO logo' },
+  { name: 'Atlas', logo: atlasLogo, alt: 'Atlas Roofing logo' },
+  { name: 'Mule-Hide' },
+  { name: 'EPDM / TPO Systems' },
 ];
 
 const safetyCredentials = [
@@ -486,11 +489,20 @@ function Credentials() {
               <span>01</span>
               <span>Manufacturer Training & Credentials</span>
             </div>
-            <ul>
+            <ul className="credentials-brand-list">
               {manufacturerCredentials.map((credential) => (
-                <li key={credential}>{credential}</li>
+                <li key={credential.name}>
+                  {credential.logo ? (
+                    <img src={credential.logo} alt={credential.alt} loading="lazy" />
+                  ) : (
+                    <span>{credential.name}</span>
+                  )}
+                </li>
               ))}
             </ul>
+            <p className="credentials-attribution">
+              An Independent Roofing Contractor, not an Employee or Agent of Atlas Roofing Corporation.
+            </p>
           </div>
           <div className="credentials-group">
             <div className="credentials-group-topline">
