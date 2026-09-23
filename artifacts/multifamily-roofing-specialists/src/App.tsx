@@ -25,6 +25,7 @@ const queryClient = new QueryClient();
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
+  { label: 'For Managers', href: '#property-managers' },
   { label: 'Services', href: '#services' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -369,6 +370,81 @@ function AboutUs() {
   );
 }
 
+const propertyManagerQuestions = [
+  'When will crews arrive?',
+  'Which buildings are being worked on?',
+  'How will residents be affected?',
+  'Where will materials go?',
+  'How will vehicles and landscaping be protected?',
+  'Who do I call when something changes?',
+];
+
+const propertyManagerExpectations = [
+  'Clear project communication',
+  'Organized scheduling',
+  'Crew coordination',
+  'Property protection',
+  'Site cleanup',
+  'Progress updates',
+  'Final inspection',
+  'Project documentation',
+  'A single point of contact',
+];
+
+function PropertyManagers() {
+  const { ref, isVisible } = useInView();
+
+  return (
+    <section
+      ref={ref}
+      id="property-managers"
+      className={`property-managers reveal ${isVisible ? 'is-visible' : ''}`}
+      aria-labelledby="property-managers-title"
+    >
+      <div className="container-shell property-managers-grid">
+        <div className="property-managers-intro">
+          <span className="eyebrow">Property Manager / HOA</span>
+          <h2 id="property-managers-title" className="serif" data-testid="text-property-managers-headline">
+            A Roofing Partner for Property Managers
+          </h2>
+          <div className="property-managers-rule" aria-hidden="true" />
+          <p className="property-managers-lead">
+            Roofing projects create questions for property managers:
+          </p>
+          <ul className="property-managers-questions">
+            {propertyManagerQuestions.map((question) => (
+              <li key={question}>{question}</li>
+            ))}
+          </ul>
+          <p className="property-managers-description">
+            We understand that roofing doesn&apos;t happen in isolation.
+          </p>
+          <p className="property-managers-description">
+            Our project-management approach is designed to keep property managers informed while roofing work progresses.
+          </p>
+          <a href="#contact" className="btn-primary property-managers-link" data-testid="button-property-managers-contact">
+            Talk Through Your Project
+          </a>
+        </div>
+        <div className="property-managers-expectations">
+          <div className="property-managers-expectations-topline">
+            <span>What You Can Expect</span>
+            <span>01 / 09</span>
+          </div>
+          <ul className="property-managers-list">
+            {propertyManagerExpectations.map((expectation, index) => (
+              <li key={expectation}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <strong>{expectation}</strong>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Programs() {
   const { ref, isVisible } = useInView();
 
@@ -666,6 +742,7 @@ function Footer() {
               <span className="footer-column-title">Explore</span>
               <a href="#home" data-testid="link-footer-home">Home</a>
               <a href="#about" data-testid="link-footer-about">About Us</a>
+              <a href="#property-managers" data-testid="link-footer-property-managers">For Managers</a>
               <a href="#services" data-testid="link-footer-services">Services</a>
               <a href="#contact" data-testid="link-footer-contact">Contact</a>
             </nav>
@@ -708,6 +785,7 @@ function Home() {
         <Hero />
         <Stats />
         <AboutUs />
+        <PropertyManagers />
         <Programs />
         <FieldIntelligence />
         <Contact />
