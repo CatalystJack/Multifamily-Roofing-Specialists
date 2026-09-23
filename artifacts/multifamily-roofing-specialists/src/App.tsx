@@ -414,17 +414,28 @@ function FieldIntelligence() {
   const activeCapability = fieldCapabilities.find((capability) => capability.id === activeCapabilityId) ?? fieldCapabilities[0];
   const activeCapabilityIndex = fieldCapabilities.findIndex((capability) => capability.id === activeCapability.id) + 1;
 
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveCapabilityId((currentId) => {
+        const currentIndex = fieldCapabilities.findIndex((capability) => capability.id === currentId);
+        const nextIndex = (currentIndex + 1) % fieldCapabilities.length;
+        return fieldCapabilities[nextIndex].id;
+      });
+    }, 2000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <section ref={ref} id="field-intelligence" className={`field reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="field-title">
       <div className="container-shell field-experience">
         <div className="field-intro">
-          <span className="eyebrow">Field Intelligence</span>
           <h2 id="field-title" className="serif" data-testid="text-field-headline">
             Better Field Information.
             <br />
             Cleaner Decisions.
           </h2>
-          <div className="field-tabs" role="tablist" aria-label="Field intelligence capabilities">
+          <div className="field-tabs" role="tablist" aria-label="Roofing capabilities">
             {fieldCapabilities.map((capability, index) => (
               <button
                 key={capability.id}
@@ -551,28 +562,6 @@ function ServiceArea() {
   );
 }
 
-function BottomCta() {
-  const { ref, isVisible } = useInView();
-
-  return (
-    <section ref={ref} className={`cta reveal ${isVisible ? 'is-visible' : ''}`} aria-labelledby="cta-title">
-      <div className="container-shell cta-grid">
-        <div>
-          <h2 id="cta-title" className="serif" data-testid="text-cta-headline">
-            Have a Roofing Project Ahead?
-          </h2>
-          <p>
-            Let&apos;s talk scope, timeline, and budget before you finalize your bid list.
-          </p>
-        </div>
-        <a href="#contact" className="btn-primary" data-testid="button-cta-request-bid">
-          Request a Bid
-        </a>
-      </div>
-    </section>
-  );
-}
-
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const { ref, isVisible } = useInView();
@@ -594,8 +583,8 @@ function Contact() {
             Tell us what you&apos;re planning. We&apos;ll come prepared to talk scope and schedule.
           </p>
           <div className="contact-details">
-            <a href="tel:+17045550184" data-testid="link-contact-phone">[Phone]</a>
-            <a href="mailto:projects@multifamilyroofingspecialists.com" data-testid="link-contact-email">[Email]</a>
+            <a href="tel:+17042192097" data-testid="link-contact-phone">704-219-2097</a>
+            <a href="mailto:help@themultifmailyroofers.com" data-testid="link-contact-email">[Email]</a>
           </div>
         </div>
         <div>
@@ -692,8 +681,8 @@ function Footer() {
           <div className="footer-contact">
             <span className="footer-column-title">Start a conversation</span>
             <p>Tell us what you&apos;re planning. We&apos;ll come prepared to talk scope and schedule.</p>
-            <a href="mailto:projects@multifamilyroofingspecialists.com" data-testid="link-footer-email">
-              projects@multifamilyroofingspecialists.com
+            <a href="mailto:help@themultifmailyroofers.com" data-testid="link-footer-email">
+              help@themultifmailyroofers.com
             </a>
             <a href="#contact" className="btn-primary footer-contact-link" data-testid="link-footer-request-bid">
               Request a Bid
@@ -724,7 +713,6 @@ function Home() {
         <AboutUs />
         <Programs />
         <FieldIntelligence />
-        <BottomCta />
         <Contact />
       </main>
       <Footer />

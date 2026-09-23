@@ -351,7 +351,7 @@
 .about-us-panel {
   display: flex;
   align-items: center;
-  padding: clamp(36px, 5vw, 70px) clamp(30px, 6vw, 88px);
+  padding: clamp(18px, 2.2vw, 28px) clamp(30px, 6vw, 88px);
   background: #151515;
 }
 .about-us-panel-inner { width: min(100%, 470px); }
@@ -493,7 +493,6 @@
 .programs h2,
 .field h2,
 .area h2,
-.cta h2,
 .contact h2 {
   margin: 0;
   font: 600 clamp(2.3rem, 4vw, 4.15rem)/.94 var(--app-font-sans);
@@ -1087,18 +1086,6 @@
 }
 .area-button { margin-top: 20px; }
 
-.cta {
-  padding: 76px 0 80px;
-  border-top: 1px solid rgba(199, 167, 127, .5);
-  border-bottom: 1px solid rgba(199, 167, 127, .5);
-  background: #fff;
-  color: #1b2b34;
-}
-.cta-grid { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
-.cta h2 { max-width: 750px; font-size: clamp(2.65rem, 5vw, 4.7rem); }
-.cta p { max-width: 575px; margin: 22px 0 0; font-size: .78rem; line-height: 1.8; }
-.cta .btn-primary { margin-bottom: 4px; }
-
 .contact { padding: 154px 0 164px; }
 .contact h2 { max-width: 415px; margin-top: 18px; }
 .contact-note { max-width: 330px; margin-top: 29px; color: #d0d5d7; }
@@ -1415,10 +1402,10 @@
   .stat:nth-child(odd) { padding-left: 10px; border-left: 0; }
   .stat:nth-child(n + 3) { padding-top: 27px; border-top: 1px solid rgba(245, 245, 242, .35); }
   .stat-number { font-size: 3.5rem; }
-  .about-us { padding: 54px 0 60px; }
+  .about-us { padding: 40px 0 46px; }
   .about-us-split { grid-template-columns: 1fr; min-height: 0; }
   .about-us-photo { min-height: 260px; aspect-ratio: 1.25 / 1; }
-  .about-us-panel { padding: 46px 1.75rem 52px; }
+  .about-us-panel { padding: 26px 1.75rem 30px; }
   .about-us-panel-inner { width: 100%; }
   .about-us-kicker { margin-bottom: 21px; }
   .about-us h2 { max-width: 360px; font-size: clamp(2.35rem, 10vw, 3.4rem); }
@@ -1494,9 +1481,6 @@
     min-height: 190px;
     scroll-snap-align: start;
   }
-  .cta { padding: 72px 0 78px; }
-  .cta-grid { grid-template-columns: 1fr; gap: 27px; }
-  .cta h2 { font-size: clamp(2.35rem, 11vw, 3.55rem); }
   .contact-form { padding-top: 21px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .footer-shell { width: min(100% - 2.5rem, 1240px); }
