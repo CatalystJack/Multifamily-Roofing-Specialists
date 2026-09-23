@@ -407,8 +407,7 @@ function PropertyManagers() {
       aria-labelledby="property-managers-title"
     >
       <div className="container-shell property-managers-shell">
-        <div className="property-managers-meta" aria-label="Property manager section">
-          <span className="property-managers-index">02</span>
+        <div className="property-managers-rail" aria-label="Property manager section">
           <span>Property Manager / HOA</span>
           <span>Communication built into the project</span>
         </div>
