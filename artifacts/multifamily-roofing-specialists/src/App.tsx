@@ -406,36 +406,43 @@ function PropertyManagers() {
       className={`property-managers reveal ${isVisible ? 'is-visible' : ''}`}
       aria-labelledby="property-managers-title"
     >
-      <div className="container-shell property-managers-grid">
-        <div className="property-managers-intro">
-          <span className="eyebrow">Property Manager / HOA</span>
-          <h2 id="property-managers-title" className="serif" data-testid="text-property-managers-headline">
-            A Roofing Partner for Property Managers
-          </h2>
-          <div className="property-managers-rule" aria-hidden="true" />
-          <p className="property-managers-description">
-            We understand that roofing doesn&apos;t happen in isolation.
-          </p>
-          <p className="property-managers-description">
-            Our project-management approach is designed to keep property managers informed while roofing work progresses.
-          </p>
-          <a href="#contact" className="btn-primary property-managers-link" data-testid="button-property-managers-contact">
-            Talk Through Your Project
-          </a>
+      <div className="container-shell property-managers-shell">
+        <div className="property-managers-rail" aria-label="Property manager section">
+          <span>Property Manager / HOA</span>
+          <span>Communication built into the project</span>
         </div>
-        <div className="property-managers-expectations">
-          <div className="property-managers-expectations-topline">
-            <span>What You Can Expect</span>
-            <span>01 / 09</span>
+        <div className="property-managers-grid">
+          <div className="property-managers-intro">
+            <h2 id="property-managers-title" className="serif" data-testid="text-property-managers-headline">
+              A Roofing Partner for Property Managers
+            </h2>
+            <div className="property-managers-rule" aria-hidden="true" />
+            <div className="property-managers-copy">
+              <p className="property-managers-description">
+                We understand that roofing doesn&apos;t happen in isolation.
+              </p>
+              <p className="property-managers-description">
+                Our project-management approach is designed to keep property managers informed while roofing work progresses.
+              </p>
+            </div>
+            <a href="#contact" className="btn-primary property-managers-link" data-testid="button-property-managers-contact">
+              Talk Through Your Project
+            </a>
           </div>
-          <ul className="property-managers-list">
-            {propertyManagerExpectations.map((expectation, index) => (
-              <li key={expectation}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <strong>{expectation}</strong>
-              </li>
-            ))}
-          </ul>
+          <div className="property-managers-expectations">
+            <div className="property-managers-expectations-topline">
+              <span>What You Can Expect</span>
+              <span>01 / 09</span>
+            </div>
+            <ul className="property-managers-list">
+              {propertyManagerExpectations.map((expectation, index) => (
+                <li key={expectation}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <strong>{expectation}</strong>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
