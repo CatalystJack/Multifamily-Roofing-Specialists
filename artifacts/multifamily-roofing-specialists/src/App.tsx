@@ -360,10 +360,10 @@ function AboutUs() {
               Most roofing companies serve homeowners. We work with the people who build, own, and manage apartment communities.
             </p>
             <p>
-              That focus shapes how we plan, communicate, document, and deliver—from the first scope through the final warranty.
+              That focus shapes how we plan, communicate, document, and deliver, from the first scope through the final warranty.
             </p>
             <p>
-              Jonathan Keating brings roofing operations and project management experience dating to approximately 2009 in the Charlotte region. His background spans steep-slope replacements, complex rooflines, specialty copper and metal details, insurance restoration, and coordination of crews and property protection.
+              Our team brings roofing operations and project management experience dating to approximately 2009 in the Charlotte region. Our background spans steep-slope replacements, complex rooflines, specialty copper and metal details, insurance restoration, and coordination of crews and property protection.
             </p>
             <a href="#services" className="btn-primary about-us-link" data-testid="link-about-services">
               Who we are
@@ -694,7 +694,7 @@ function Footer() {
         </div>
         <div className="footer-bottom">
           <p className="footer-legal-note">
-            Multifamily Roofing Specialists is an Equal Opportunity Employer — race, color, religion, sex, sexual orientation, gender identity, national origin, disability, status as a protected veteran, or other characteristics protected by applicable law.
+            Multifamily Roofing Specialists is an Equal Opportunity Employer, regardless of race, color, religion, sex, sexual orientation, gender identity, national origin, disability, status as a protected veteran, or other characteristics protected by applicable law.
           </p>
           <div className="footer-bottom-meta">
             <span data-testid="text-copyright">© {year} Multifamily Roofing Specialists</span>
