@@ -391,6 +391,21 @@ const propertyManagerExpectations = [
   'A single point of contact',
 ];
 
+const manufacturerCredentials = [
+  'Owens Corning',
+  'CertainTeed',
+  'TAMKO',
+  'Atlas',
+  'Mule-Hide',
+  'EPDM / TPO Systems',
+];
+
+const safetyCredentials = [
+  'OSHA Training',
+  'Fall Protection Training',
+  'HAG Inspector Designation',
+];
+
 function PropertyManagers() {
   const { ref, isVisible } = useInView();
 
@@ -439,6 +454,55 @@ function PropertyManagers() {
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Credentials() {
+  const { ref, isVisible } = useInView();
+
+  return (
+    <section
+      ref={ref}
+      id="credentials"
+      className={`credentials reveal ${isVisible ? 'is-visible' : ''}`}
+      aria-labelledby="credentials-title"
+    >
+      <div className="container-shell credentials-grid">
+        <div className="credentials-heading">
+          <span className="eyebrow">Training & Credentials</span>
+          <h2 id="credentials-title" className="serif" data-testid="text-credentials-headline">
+            Trained for the systems on your roof.
+          </h2>
+          <p>
+            Our team holds training and credentials across the roofing systems, safety practices, and inspection work that support multifamily projects.
+          </p>
+        </div>
+        <div className="credentials-groups">
+          <div className="credentials-group">
+            <div className="credentials-group-topline">
+              <span>01</span>
+              <span>Manufacturer Training & Credentials</span>
+            </div>
+            <ul>
+              {manufacturerCredentials.map((credential) => (
+                <li key={credential}>{credential}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="credentials-group">
+            <div className="credentials-group-topline">
+              <span>02</span>
+              <span>Safety & Inspection</span>
+            </div>
+            <ul>
+              {safetyCredentials.map((credential) => (
+                <li key={credential}>{credential}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -743,6 +807,7 @@ function Footer() {
               <a href="#home" data-testid="link-footer-home">Home</a>
               <a href="#about" data-testid="link-footer-about">About Us</a>
               <a href="#property-managers" data-testid="link-footer-property-managers">For Managers</a>
+              <a href="#credentials" data-testid="link-footer-credentials">Credentials</a>
               <a href="#services" data-testid="link-footer-services">Services</a>
               <a href="#contact" data-testid="link-footer-contact">Contact</a>
             </nav>
@@ -786,6 +851,7 @@ function Home() {
         <Stats />
         <AboutUs />
         <PropertyManagers />
+        <Credentials />
         <Programs />
         <FieldIntelligence />
         <Contact />
