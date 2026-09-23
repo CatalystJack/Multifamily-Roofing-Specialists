@@ -481,9 +481,10 @@
   grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
   gap: clamp(54px, 9vw, 142px);
   margin-top: clamp(48px, 6vw, 76px);
-  align-items: start;
+  align-items: center;
 }
 .property-managers-intro {
+  align-self: center;
   max-width: 480px;
 }
 .property-managers h2 {
@@ -1594,14 +1595,19 @@
   .credentials { padding: 92px 0 104px; }
   .property-managers-grid,
   .credentials-grid { grid-template-columns: 1fr; gap: 44px; }
-  .property-managers-rail {
+  .property-managers-meta {
+    grid-template-columns: auto 1fr;
     flex-direction: column;
     gap: 8px;
   }
-  .property-managers-rail span:last-child { text-align: left; }
+  .property-managers-meta span:last-child {
+    grid-column: 2;
+    text-align: left;
+  }
   .property-managers-grid { margin-top: 34px; }
+  .property-managers-grid { align-items: start; }
+  .property-managers-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
   .property-managers h2 { font-size: clamp(2.45rem, 11vw, 3.7rem); }
-  .property-managers-expectations { padding: 26px 22px 29px; box-shadow: 10px 10px 0 rgba(199, 167, 127, .2); }
   .credentials h2 { font-size: clamp(2.45rem, 11vw, 3.7rem); }
   .credentials-group ul { grid-template-columns: 1fr; }
   .intro, .field, .area, .contact { padding: 94px 0 102px; }
