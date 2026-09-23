@@ -348,7 +348,7 @@ function AboutUs() {
         <div className="about-us-panel">
           <div className="about-us-panel-inner">
             <div className="about-us-kicker" aria-hidden="true">
-              <span>01 / About us</span>
+              <span>About us</span>
             </div>
             <h2 id="about-title" className="serif" data-testid="text-about-headline">
               <span>Extraordinary teams</span>
@@ -584,7 +584,7 @@ function Contact() {
           </p>
           <div className="contact-details">
             <a href="tel:+17042192097" data-testid="link-contact-phone">704-219-2097</a>
-            <a href="mailto:help@themultifmailyroofers.com" data-testid="link-contact-email">[Email]</a>
+            <a href="mailto:help@themultifamilyroofers.com" data-testid="link-contact-email">help@themultifamilyroofers.com</a>
           </div>
         </div>
         <div>
@@ -681,8 +681,8 @@ function Footer() {
           <div className="footer-contact">
             <span className="footer-column-title">Start a conversation</span>
             <p>Tell us what you&apos;re planning. We&apos;ll come prepared to talk scope and schedule.</p>
-            <a href="mailto:help@themultifmailyroofers.com" data-testid="link-footer-email">
-              help@themultifmailyroofers.com
+            <a href="mailto:help@themultifamilyroofers.com" data-testid="link-footer-email">
+              help@themultifamilyroofers.com
             </a>
             <a href="#contact" className="btn-primary footer-contact-link" data-testid="link-footer-request-bid">
               Request a Bid
