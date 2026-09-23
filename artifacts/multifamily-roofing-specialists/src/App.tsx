@@ -347,7 +347,7 @@ function AboutUs() {
         <figure className="about-us-photo">
           <img src={teamPlanningImage} alt="Multifamily roofing team reviewing plans together on a roof" />
         </figure>
-        <div className="about-us-panel pt-[8px] pb-[8px]">
+        <div className="about-us-panel">
           <div className="about-us-panel-inner">
             <div className="about-us-kicker" aria-hidden="true">
               <span>About us</span>
