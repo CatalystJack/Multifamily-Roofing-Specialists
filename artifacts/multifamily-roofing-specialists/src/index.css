@@ -446,61 +446,59 @@
 }
 
 .property-managers {
-  padding: clamp(104px, 11vw, 156px) 0 clamp(112px, 12vw, 166px);
+  padding: clamp(72px, 8vw, 112px) 0 clamp(78px, 8vw, 108px);
   background: #f4f1ea;
   color: #1b2b34;
 }
 .property-managers-grid {
   display: grid;
-  grid-template-columns: minmax(0, .96fr) minmax(360px, 1fr);
-  gap: clamp(48px, 7vw, 96px);
+  grid-template-columns: minmax(0, .95fr) minmax(360px, 1fr);
+  gap: clamp(44px, 6.5vw, 84px);
   align-items: start;
 }
 .property-managers-intro {
-  max-width: 560px;
-  padding-top: 4px;
+  max-width: 520px;
 }
 .property-managers-intro .eyebrow {
-  margin-bottom: 27px;
+  margin-bottom: 22px;
 }
 .property-managers h2 {
-  max-width: 560px;
+  max-width: 520px;
   margin: 0;
   color: #1b2b34;
-  font: 600 clamp(3.25rem, 5.8vw, 6.2rem)/.86 var(--app-font-sans);
+  font: 600 clamp(3.2rem, 5.7vw, 6rem)/.86 var(--app-font-sans);
   letter-spacing: -.075em;
 }
 .property-managers-rule {
-  width: min(220px, 44%);
+  width: min(145px, 40%);
   height: 1px;
-  margin-top: 39px;
+  margin-top: 30px;
   background: #c7a77f;
 }
 .property-managers-description {
-  max-width: 450px;
+  max-width: 430px;
   color: #53616a;
-  font-size: .82rem;
-  line-height: 1.9;
+  font-size: .76rem;
+  line-height: 1.72;
 }
-.property-managers-description { margin-top: 30px; }
+.property-managers-description { margin-top: 22px; }
 .property-managers-description + .property-managers-description { margin-top: 8px; }
-.property-managers-link { margin-top: 30px; }
+.property-managers-link { margin-top: 24px; }
 .property-managers-expectations {
   display: flex;
   flex-direction: column;
   align-self: start;
-  padding: 30px 34px 29px;
-  border-top: 2px solid #c7a77f;
+  padding: 24px 30px 22px;
   background: #0b0e11;
   color: #f5f5f2;
-  box-shadow: 14px 14px 0 rgba(199, 167, 127, .2);
+  box-shadow: 10px 10px 0 rgba(199, 167, 127, .2);
 }
 .property-managers-expectations-topline,
 .credentials-group-topline {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding-bottom: 16px;
+  padding-bottom: 12px;
   border-bottom: 1px solid rgba(245, 245, 242, .2);
   color: #f0d6ad;
   font: 600 .57rem var(--app-font-mono);
@@ -516,25 +514,25 @@
   color: rgba(245, 245, 242, .55);
 }
 .property-managers-list {
-  margin: 10px 0 0;
+  margin: 4px 0 0;
   padding: 0;
   list-style: none;
 }
 .property-managers-list li {
   display: flex;
   align-items: baseline;
-  gap: 20px;
-  padding: 14px 0;
+  gap: 16px;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(245, 245, 242, .14);
 }
 .property-managers-list li span {
-  flex: 0 0 24px;
+  flex: 0 0 22px;
   color: #f0d6ad;
   font: .62rem var(--app-font-mono);
 }
 .property-managers-list li strong {
   color: #f5f5f2;
-  font-size: .76rem;
+  font-size: .7rem;
   font-weight: 500;
   line-height: 1.45;
 }
