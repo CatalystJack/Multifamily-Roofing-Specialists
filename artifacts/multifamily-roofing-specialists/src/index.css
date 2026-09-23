@@ -1326,8 +1326,8 @@
   flex-direction: column;
 }
 .footer .brand-logo {
-  width: 260px;
-  height: auto;
+  width: 220px;
+  height: 52px;
   filter: none;
 }
 .footer-description {
@@ -1625,19 +1625,43 @@
   .field h2 { max-width: 350px; font-size: clamp(2.45rem, 11vw, 3.7rem); }
   .field-tabs {
     width: 100%;
+    max-width: 100%;
     justify-content: flex-start;
     margin-top: 25px;
     border-radius: 18px;
+    scroll-padding-inline: 4px;
+    overscroll-behavior-x: contain;
   }
-  .field-tab { padding: 0 14px; }
+  .field-tab {
+    min-height: 36px;
+    padding: 0 13px;
+    font-size: .58rem;
+    white-space: nowrap;
+  }
   .field-feature {
-    min-height: 390px;
+    display: grid;
+    grid-template-rows: minmax(205px, 43vw) auto;
+    min-height: 0;
     margin-top: 35px;
     border-radius: 6px;
   }
-  .field-feature-overlay { padding: 19px; }
-  .field-feature-copy h3 { font-size: clamp(2.05rem, 10vw, 3.35rem); }
-  .field-feature-copy p { max-width: 320px; margin-top: 15px; font-size: .7rem; }
+  .field-feature > img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-position: center center;
+  }
+  .field-feature-overlay {
+    position: relative;
+    inset: auto;
+    display: block;
+    padding: 22px 20px 25px;
+    background: #1b2b34;
+  }
+  .field-feature-topline { justify-content: space-between; }
+  .field-feature-copy { max-width: none; margin-top: 24px; }
+  .field-feature-copy h3 { font-size: clamp(2rem, 9vw, 3rem); }
+  .field-feature-copy p { max-width: none; margin-top: 14px; font-size: .72rem; line-height: 1.7; }
   .area-map-stage { min-height: 250px; }
   .area-map { height: 250px; }
   .area-map-key { align-items: flex-start; flex-direction: column; gap: 8px; }
@@ -1663,7 +1687,7 @@
     gap: 46px;
     padding: 58px 0 52px;
   }
-  .footer .brand-logo { width: 230px; }
+  .footer .brand-logo { width: 175px; height: 42px; }
   .footer-description { margin-top: 25px; }
   .footer-link-groups { gap: 28px; }
   .footer-bottom {
