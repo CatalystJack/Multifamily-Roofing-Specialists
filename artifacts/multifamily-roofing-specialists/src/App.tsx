@@ -320,20 +320,20 @@ function Stats() {
     <section ref={ref} className="stats" aria-label="Company experience">
       <div className="container-shell stats-inner">
         <div className="stat" data-testid="stat-experience">
-          <div className="stat-number serif">{`${Math.round(50 * progress)}+`}</div>
-          <div className="stat-label">Years Combined Experience</div>
+          <div className="stat-number serif">{`${Math.round(100 * progress)}+`}</div>
+          <div className="stat-label">Years Combined Team & Crew Experience</div>
+        </div>
+        <div className="stat" data-testid="stat-roofs-installed">
+          <div className="stat-number serif">{`${Math.round(5000 * progress).toLocaleString()}+`}</div>
+          <div className="stat-label">Roofs Installed</div>
+        </div>
+        <div className="stat" data-testid="stat-installations-managed">
+          <div className="stat-number serif">{`${Math.round(10000 * progress).toLocaleString()}+`}</div>
+          <div className="stat-label">Installations Managed</div>
         </div>
         <div className="stat" data-testid="stat-transactions">
           <div className="stat-number serif">{`$${(5.5 * progress).toFixed(1)}B+`}</div>
           <div className="stat-label">Multifamily Transactions</div>
-        </div>
-        <div className="stat" data-testid="stat-states">
-          <div className="stat-number serif">{`${Math.round(4 * progress)}`}</div>
-          <div className="stat-label">Southeast States</div>
-        </div>
-        <div className="stat" data-testid="stat-focus">
-          <div className="stat-number serif">{`${Math.round(100 * progress)}%`}</div>
-          <div className="stat-label">Multifamily Focus</div>
         </div>
       </div>
     </section>
@@ -403,10 +403,31 @@ const manufacturerCredentials = [
   { name: 'EPDM / TPO Systems' },
 ];
 
+const manufacturerDetails = [
+  'Owens Corning Preferred Contractor',
+  '10-year manufacturer-backed workmanship coverage on qualifying Owens Corning roofs',
+  'Former Owens Corning Platinum Preferred Contractor',
+  'GAF Certified Roofing Contractor',
+  'Former GAF Master Elite Contractor, a distinction offered to only 2% of North American roofers',
+];
+
 const safetyCredentials = [
-  'OSHA Training',
-  'Fall Protection Training',
-  'HAG Inspector Designation',
+  'OSHA 10 and OSHA 30 training',
+  'Haag Certified Inspector',
+];
+
+const stormRestorationCapabilities = [
+  'Storm restoration and insurance claim specialists',
+  'Deep network of licensed public adjusters and attorneys across the United States for denied, mishandled, and large-loss claims',
+  'Restoration, interior repair, and mold-remediation partners for large losses',
+  'Exterior services including gutters, painting, and siding',
+  '24/7 emergency tarping and tailored leak response for HOA and apartment communities',
+];
+
+const multifamilyCapabilities = [
+  'Tenant communication and work-order coordination for occupied multifamily projects',
+  'AI-driven project platform for documentation, customer follow-up, and management visibility',
+  'NC, SC, Tennessee, and Georgia commercial roofing / GC licensing',
 ];
 
 function PropertyManagers() {
@@ -500,6 +521,11 @@ function Credentials() {
                 </li>
               ))}
             </ul>
+            <ul className="credentials-detail-list">
+              {manufacturerDetails.map((credential) => (
+                <li key={credential}>{credential}</li>
+              ))}
+            </ul>
             <p className="credentials-attribution">
               An Independent Roofing Contractor, not an Employee or Agent of Atlas Roofing Corporation.
             </p>
@@ -512,6 +538,28 @@ function Credentials() {
             <ul>
               {safetyCredentials.map((credential) => (
                 <li key={credential}>{credential}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="credentials-group">
+            <div className="credentials-group-topline">
+              <span>03</span>
+              <span>Storm & Restoration Support</span>
+            </div>
+            <ul>
+              {stormRestorationCapabilities.map((capability) => (
+                <li key={capability}>{capability}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="credentials-group">
+            <div className="credentials-group-topline">
+              <span>04</span>
+              <span>Multifamily Operations</span>
+            </div>
+            <ul>
+              {multifamilyCapabilities.map((capability) => (
+                <li key={capability}>{capability}</li>
               ))}
             </ul>
           </div>
