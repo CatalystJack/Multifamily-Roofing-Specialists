@@ -4,7 +4,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import whiteBrandLogo from '@assets/1_1790170695577.png';
+import goldWhiteBrandLogo from '@assets/roofing_specialists_1790280888425.png';
+import whiteBrandLogo from '@assets/roofing_specialists_(1)_1790280899742.png';
 import roofDetail from '@assets/image_1788528449639.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
 import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
@@ -172,7 +173,7 @@ function useInView() {
   return { ref, isVisible };
 }
 
-function Brand({ logo = whiteBrandLogo }: { logo?: string }) {
+function Brand({ logo = goldWhiteBrandLogo }: { logo?: string }) {
   return (
     <a href="#home" className="brand" data-testid="link-brand">
       <img
@@ -781,7 +782,7 @@ function Footer() {
       <div className="container-shell footer-shell">
         <div className="footer-main">
           <div className="footer-branding">
-            <Brand />
+            <Brand logo={whiteBrandLogo} />
             <p className="footer-description">
               Multifamily roofing for the people who build, own, and manage apartment communities.
             </p>
