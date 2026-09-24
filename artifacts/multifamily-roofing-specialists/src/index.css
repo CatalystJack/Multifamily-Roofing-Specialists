@@ -1761,14 +1761,14 @@ body {
 
 .site-header {
   border-bottom-color: rgba(255, 255, 255, .16);
-  background: rgba(15, 47, 66, .22);
+  background: var(--brand-blue-night);
 }
 
 .site-header.scrolled,
 .mobile-menu,
 .site-header.scrolled .mobile-menu {
   border-bottom-color: rgba(255, 255, 255, .16);
-  background: var(--brand-blue-deep);
+  background: var(--brand-blue-night);
 }
 
 .nav-link,
@@ -1837,12 +1837,12 @@ body {
 .hero,
 .stats,
 .field-feature,
-.area-map-card {
+.area-map-card,
+.about-us {
   background-color: var(--brand-blue);
   color: var(--brand-white);
 }
 
-.about-us,
 .credentials,
 .programs-body,
 .contact,
@@ -1921,10 +1921,13 @@ body {
   border-color: rgba(255, 255, 255, .22);
 }
 
-.about-us-panel,
 .about-us-vision,
 .field-feature-overlay {
   background-color: var(--brand-blue-deep);
+}
+
+.about-us-panel {
+  background-color: var(--brand-blue);
 }
 
 .about-us-kicker,
