@@ -1714,6 +1714,7 @@
 :root {
   --brand-blue: #0f2f42;
   --brand-blue-deep: #06273a;
+  --brand-blue-night: #041b2a;
   --brand-gold: #e5ad4b;
   --brand-white: #ffffff;
   --background: 0 0% 100%;
@@ -1852,8 +1853,8 @@ body {
 
 .hero::after {
   background:
-    linear-gradient(90deg, rgba(6, 39, 58, .72) 0%, rgba(6, 39, 58, .48) 48%, rgba(6, 39, 58, .24) 100%),
-    linear-gradient(0deg, rgba(6, 39, 58, .78) 0%, rgba(6, 39, 58, .12) 58%, rgba(6, 39, 58, .2) 100%);
+    linear-gradient(90deg, rgba(4, 27, 42, .72) 0%, rgba(4, 27, 42, .48) 48%, rgba(4, 27, 42, .24) 100%),
+    linear-gradient(0deg, rgba(4, 27, 42, .78) 0%, rgba(4, 27, 42, .12) 58%, rgba(4, 27, 42, .2) 100%);
 }
 
 .hero h1,
@@ -1897,7 +1898,7 @@ body {
 }
 
 .stats {
-  background: var(--brand-gold);
+  background: var(--brand-blue-deep);
   color: var(--brand-white);
 }
 
@@ -1946,8 +1947,8 @@ body {
 
 .about-us-vision::after {
   background:
-    linear-gradient(90deg, rgba(6, 39, 58, .82) 0%, rgba(6, 39, 58, .52) 52%, rgba(6, 39, 58, .36) 100%),
-    linear-gradient(0deg, rgba(6, 39, 58, .4), transparent 72%);
+    linear-gradient(90deg, rgba(4, 27, 42, .82) 0%, rgba(4, 27, 42, .52) 52%, rgba(4, 27, 42, .36) 100%),
+    linear-gradient(0deg, rgba(4, 27, 42, .4), transparent 72%);
 }
 
 .property-managers,
@@ -2081,7 +2082,7 @@ body {
 }
 
 .programs-body {
-  background: var(--brand-blue-deep);
+  background: var(--brand-blue-night);
   color: var(--brand-white);
 }
 
@@ -2090,7 +2091,7 @@ body {
 }
 
 .program::after {
-  background: linear-gradient(0deg, rgba(6, 39, 58, .96) 0%, rgba(6, 39, 58, .64) 42%, rgba(6, 39, 58, .08) 100%);
+  background: linear-gradient(0deg, rgba(4, 27, 42, .96) 0%, rgba(4, 27, 42, .64) 42%, rgba(4, 27, 42, .08) 100%);
 }
 
 .program-card--plain,
@@ -2129,7 +2130,7 @@ body {
 }
 
 .field-feature-overlay {
-  background: linear-gradient(180deg, rgba(6, 39, 58, .12) 0%, rgba(6, 39, 58, .1) 34%, rgba(6, 39, 58, .9) 100%);
+  background: linear-gradient(180deg, rgba(4, 27, 42, .12) 0%, rgba(4, 27, 42, .1) 34%, rgba(4, 27, 42, .9) 100%);
 }
 
 .field-feature-topline span:last-child {
@@ -2205,7 +2206,7 @@ body {
 }
 
 .region-card::after {
-  background: linear-gradient(180deg, rgba(6, 39, 58, .22) 0%, rgba(6, 39, 58, .84) 68%, rgba(6, 39, 58, .96) 100%);
+  background: linear-gradient(180deg, rgba(4, 27, 42, .22) 0%, rgba(4, 27, 42, .84) 68%, rgba(4, 27, 42, .96) 100%);
 }
 
 .contact {
@@ -2267,7 +2268,7 @@ body {
 }
 
 .footer {
-  background: var(--brand-blue-deep);
+  background: var(--brand-blue-night);
   color: var(--brand-white);
 }
 
