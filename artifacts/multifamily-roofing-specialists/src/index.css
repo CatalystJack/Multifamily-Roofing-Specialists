@@ -54,9 +54,9 @@
   --chart-3: 216 8% 54%;
   --chart-4: 205 26% 18%;
   --chart-5: 45 18% 94%;
-  --app-font-sans: 'Proxima Nova', Arial, sans-serif;
-  --app-font-serif: 'Proxima Nova', Arial, sans-serif;
-  --app-font-mono: 'Proxima Nova', Arial, sans-serif;
+  --app-font-sans: 'Nunito Sans', Arial, sans-serif;
+  --app-font-serif: 'Nunito Sans', Arial, sans-serif;
+  --app-font-mono: 'Nunito Sans', Arial, sans-serif;
   --radius: 0.2rem;
   --elevate-1: rgba(27, 43, 52, 0.06);
   --elevate-2: rgba(27, 43, 52, 0.11);
@@ -74,9 +74,15 @@
   html { scroll-behavior: smooth; background: #fff; }
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    font-stretch: 108%;
     margin: 0;
     min-width: 320px;
     overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3 {
+    font-stretch: 118%;
   }
   ::selection { background: #c7a77f; color: #1b2b34; }
   :focus-visible { outline: 2px solid #cfe4e7; outline-offset: 4px; }
