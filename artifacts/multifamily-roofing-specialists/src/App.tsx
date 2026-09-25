@@ -199,7 +199,7 @@ function Header() {
 
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container-shell header-inner">
+      <div className="container-shell header-inner" data-nosnippet>
         <Brand />
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map((item) => (
@@ -227,7 +227,7 @@ function Header() {
           {menuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
         </button>
       </div>
-      <nav className={`mobile-menu ${menuOpen ? 'open' : ''}`} aria-label="Mobile navigation">
+      <nav className={`mobile-menu ${menuOpen ? 'open' : ''}`} aria-label="Mobile navigation" data-nosnippet>
         {navItems.map((item) => (
           <a key={item.href} href={item.href} onClick={closeMenu} data-testid={`link-mobile-${item.label.toLowerCase().replaceAll(' ', '-')}`}>
             {item.label}
@@ -268,7 +268,7 @@ function Hero() {
               We focus exclusively on multifamily roofing, so our crews know the buildings, schedules, and budgets that keep projects moving.
             </p>
           </div>
-          <div className="hero-actions">
+          <div className="hero-actions" data-nosnippet>
             <a href="#contact" className="btn-primary" data-testid="button-hero-request-bid">
               Request a Bid
             </a>
