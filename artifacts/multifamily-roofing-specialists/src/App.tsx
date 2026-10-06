@@ -16,6 +16,15 @@ import fieldActionsImage from '@assets/Gemini_Generated_Image_irlxrqirlxrqirlx_1
 import constructionImage from '@assets/Gemini_Generated_Image_xkwxflxkwxflxkwx_1790002833976.jpg';
 import newConstructionImage from '@assets/image_1790003076677.png';
 import maintenanceImage from '@assets/image_1790003123704.png';
+import serviceRoofRepairImage from '@assets/mrp-service-roof-repair.webp';
+import serviceRoofReplacementImage from '@assets/mrp-service-roof-replacement.webp';
+import serviceRoofInspectionImage from '@assets/mrp-service-roof-inspection.webp';
+import serviceVentilationImage from '@assets/mrp-service-ventilation.webp';
+import serviceSkylightImage from '@assets/mrp-service-skylight.webp';
+import serviceRoofDrainageImage from '@assets/mrp-service-roof-drainage.webp';
+import serviceExteriorPaintingImage from '@assets/mrp-service-exterior-painting.webp';
+import serviceSoffitImage from '@assets/mrp-service-soffit.webp';
+import serviceSidingImage from '@assets/mrp-service-siding.webp';
 
 const queryClient = new QueryClient();
 
@@ -32,56 +41,67 @@ const programs = [
   {
     number: '01',
     title: 'Roof Repair',
+    image: serviceRoofRepairImage,
     description: 'Roof repair services for multifamily properties.',
   },
   {
     number: '02',
     title: 'Roof Replacement',
+    image: serviceRoofReplacementImage,
     description: 'Roof replacement services for multifamily properties.',
   },
   {
     number: '03',
     title: 'Roof Inspection',
+    image: serviceRoofInspectionImage,
     description: 'Roof inspections for multifamily properties.',
   },
   {
     number: '04',
     title: 'Ventilation',
+    image: serviceVentilationImage,
     description: 'Ventilation services for roofing systems.',
   },
   {
     number: '05',
     title: 'Skylight Installation & Repair',
+    image: serviceSkylightImage,
     description: 'Skylight installation and repair.',
   },
   {
     number: '06',
     title: 'Gutter Installation, Repair & Guards',
+    image: serviceRoofDrainageImage,
     description: 'Gutter installation and repair, plus gutter guards.',
   },
   {
     number: '07',
     title: 'Guarantees & Warranties',
+    image: serviceRoofInspectionImage,
     description: 'Guarantee and warranty support for roofing work.',
   },
   {
     number: '08',
     title: 'Annual Maintenance Plan',
+    image: serviceRoofDrainageImage,
     description: 'Scheduled annual maintenance for multifamily roofs.',
   },
   {
     number: '09',
     title: 'Siding',
+    image: serviceSidingImage,
     description: 'Siding services for multifamily properties.',
   },
   {
     number: '10',
     title: 'Painting',
+    image: serviceExteriorPaintingImage,
     description: 'Painting services for multifamily properties.',
   },
   {
     number: '11',
     title: 'Soffit',
+    image: serviceSoffitImage,
     description: 'Soffit services for multifamily properties.',
   },
 ];
@@ -522,9 +542,12 @@ function Programs() {
           <div className="program-grid">
             {programs.map((program) => (
               <article
-                className="program program-card program-card--plain reveal-item"
+                className="program program-card reveal-item"
                 key={program.number}
-                style={{ '--reveal-delay': `${Number(program.number) * 70}ms` } as CSSProperties}
+                style={{
+                  '--reveal-delay': `${Number(program.number) * 70}ms`,
+                  '--program-image': `url(${program.image})`,
+                } as CSSProperties}
                 data-testid={`program-${program.number}`}
               >
                 <div className="program-card-content">
@@ -717,7 +740,7 @@ function Contact() {
           </p>
           <div className="contact-details">
             <a href="tel:+17042192097" data-testid="link-contact-phone">704-219-2097</a>
-            <a href="mailto:help@themultifamilyroofers.com" data-testid="link-contact-email">help@themultifamilyroofers.com</a>
+            <a href="mailto:jonathan@themultifamilyroofers.com" data-testid="link-contact-email">jonathan@themultifamilyroofers.com</a>
           </div>
         </div>
         <div>
@@ -816,8 +839,8 @@ function Footer() {
           <div className="footer-contact">
             <span className="footer-column-title">Start a conversation</span>
             <p>Tell us what you&apos;re planning. We&apos;ll come prepared to talk scope and schedule.</p>
-            <a href="mailto:help@themultifamilyroofers.com" data-testid="link-footer-email">
-              help@themultifamilyroofers.com
+            <a href="mailto:jonathan@themultifamilyroofers.com" data-testid="link-footer-email">
+              jonathan@themultifamilyroofers.com
             </a>
             <a href="#contact" className="btn-primary footer-contact-link" data-testid="link-footer-request-bid">
               Request a Bid
