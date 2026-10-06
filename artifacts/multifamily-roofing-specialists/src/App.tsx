@@ -21,7 +21,7 @@ import serviceRoofReplacementImage from '@assets/mrp-service-roof-replacement.we
 import serviceRoofInspectionImage from '@assets/mrp-service-roof-inspection.webp';
 import serviceVentilationImage from '@assets/mrp-service-ventilation.webp';
 import serviceSkylightImage from '@assets/mrp-service-skylight.webp';
-import serviceRoofDrainageImage from '@assets/mrp-service-roof-drainage.webp';
+import serviceGutterInstallationImage from '@assets/mrp-service-gutter-installation.webp';
 import serviceAnnualMaintenanceImage from '@assets/mrp-service-annual-maintenance.webp';
 import serviceExteriorPaintingImage from '@assets/mrp-service-painting.webp';
 import serviceSoffitImage from '@assets/mrp-service-soffit-installation.webp';
@@ -72,7 +72,7 @@ const programs = [
   {
     number: '06',
     title: 'Gutter Installation, Repair & Guards',
-    image: serviceRoofDrainageImage,
+    image: serviceGutterInstallationImage,
     description: 'Gutter installation and repair, plus gutter guards.',
   },
   {
