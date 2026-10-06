@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import brandLogo from '@assets/Copy_of_Copy_of_roofing_specialists_(3)_1790358155126.png';
+import brandLogo from '@assets/multifamily-roofing-partners-logo.png';
 import roofDetail from '@assets/image_1788528449639.png';
 import heroImage from '@assets/ChatGPT_Image_Sep_8,_2026,_08_57_09_AM_1788872235177.png';
 import fieldImage from '@assets/c2e03dc0-e0cc-400b-bfcf-d2b8d0d1c3c2_1789407233528.png';
@@ -178,7 +178,7 @@ function Brand({ logo = brandLogo }: { logo?: string }) {
       <img
         className="brand-logo"
         src={logo}
-        alt="Multifamily Roofing Specialists"
+        alt="Multifamily Roofing Partners"
       />
     </a>
   );
@@ -256,12 +256,12 @@ function Hero() {
             <br />
             Roofing
             <br />
-            Specialists
+            Partners
           </h1>
         </div>
         <div className="hero-support">
           <p className="hero-tagline serif" data-testid="text-hero-tagline">
-            Not Generalists. Multifamily Specialists.
+            Not Generalists. Multifamily Partners.
           </p>
           <div className="hero-copy">
             <p>
@@ -819,10 +819,10 @@ function Footer() {
         </div>
         <div className="footer-bottom">
           <p className="footer-legal-note">
-            Multifamily Roofing Specialists is an Equal Opportunity Employer, regardless of race, color, religion, sex, sexual orientation, gender identity, national origin, disability, status as a protected veteran, or other characteristics protected by applicable law.
+            Multifamily Roofing Partners is an Equal Opportunity Employer, regardless of race, color, religion, sex, sexual orientation, gender identity, national origin, disability, status as a protected veteran, or other characteristics protected by applicable law.
           </p>
           <div className="footer-bottom-meta">
-            <span data-testid="text-copyright">© {year} Multifamily Roofing Specialists</span>
+            <span data-testid="text-copyright">© {year} Multifamily Roofing Partners</span>
             <span>All rights reserved</span>
           </div>
         </div>

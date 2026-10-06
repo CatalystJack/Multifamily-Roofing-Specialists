@@ -3,6 +3,6 @@ type ModuleMap = Record<string, () => Promise<Record<string, unknown>>>;
 export const modules: ModuleMap = {
   "./components/mockups/multifamily/RoofingProjectBrief.tsx": () => import("../components/mockups/multifamily/RoofingProjectBrief.tsx"),
   "./components/mockups/templates/FirstLightCyclingLookbook-H7Hfgv/ClikClakDuskMix.tsx": () => import("../components/mockups/templates/FirstLightCyclingLookbook-H7Hfgv/ClikClakDuskMix.tsx"),
-  "./components/mockups/templates/FirstLightCyclingLookbook-T7rn--/ClikClakDuskMix.tsx": () => import("../components/mockups/templates/FirstLightCyclingLookbook-T7rn--/ClikClakDuskMix.tsx"),
-  "./components/mockups/templates/FirstLightCyclingLookbook-LnpXMF/ClikClakDuskMix.tsx": () => import("../components/mockups/templates/FirstLightCyclingLookbook-LnpXMF/ClikClakDuskMix.tsx")
+  "./components/mockups/templates/FirstLightCyclingLookbook-LnpXMF/ClikClakDuskMix.tsx": () => import("../components/mockups/templates/FirstLightCyclingLookbook-LnpXMF/ClikClakDuskMix.tsx"),
+  "./components/mockups/templates/FirstLightCyclingLookbook-T7rn--/ClikClakDuskMix.tsx": () => import("../components/mockups/templates/FirstLightCyclingLookbook-T7rn--/ClikClakDuskMix.tsx")
 };

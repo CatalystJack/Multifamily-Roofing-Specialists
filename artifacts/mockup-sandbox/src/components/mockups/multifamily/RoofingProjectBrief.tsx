@@ -169,7 +169,7 @@ export function RoofingProjectBrief() {
         .brief-capability h3 { font: 400 25px/1 Georgia, serif; letter-spacing: -.035em; margin: 0 0 12px; }
         .brief-capability p { max-width: 290px; color: var(--ink-soft); font-size: 12px; line-height: 1.65; margin: 0; }
         .brief-process { background: var(--ink); color: var(--paper); padding: 92px 0 100px; position: relative; }
-        .brief-process::after { content: "MFRS / 2024"; color: rgba(244,240,232,.3); position: absolute; right: 28px; bottom: 29px; font: 9px ui-monospace, monospace; letter-spacing: .12em; }
+        .brief-process::after { content: "MRP / 2024"; color: rgba(244,240,232,.3); position: absolute; right: 28px; bottom: 29px; font: 9px ui-monospace, monospace; letter-spacing: .12em; }
         .brief-process-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 12%; }
         .brief-process h2 { max-width: 430px; }
         .brief-process .brief-kicker { color: var(--ochre); }
@@ -246,9 +246,9 @@ export function RoofingProjectBrief() {
       `}</style>
 
       <header className="brief-wrap brief-nav">
-        <a className="brief-brand" href="#top" aria-label="Multifamily Roofing Specialists home">
+        <a className="brief-brand" href="#top" aria-label="Multifamily Roofing Partners home">
           <span className="brief-brand-mark" aria-hidden="true" />
-          <span>Multifamily Roofing Specialists</span>
+          <span>Multifamily Roofing Partners</span>
         </a>
         <nav className={`brief-links ${menuOpen ? "brief-mobile-links" : ""}`} aria-label="Primary navigation">
           <a href="#approach" onClick={() => setMenuOpen(false)}>Approach</a>
@@ -402,7 +402,7 @@ export function RoofingProjectBrief() {
 
       <footer className="brief-footer">
         <div className="brief-wrap brief-footer-inner">
-          <small>© 2024 Multifamily Roofing Specialists / Charlotte, NC</small>
+          <small>© 2024 Multifamily Roofing Partners / Charlotte, NC</small>
           <div className="brief-footer-links"><a href="#top">Back to top</a><a href="#intake">Start a project</a></div>
         </div>
       </footer>
