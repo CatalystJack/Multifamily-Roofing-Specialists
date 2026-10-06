@@ -23,6 +23,7 @@ import serviceVentilationImage from '@assets/mrp-service-ventilation.webp';
 import serviceSkylightImage from '@assets/mrp-service-skylight.webp';
 import serviceGutterInstallationImage from '@assets/mrp-service-gutter-installation.webp';
 import serviceAnnualMaintenanceImage from '@assets/mrp-service-annual-maintenance.webp';
+import serviceWarrantyImage from '@assets/mrp-service-warranties.webp';
 import serviceExteriorPaintingImage from '@assets/mrp-service-painting.webp';
 import serviceSoffitImage from '@assets/mrp-service-soffit-installation.webp';
 import serviceSidingImage from '@assets/mrp-service-siding.webp';
@@ -78,7 +79,7 @@ const programs = [
   {
     number: '07',
     title: 'Guarantees & Warranties',
-    image: serviceRoofInspectionImage,
+    image: serviceWarrantyImage,
     description: 'Guarantee and warranty support for roofing work.',
   },
   {
