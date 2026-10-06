@@ -15,10 +15,7 @@ import fieldCheckpointsImage from '@assets/Gemini_Generated_Image_b2ftsib2ftsib2
 import fieldActionsImage from '@assets/Gemini_Generated_Image_irlxrqirlxrqirlx_1790082106322.jpg';
 import constructionImage from '@assets/Gemini_Generated_Image_xkwxflxkwxflxkwx_1790002833976.jpg';
 import newConstructionImage from '@assets/image_1790003076677.png';
-import occupiedRehabsImage from '@assets/image_1790013020294.png';
-import stormInspectionImage from '@assets/image_1790003116172.png';
 import maintenanceImage from '@assets/image_1790003123704.png';
-import warrantyImage from '@assets/image_1790003170403.png';
 
 const queryClient = new QueryClient();
 
@@ -34,45 +31,58 @@ const navItems = [
 const programs = [
   {
     number: '01',
-    title: 'New Construction',
-    image: newConstructionImage,
-    description:
-      'Production roofing coordinated to your schedule, materials, and closeout requirements.',
+    title: 'Roof Repair',
+    description: 'Roof repair services for multifamily properties.',
   },
   {
     number: '02',
-    title: 'Occupied Rehabs & Portfolio Reroofing',
-    image: occupiedRehabsImage,
-    description:
-      'Reroofing sequenced around residents, access, parking, cleanup, and property teams.',
+    title: 'Roof Replacement',
+    description: 'Roof replacement services for multifamily properties.',
   },
   {
     number: '03',
-    title: 'Storm & Damage Inspections',
-    image: stormInspectionImage,
-    description:
-      'Photo-documented inspections organized by building, with clear next actions.',
+    title: 'Roof Inspection',
+    description: 'Roof inspections for multifamily properties.',
   },
   {
     number: '04',
-    title: 'Capital Planning Support',
-    image: constructionImage,
-    description:
-      'Roof condition data turned into replacement windows, phasing, and usable budgets.',
+    title: 'Ventilation',
+    description: 'Ventilation services for roofing systems.',
   },
   {
     number: '05',
-    title: 'Warranty & Closeout Documentation',
-    image: warrantyImage,
-    description:
-      'Warranty, inspection, and closeout records ready for lenders, insurers, and ownership.',
+    title: 'Skylight Installation & Repair',
+    description: 'Skylight installation and repair.',
   },
   {
     number: '06',
-    title: 'Maintenance Programs',
-    image: maintenanceImage,
-    description:
-      'Scheduled inspections and maintenance that keep roof conditions visible over time.',
+    title: 'Gutter Installation, Repair & Guards',
+    description: 'Gutter installation and repair, plus gutter guards.',
+  },
+  {
+    number: '07',
+    title: 'Guarantees & Warranties',
+    description: 'Guarantee and warranty support for roofing work.',
+  },
+  {
+    number: '08',
+    title: 'Annual Maintenance Plan',
+    description: 'Scheduled annual maintenance for multifamily roofs.',
+  },
+  {
+    number: '09',
+    title: 'Siding',
+    description: 'Siding services for multifamily properties.',
+  },
+  {
+    number: '10',
+    title: 'Painting',
+    description: 'Painting services for multifamily properties.',
+  },
+  {
+    number: '11',
+    title: 'Soffit',
+    description: 'Soffit services for multifamily properties.',
   },
 ];
 
@@ -502,22 +512,19 @@ function Programs() {
   const { ref, isVisible } = useInView();
 
   return (
-    <section ref={ref} id="services" className={`programs reveal ${isVisible ? 'is-visible' : ''}`} aria-label="Services and scope of work">
+    <section ref={ref} id="services" className={`programs reveal ${isVisible ? 'is-visible' : ''}`} aria-label="Roofing and exterior services">
       <div className="programs-body">
         <div className="container-shell">
           <div className="programs-body-head">
-            <span>Scope of work</span>
-            <span>Six ways we keep the roofline moving</span>
+            <span>Our services</span>
+            <span>11 roofing &amp; exterior services</span>
           </div>
           <div className="program-grid">
             {programs.map((program) => (
               <article
-                className={`program program-card ${program.image ? '' : 'program-card--plain'} reveal-item`}
+                className="program program-card program-card--plain reveal-item"
                 key={program.number}
-                style={{
-                  '--reveal-delay': `${Number(program.number) * 70}ms`,
-                  ...(program.image ? { '--program-image': `url(${program.image})` } : {}),
-                } as CSSProperties}
+                style={{ '--reveal-delay': `${Number(program.number) * 70}ms` } as CSSProperties}
                 data-testid={`program-${program.number}`}
               >
                 <div className="program-card-content">
